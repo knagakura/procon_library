@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../index.html#5058f1af8388633f609cadb75a75dc9d">.</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 04:00:21+09:00
+    - Last commit date: 2020-03-28 04:21:31+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
@@ -47,9 +47,6 @@ layout: default
 
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,N) for(int i=0;i<int(N);++i)
-#define rep1(i,N) for(int i=1;i<int(N);++i)
-#define all(a) (a).begin(),(a).end()
 
 class LCA{
   public:
@@ -113,10 +110,10 @@ int main() {
     int N;
     cin >> N;
     vector<vector<int>> g(N);
-    rep(i,N){
+    for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        rep(j,k){
+        for(int j = 0; j < k;j++){
             int a;
             cin >> a;
             g[i].push_back(a);
@@ -144,9 +141,6 @@ int main() {
 
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,N) for(int i=0;i<int(N);++i)
-#define rep1(i,N) for(int i=1;i<int(N);++i)
-#define all(a) (a).begin(),(a).end()
 
 class LCA{
   public:
@@ -210,10 +204,10 @@ int main() {
     int N;
     cin >> N;
     vector<vector<int>> g(N);
-    rep(i,N){
+    for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        rep(j,k){
+        for(int j = 0; j < k;j++){
             int a;
             cin >> a;
             g[i].push_back(a);
