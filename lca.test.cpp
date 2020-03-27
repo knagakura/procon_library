@@ -3,9 +3,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i,N) for(int i=0;i<int(N);++i)
-#define rep1(i,N) for(int i=1;i<int(N);++i)
-#define all(a) (a).begin(),(a).end()
 
 class LCA{
   public:
@@ -69,10 +66,10 @@ int main() {
     int N;
     cin >> N;
     vector<vector<int>> g(N);
-    rep(i,N){
+    for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        rep(j,k){
+        for(int j = 0; j < k;j++){
             int a;
             cin >> a;
             g[i].push_back(a);
