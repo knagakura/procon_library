@@ -34,6 +34,6 @@ layout: default
 
 ## Verify Files
 
-* :x: <a href="verify/lca.test.cpp.html">lca.test.cpp</a>
+* :heavy_check_mark: <a href="verify/lca.test.cpp.html">lca.test.cpp</a>
 
 

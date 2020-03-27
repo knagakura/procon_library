@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../assets/css/copy-button.css" />
 
 
-# :x: lca.test.cpp
+# :heavy_check_mark: lca.test.cpp
 
 <a href="../index.html">Back to top page</a>
 
 * category: <a href="../index.html#5058f1af8388633f609cadb75a75dc9d">.</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 03:56:06+09:00
+    - Last commit date: 2020-03-28 04:00:21+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C">https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
 
 
 ## Code
@@ -43,7 +43,7 @@ layout: default
 {% raw %}
 ```cpp
 //#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -140,7 +140,7 @@ int main() {
 ```cpp
 #line 1 "lca.test.cpp"
 //#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 
 #include <bits/stdc++.h>
 using namespace std;
