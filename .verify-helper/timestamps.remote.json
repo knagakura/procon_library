@@ -1,7 +1,7 @@
 {
-"graph/shortest_path/dijkstra.test.cpp": "2020-03-28 15:01:29 +0900",
-"graph/tree/lca.test.cpp": "2020-03-28 17:28:42 +0900",
-"test/ALDS1_4_B.test.cpp": "2020-03-28 17:37:55 +0900",
-"test/DSL_1_A.test.cpp": "2020-03-28 18:08:51 +0900",
-"test/union_find_tree.yosupo.test.cpp": "2020-03-28 18:09:01 +0900"
+"example/example.test.cpp": "2020-03-28 18:27:33 +0900",
+"test/DSL_1_A.test.cpp": "2020-03-28 18:27:33 +0900",
+"test/GRL_1_A.test.cpp": "2020-03-28 18:27:33 +0900",
+"test/union_find_tree.yosupo.test.cpp": "2020-03-28 18:27:33 +0900",
+"tree/lca.test.cpp": "2020-03-28 18:27:33 +0900"
 }
