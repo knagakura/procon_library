@@ -1,5 +1,4 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp"
-#include "../macros.hpp"
 #include "../datastructure/unionfind.hpp"
 
 int main(){
