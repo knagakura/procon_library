@@ -1,10 +1,9 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#include <bits/stdc++.h>
-using namespace std;
+#include "../macros.hpp"
 /*
 @title example(二分探索)
 @category example
-@brief test用
+@brief test用。
 */
 int main() {
     int n; cin >> n;
