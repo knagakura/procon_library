@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DSL_1_A.test.cpp
+# :heavy_check_mark: test/GRL_1_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-28 18:27:33+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../../library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
@@ -48,22 +48,29 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp"
-#include "../data_structure/unionfind.hpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
+#include "../macro/macros.hpp"
+#include "../graph/dijkstra.cpp"
 
-int main(){
-    int N, Q;
-    cin >> N >> Q;
-    UnionFind Tree(N);
-    while(Q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        if(com == 0){
-            Tree.unite(x, y);
-        }
-        if(com == 1){
-            cout << Tree.same(x, y) << endl;
-        }
+int main() {
+    const long long INFLL = (long long)1e18+1;
+    int V, E, r;
+    cin >> V >> E >> r;
+
+    Dijkstra<long long> G(V, INFLL);
+
+    for(int _ = 0; _ < E; _++){
+        int s, t;
+        long long d;
+        cin >> s >> t >> d;
+        G.make_edge(s, t, d);
+    }
+
+    G.solve(r);
+
+    for(int i = 0; i < V; i++){
+        if(G.cost[i] == INFLL)cout << "INF" << endl;
+        else cout << G.cost[i] << endl;
     }
 }
 ```
@@ -72,11 +79,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DSL_1_A.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp"
-#line 1 "data_structure/unionfind.hpp"
-
-
+#line 1 "test/GRL_1_A.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
 #line 2 "macro/macros.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -107,59 +111,67 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 */
-#line 4 "data_structure/unionfind.hpp"
-/*
-@title UnionFind Tree
-@category datastructure
-@docs ../docs/datastructure/unionfind.md
-*/
-struct UnionFind{
-    int n;
-    vector<int> Parent;
-    vector<int> sizes;
-    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){ rep(i,n)Parent[i]=i; }
-    //find the root of x
-    int root(int x){
-        if(x!=Parent[x]){
-        Parent[x] = root(Parent[x]);
-        }
-        return Parent[x];
+#line 3 "graph/dijkstra.cpp"
+
+template<class T> class Dijkstra {
+public:
+    int N;
+    T inf;
+    vector<T> cost;
+    vector<vector<pair<T, int>>> edge;
+ 
+    Dijkstra(const int _N, T _inf = 1e18) : N(_N), inf(_inf),cost(N), edge(N) {
     }
-    //merge x and y
-    void unite(int x,int y){
-        x = root(x);
-        y = root(y);
-        if(x == y) return;
-        if(sizes[x] < sizes[y]) swap(x, y);
-        Parent[y] = x;
-        sizes[x] += sizes[y];
+ 
+    void make_edge(int from, int to, T w) {
+        edge[from].push_back({ w,to });
     }
-    bool same(int x,int y){ return root(x) == root(y); }
-    int size(int x){ return sizes[root(x)]; }
-    int group_num(){
-        set<int> s;
-        for(int i = 0; i < n; ++i){
-            s.insert(root(i));
+ 
+    void solve(int start) {
+        for(int i = 0; i < N; ++i) cost[i] = inf;
+ 
+        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
+        cost[start] = 0;
+        pq.push({ 0,start });
+ 
+        while (!pq.empty()) {
+            T v = pq.top().first;
+            int from = pq.top().second;
+            pq.pop();
+            for (auto u : edge[from]) {
+                T w = v + u.first;
+                int to = u.second;
+                if (w < cost[to]) {
+                    cost[to] = w;
+                    pq.push({ w,to });
+                }
+            }
         }
-        return int(s.size());
+        return;
     }
 };
 
-#line 3 "test/DSL_1_A.test.cpp"
+#line 4 "test/GRL_1_A.test.cpp"
 
-int main(){
-    int N, Q;
-    cin >> N >> Q;
-    UnionFind Tree(N);
-    while(Q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        if(com == 0){
-            Tree.unite(x, y);
-        }
-        if(com == 1){
-            cout << Tree.same(x, y) << endl;
-        }
+int main() {
+    const long long INFLL = (long long)1e18+1;
+    int V, E, r;
+    cin >> V >> E >> r;
+
+    Dijkstra<long long> G(V, INFLL);
+
+    for(int _ = 0; _ < E; _++){
+        int s, t;
+        long long d;
+        cin >> s >> t >> d;
+        G.make_edge(s, t, d);
+    }
+
+    G.solve(r);
+
+    for(int i = 0; i < V; i++){
+        if(G.cost[i] == INFLL)cout << "INF" << endl;
+        else cout << G.cost[i] << endl;
     }
 }
 

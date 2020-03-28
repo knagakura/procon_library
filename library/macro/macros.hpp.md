@@ -25,21 +25,29 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: example(二分探索)
+# :heavy_check_mark: macro/macros.hpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#1a79a4d60de6718e8e5b326e338ae533">example</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_4_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:37:55+09:00
+* category: <a href="../../index.html#eb320f0c2b6a25b48ca861a120eea902">macro</a>
+* <a href="{{ site.github.repository_url }}/blob/master/macro/macros.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-28 18:27:33+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
 
 
-## Depends on
+## Required by
 
-* :heavy_check_mark: <a href="../../library/macros.hpp.html">macros.hpp</a>
+* :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/example/example.test.cpp.html">example(二分探索)</a>
+* :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
 
 
 ## Code
@@ -47,37 +55,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#include "../macros.hpp"
-/*
-@title example(二分探索)
-@category example
-@brief test用。
-*/
-int main() {
-    int n; cin >> n;
-    vector<int> s(n);
-    for(int i = 0; i < n;++i){
-        cin >> s[i];
-    }
-    int q; cin >> q;
-    int cnt = 0;
-    while (q --) {
-        int t_i; cin >> t_i;
-        cnt += binary_search(s.begin(), s.end(), t_i);
-    }
-    cout << cnt << endl;
-    return 0;
-}
-```
-{% endraw %}
-
-<a id="bundled"></a>
-{% raw %}
-```cpp
-#line 1 "test/ALDS1_4_B.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#line 2 "macros.hpp"
+#pragma once
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -107,27 +85,42 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 */
-#line 3 "test/ALDS1_4_B.test.cpp"
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 2 "macro/macros.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,N) for(int i=0;i<int(N);++i)
+#define rep1(i,N) for(int i=1;i<int(N);++i)
+#define all(a) (a).begin(),(a).end()
+#define print(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<_<<", "; cerr<<"]"<<endl; }
+#define printpair(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<"{"<<_.first<<","<<_.second<<"}"<<", "; cerr<<"]"<<endl; }
+#define dump(x) cerr<<#x<<": "<<x<<endl;
+#define bit(k) (1LL<<(k))
+#define Yes "Yes"
+#define No "No"
+#define YES "YES"
+#define NO "NO"
+typedef long long ll;
+template <class T> using vec = vector<T>;
+template <class T> using vvec = vector<vec<T>>;
+
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
+
+const int INF = (ll)1e9;
+const ll INFLL = (ll)1e18+1;
+const ll MOD = (ll)1e9+7;
+const double PI = acos(-1.0);
 /*
-@title example(二分探索)
-@category example
-@brief test用。
+const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+const string dir = "DRUL";
 */
-int main() {
-    int n; cin >> n;
-    vector<int> s(n);
-    for(int i = 0; i < n;++i){
-        cin >> s[i];
-    }
-    int q; cin >> q;
-    int cnt = 0;
-    while (q --) {
-        int t_i; cin >> t_i;
-        cnt += binary_search(s.begin(), s.end(), t_i);
-    }
-    cout << cnt << endl;
-    return 0;
-}
 
 ```
 {% endraw %}

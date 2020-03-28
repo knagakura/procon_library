@@ -21,17 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
 # :heavy_check_mark: 最小共通祖先/LCA(Lowest Common Acestor)
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#28790b6202284cbbffc9d712b59f4b80">graph/tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/tree/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:28:42+09:00
+* category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
+* <a href="{{ site.github.repository_url }}/blob/master/tree/lca.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-28 18:27:33+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
@@ -136,7 +136,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/tree/lca.test.cpp"
+#line 1 "tree/lca.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
@@ -229,5 +229,5 @@ int main() {
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 

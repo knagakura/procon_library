@@ -30,8 +30,8 @@ layout: default
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/datastructure/unionfind.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:49:27+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/data_structure/unionfind.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-28 18:27:33+09:00
 
 
 
@@ -76,7 +76,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macros.hpp.html">macros.hpp</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Verified with
@@ -92,7 +92,7 @@ layout: default
 ```cpp
 #ifndef INCLUDED_UNIONFIND_HPP
 #define INCLUDED_UNIONFIND_HPP
-#include "../macros.hpp"
+#include "../macro/macros.hpp"
 /*
 @title UnionFind Tree
 @category datastructure
@@ -136,10 +136,10 @@ struct UnionFind{
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "datastructure/unionfind.hpp"
+#line 1 "data_structure/unionfind.hpp"
 
 
-#line 2 "macros.hpp"
+#line 2 "macro/macros.hpp"
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -169,7 +169,7 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 */
-#line 4 "datastructure/unionfind.hpp"
+#line 4 "data_structure/unionfind.hpp"
 /*
 @title UnionFind Tree
 @category datastructure
