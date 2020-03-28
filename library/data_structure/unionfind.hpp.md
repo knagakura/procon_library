@@ -29,9 +29,9 @@ layout: default
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
+* category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/unionfind.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 18:27:33+09:00
+    - Last commit date: 2020-03-28 23:58:48+09:00
 
 
 
@@ -95,8 +95,8 @@ layout: default
 #include "../macro/macros.hpp"
 /*
 @title UnionFind Tree
-@category datastructure
-@docs ../docs/datastructure/unionfind.md
+@category data_structure
+@docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
     int n;
@@ -172,8 +172,8 @@ const string dir = "DRUL";
 #line 4 "data_structure/unionfind.hpp"
 /*
 @title UnionFind Tree
-@category datastructure
-@docs ../docs/datastructure/unionfind.md
+@category data_structure
+@docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
     int n;

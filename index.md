@@ -34,9 +34,9 @@ layout: default
 
 ## Library Files
 
-<div id="8dc87745f885a4cc532acd7b15b8b5fe"></div>
+<div id="c8f6850ec2ec3fb32f203c1f4e3c2fd2"></div>
 
-### datastructure
+### data_structure
 
 * :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
 

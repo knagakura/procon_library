@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 18:27:33+09:00
+    - Last commit date: 2020-03-28 23:58:48+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp</a>
@@ -110,8 +110,8 @@ const string dir = "DRUL";
 #line 4 "data_structure/unionfind.hpp"
 /*
 @title UnionFind Tree
-@category datastructure
-@docs ../docs/datastructure/unionfind.md
+@category data_structure
+@docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
     int n;
