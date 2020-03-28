@@ -34,6 +34,7 @@ layout: default
 
 ## Verify Files
 
+* :heavy_check_mark: <a href="verify/example.test.cpp.html">example(二分探索)</a>
 * :heavy_check_mark: <a href="verify/graph/shortest_path/dijkstra.test.cpp.html">graph/shortest_path/dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/graph/tree/lca.test.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
