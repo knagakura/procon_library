@@ -1,6 +1,8 @@
 #pragma once
-#include "../macro/macros.hpp"
-
+#include "../../macro/macros.hpp"
+/*
+@title Dijkstra法
+*/
 template<class T> class Dijkstra {
 public:
     int N;
