@@ -31,15 +31,10 @@ layout: default
 
 * category: <a href="../../index.html#1a79a4d60de6718e8e5b326e338ae533">example</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_4_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:29:09+09:00
+    - Last commit date: 2020-03-28 17:34:22+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../../library/macros.hpp.html">macros.hpp</a>
 
 
 ## Code
@@ -75,59 +70,16 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/ALDS1_4_B.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#line 2 "macros.hpp"
-#include <bits/stdc++.h>
-using namespace std;
-#define rep(i,N) for(int i=0;i<int(N);++i)
-#define rep1(i,N) for(int i=1;i<int(N);++i)
-#define all(a) (a).begin(),(a).end()
-#define print(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<_<<", "; cerr<<"]"<<endl; }
-#define printpair(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<"{"<<_.first<<","<<_.second<<"}"<<", "; cerr<<"]"<<endl; }
-#define dump(x) cerr<<#x<<": "<<x<<endl;
-#define bit(k) (1LL<<(k))
-#define Yes "Yes"
-#define No "No"
-#define YES "YES"
-#define NO "NO"
-typedef long long ll;
-template <class T> using vec = vector<T>;
-template <class T> using vvec = vector<vec<T>>;
-
-template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
-template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
-
-const int INF = (ll)1e9;
-const ll INFLL = (ll)1e18+1;
-const ll MOD = (ll)1e9+7;
-const double PI = acos(-1.0);
-/*
-const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
-const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
-const string dir = "DRUL";
-*/
-#line 3 "test/ALDS1_4_B.test.cpp"
-/*
-@title example(二分探索)
-@category example
-@brief test用。
-*/
-int main() {
-    int n; cin >> n;
-    vector<int> s(n);
-    for(int i = 0; i < n;++i){
-        cin >> s[i];
-    }
-    int q; cin >> q;
-    int cnt = 0;
-    while (q --) {
-        int t_i; cin >> t_i;
-        cnt += binary_search(s.begin(), s.end(), t_i);
-    }
-    cout << cnt << endl;
-    return 0;
-}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 170, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 282, in update
+    self.update(self._resolve(pathlib.Path(included), included_from=path))
+  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 214, in update
+    raise BundleError(path, i + 1, "#pragma once found in a non-first line")
+onlinejudge_verify.languages.cplusplus_bundle.BundleError: macros.hpp: line 4: #pragma once found in a non-first line
 
 ```
 {% endraw %}
