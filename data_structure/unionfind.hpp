@@ -1,6 +1,6 @@
 #ifndef INCLUDED_UNIONFIND_HPP
 #define INCLUDED_UNIONFIND_HPP
-#include "../macros.hpp"
+#include "../macro/macros.hpp"
 /*
 @title UnionFind Tree
 @category datastructure

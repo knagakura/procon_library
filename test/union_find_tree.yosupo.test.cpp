@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
-#include <iostream>
-#include "../datastructure/unionfind.hpp"
-#include "../macros.hpp"
+#include "../macro/macros.hpp"
+#include "../data_structure/unionfind.hpp"
+
 using namespace std;
 
 int main() {

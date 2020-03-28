@@ -1,5 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#include "../macros.hpp"
+#include "../macro/macros.hpp"
 /*
 @title example(二分探索)
 @category example
