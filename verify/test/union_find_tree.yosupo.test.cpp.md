@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: test/DSL_1_A.cpp
+# :heavy_check_mark: test/union_find_tree.yosupo.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:52:45+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/union_find_tree.yosupo.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-28 18:09:01+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp</a>
+* see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
 
 
 ## Depends on
 
-* :warning: <a href="../datastructure/unionfind.hpp.html">UnionFind Tree</a>
-* :heavy_check_mark: <a href="../macros.hpp.html">macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/datastructure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../../library/macros.hpp.html">macros.hpp</a>
 
 
 ## Code
@@ -48,32 +48,35 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#include <iostream>
 #include "../datastructure/unionfind.hpp"
+#include "../macros.hpp"
+using namespace std;
 
-int main(){
-    int N, Q;
-    cin >> N >> Q;
-    UnionFind Tree(N);
-    while(Q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        if(com == 0){
-            Tree.unite(x, y);
-        }
-        if(com == 1){
-            cout << Tree.same(x, y) << endl;
+int main() {
+    int n, q; cin >> n >> q;
+    UnionFind uft(n);
+    rep (i, q) {
+        int t, u, v; cin >> t >> u >> v;
+        if (t == 0) {
+            uft.unite(u, v);
+        } else if (t == 1) {
+            cout << uft.same(u, v) << endl;
         }
     }
+    return 0;
 }
+
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DSL_1_A.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp"
+#line 1 "test/union_find_tree.yosupo.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#include <iostream>
 #line 1 "datastructure/unionfind.hpp"
 
 
@@ -145,22 +148,21 @@ struct UnionFind{
     }
 };
 
-#line 3 "test/DSL_1_A.cpp"
+#line 5 "test/union_find_tree.yosupo.test.cpp"
+using namespace std;
 
-int main(){
-    int N, Q;
-    cin >> N >> Q;
-    UnionFind Tree(N);
-    while(Q--){
-        int com, x, y;
-        cin >> com >> x >> y;
-        if(com == 0){
-            Tree.unite(x, y);
-        }
-        if(com == 1){
-            cout << Tree.same(x, y) << endl;
+int main() {
+    int n, q; cin >> n >> q;
+    UnionFind uft(n);
+    rep (i, q) {
+        int t, u, v; cin >> t >> u >> v;
+        if (t == 0) {
+            uft.unite(u, v);
+        } else if (t == 1) {
+            cout << uft.same(u, v) << endl;
         }
     }
+    return 0;
 }
 
 ```

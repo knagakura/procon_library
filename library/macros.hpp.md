@@ -38,13 +38,14 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="datastructure/unionfind.hpp.html">UnionFind Tree</a>
-* :warning: <a href="test/DSL_1_A.cpp.html">test/DSL_1_A.cpp</a>
+* :heavy_check_mark: <a href="datastructure/unionfind.hpp.html">UnionFind Tree</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../verify/test/ALDS1_4_B.test.cpp.html">example(二分探索)</a>
+* :heavy_check_mark: <a href="../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
 
 
 ## Code
