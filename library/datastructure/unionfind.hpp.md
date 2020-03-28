@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#8dc87745f885a4cc532acd7b15b8b5fe">datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/datastructure/unionfind.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:34:22+09:00
+    - Last commit date: 2020-03-28 17:37:55+09:00
 
 
 
@@ -91,6 +91,11 @@ layout: default
     集合の数を管理するgroup_numを実装した
 
 
+## Depends on
+
+* :heavy_check_mark: <a href="../macros.hpp.html">macros.hpp</a>
+
+
 ## Required by
 
 * :warning: <a href="../test/DSL_1_A.cpp.html">test/DSL_1_A.cpp</a>
@@ -146,16 +151,73 @@ struct UnionFind{
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 340, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 170, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 282, in update
-    self.update(self._resolve(pathlib.Path(included), included_from=path))
-  File "/opt/hostedtoolcache/Python/3.8.2/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 214, in update
-    raise BundleError(path, i + 1, "#pragma once found in a non-first line")
-onlinejudge_verify.languages.cplusplus_bundle.BundleError: macros.hpp: line 4: #pragma once found in a non-first line
+#line 2 "macros.hpp"
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,N) for(int i=0;i<int(N);++i)
+#define rep1(i,N) for(int i=1;i<int(N);++i)
+#define all(a) (a).begin(),(a).end()
+#define print(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<_<<", "; cerr<<"]"<<endl; }
+#define printpair(v) { cerr<<#v<<": [ "; for(auto _ : v) cerr<<"{"<<_.first<<","<<_.second<<"}"<<", "; cerr<<"]"<<endl; }
+#define dump(x) cerr<<#x<<": "<<x<<endl;
+#define bit(k) (1LL<<(k))
+#define Yes "Yes"
+#define No "No"
+#define YES "YES"
+#define NO "NO"
+typedef long long ll;
+template <class T> using vec = vector<T>;
+template <class T> using vvec = vector<vec<T>>;
+
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
+
+const int INF = (ll)1e9;
+const ll INFLL = (ll)1e18+1;
+const ll MOD = (ll)1e9+7;
+const double PI = acos(-1.0);
+/*
+const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+const string dir = "DRUL";
+*/
+#line 3 "datastructure/unionfind.hpp"
+/*
+@title UnionFind Tree
+@category datastructure
+@docs ../docs/datastructure/unionfind.md
+*/
+struct UnionFind{
+    int n;
+    vector<int> Parent;
+    vector<int> sizes;
+    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){ rep(i,n)Parent[i]=i; }
+    //find the root of x
+    int root(int x){
+        if(x!=Parent[x]){
+        Parent[x] = root(Parent[x]);
+        }
+        return Parent[x];
+    }
+    //merge x and y
+    void unite(int x,int y){
+        x = root(x);
+        y = root(y);
+        if(x == y) return;
+        if(sizes[x] < sizes[y]) swap(x, y);
+        Parent[y] = x;
+        sizes[x] += sizes[y];
+    }
+    bool same(int x,int y){ return root(x) == root(y); }
+    int size(int x){ return sizes[root(x)]; }
+    int group_num(){
+        set<int> s;
+        for(int i = 0; i < n; ++i){
+            s.insert(root(i));
+        }
+        return int(s.size());
+    }
+};
 
 ```
 {% endraw %}
