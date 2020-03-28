@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INCLUDED_UNIONFIND_HPP
+#define INCLUDED_UNIONFIND_HPP
 #include "../macros.hpp"
 /*
 @title UnionFind Tree
@@ -36,3 +37,4 @@ struct UnionFind{
         return int(s.size());
     }
 };
+#endif
