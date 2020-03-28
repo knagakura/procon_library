@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#28790b6202284cbbffc9d712b59f4b80">graph/tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/tree/lca.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 16:04:07+09:00
+    - Last commit date: 2020-03-28 17:28:42+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
@@ -42,7 +42,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-//#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
@@ -138,7 +137,6 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "graph/tree/lca.test.cpp"
-//#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
