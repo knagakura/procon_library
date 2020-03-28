@@ -1,4 +1,3 @@
-//#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja"
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
