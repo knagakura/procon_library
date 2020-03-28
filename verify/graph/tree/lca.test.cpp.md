@@ -36,8 +36,6 @@ layout: default
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
 
-## Description
-Calculate Longest Common Ancestor in tree graph.
 
 ## Code
 
