@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-28 17:37:55+09:00
+    - Last commit date: 2020-03-28 17:49:27+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp</a>
@@ -105,7 +105,10 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 */
-#line 3 "datastructure/unionfind.hpp"
+#line 1 "datastructure/unionfind.hpp"
+
+
+#line 4 "datastructure/unionfind.hpp"
 /*
 @title UnionFind Tree
 @category datastructure
@@ -142,6 +145,7 @@ struct UnionFind{
         return int(s.size());
     }
 };
+
 #line 4 "test/DSL_1_A.cpp"
 
 int main(){
