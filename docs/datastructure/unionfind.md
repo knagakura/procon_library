@@ -1,20 +1,3 @@
-
-## 使い方講座
-1. まず、main関数内で `UnionFind uni(N);`と呼び出します（これでUnionFind木のuniちゃんが呼び出されます）。
-2. uniちゃんの中には、NodeがN個あり、それぞれの親とそれが属する集合の数（size）が定義されています。
-    - 二つのNode xとy が同じ集合に属するか確認するとき
-
-        `uni.same(x, y);`
-    - あるNode x が含まれる集合の大きさを知りたいとき
-
-        `uni.size(x);`
-    - 二つのNode xとyを同じ集合に属させたいとき
-
-        `uni.unite(x, y);`
-    - あるNode xの根を知りたいとき
-
-        `uni.root(x);`
-
 ## UnionFind木が出題された問題
 1. [D-Decayed Bridges](https://beta.atcoder.jp/contests/abc120)
 
