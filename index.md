@@ -35,6 +35,6 @@ layout: default
 ## Verify Files
 ### Graph
 #### Tree
-* :heavy_check_mark: <a href="verify/graph/tree/lca.test.cpp.html">graph/tree/lca.test.cpp</a>
+* :heavy_check_mark: <a href="verify/graph/tree/lca.test.cpp.html">lca.test.cpp</a>
 
 
