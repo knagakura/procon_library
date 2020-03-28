@@ -3,8 +3,8 @@
 #include "../macro/macros.hpp"
 /*
 @title UnionFind Tree
-@category datastructure
-@docs ../docs/datastructure/unionfind.md
+@category data_structure
+@docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
     int n;
