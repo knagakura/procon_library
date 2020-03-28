@@ -55,12 +55,19 @@ layout: default
 * :heavy_check_mark: <a href="library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
+<div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
+
+### tree
+
+* :heavy_check_mark: <a href="library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
+
+
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/example/example.test.cpp.html">example(二分探索)</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
-* :heavy_check_mark: <a href="verify/tree/lca.test.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 
