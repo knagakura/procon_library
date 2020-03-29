@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mint.hpp
+# :heavy_check_mark: 第二種スターリング数
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mint.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 03:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 06:28:46+09:00
 
 
 
@@ -39,22 +39,12 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-
-
-## Required by
-
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
 
 
@@ -63,62 +53,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef MINT_HPP
-#define MINT_HPP
-
+#ifndef STIRING_NUMBER_SECOND_CPP
+#define STIRING_NUMBER_SECOND_CPP
 #include "../macro/macros.hpp"
+#include "mint.hpp"
+#include "comb.hpp"
 
-struct mint {
-    long long x;
-    mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
-    mint operator-() const { return mint(-x);}
-    mint& operator+=(const mint a) {
-        if ((x += a.x) >= MOD) x -= MOD;
-        return *this;
+/*
+@title 第二種スターリング数
+*/
+mint stirling_number_second(int n, int k){
+    combination C(k+1);
+    mint res = 0;
+    for(int i = 0; i <= k;i++){
+        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
+        res += (i & 1) ? -x:x;
     }
-    mint& operator-=(const mint a) {
-        if ((x += MOD-a.x) >= MOD) x -= MOD;
-        return *this;
-    }
-    mint& operator*=(const mint a) {
-        (x *= a.x) %= MOD;
-        return *this;
-    }
-    mint operator+(const mint a) const {
-        mint res(*this);
-        return res+=a;
-    }
-    mint operator-(const mint a) const {
-        mint res(*this);
-        return res-=a;
-    }
-    mint operator*(const mint a) const {
-        mint res(*this);
-        return res*=a;
-    }
-    mint modpow(long long t) const {
-        if (!t) return 1;
-        mint a = modpow(t>>1);
-        a *= a;
-        if (t&1) a *= *this;
-        return a;
-    }
-    // for prime MOD
-    mint inv() const {
-        return modpow(MOD-2);
-    }
-    mint& operator/=(const mint a) {
-        return (*this) *= a.inv();
-    }
-    mint operator/(const mint a) const {
-        mint res(*this);
-        return res/=a;
-    }
-    friend std::ostream& operator<<(std::ostream& os, const mint& a){
-        os << a.x;
-        return os;
-    }
-};
+    res *= C.ifact[k];
+    return res;
+}
+
 #endif
 ```
 {% endraw %}
@@ -126,8 +80,7 @@ struct mint {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/mint.hpp"
-
+#line 1 "math/stiring-number-second.cpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -169,6 +122,10 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "math/mint.hpp"
+
 
 
 #line 5 "math/mint.hpp"
@@ -224,6 +181,54 @@ struct mint {
         return os;
     }
 };
+
+#line 1 "math/comb.hpp"
+
+
+#line 5 "math/comb.hpp"
+
+/*
+@title 組み合わせ(Combination)
+*/
+struct combination {
+    vector<mint> fact, ifact;
+    combination(int n):fact(n+1),ifact(n+1) {
+        assert(n < MOD);
+        fact[0] = 1;
+        for (int i = 1; i <= n; ++i) fact[i] = fact[i-1]*i;
+        ifact[n] = fact[n].inv();
+        for (int i = n; i >= 1; --i) ifact[i-1] = ifact[i]*i;
+    }
+    mint Comb(int n, int k) {
+        if (k < 0 || k > n) return 0;
+        return fact[n]*ifact[k]*ifact[n-k];
+    }
+    mint H(int n, int m){
+        return Comb(n + m - 1, n);
+    }
+    //nPk
+    mint Perm(int n, int k){
+        if (k < 0 || n < k) return 0;
+        return fact[n]*ifact[n-k];
+    }
+};
+
+#line 6 "math/stiring-number-second.cpp"
+
+/*
+@title 第二種スターリング数
+*/
+mint stirling_number_second(int n, int k){
+    combination C(k+1);
+    mint res = 0;
+    for(int i = 0; i <= k;i++){
+        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
+        res += (i & 1) ? -x:x;
+    }
+    res *= C.ifact[k];
+    return res;
+}
+
 
 
 ```
