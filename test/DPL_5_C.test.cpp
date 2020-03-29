@@ -2,8 +2,8 @@
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
-/*
-@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k{\rm C}_{i} (k-i)^n$)
+/*{}
+@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k C_{i} (k-i)^n$)
 @category 写像12相
 */
 combination C(200010);
