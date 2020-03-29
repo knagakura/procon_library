@@ -6,6 +6,7 @@
 
 /*
 @title 第二種スターリング数
+@docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
     combination C(k+1);
