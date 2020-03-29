@@ -45,6 +45,7 @@ layout: default
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
+* :heavy_check_mark: <a href="../math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../math/mint.hpp.html">math/mint.hpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
@@ -56,6 +57,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">test/DPL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">test/DPL_5_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>

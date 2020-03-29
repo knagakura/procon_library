@@ -70,6 +70,7 @@ layout: default
 
 ### math
 
+* :heavy_check_mark: <a href="library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
 * :heavy_check_mark: <a href="library/math/mint.hpp.html">math/mint.hpp</a>
 
@@ -88,6 +89,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_A.test.cpp.html">test/DPL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/DPL_5_B.test.cpp.html">test/DPL_5_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
