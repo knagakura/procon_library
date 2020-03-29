@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DIJKSTRA_CPP
+#define DIJKSTRA_CPP
 #include "../../macro/macros.hpp"
 /*
 @title Dijkstra法
@@ -10,7 +11,7 @@ public:
     vector<T> cost;
     vector<vector<pair<T, int>>> edge;
  
-    Dijkstra(const int _N, T _inf = 1e18) : N(_N), inf(_inf),cost(N), edge(N) {
+    Dijkstra(const int _N, T _inf = INFLL) : N(_N), inf(_inf),cost(N), edge(N) {
     }
  
     void make_edge(int from, int to, T w) {
@@ -40,4 +41,4 @@ public:
         return;
     }
 };
-
+#endif
