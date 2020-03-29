@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Warchall Floyd法
+# :heavy_check_mark: graph/shortest_path/warshall-floyd.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:21:38+09:00
+    - Last commit date: 2020-03-29 21:34:17+09:00
 
 
 
@@ -55,7 +55,6 @@ layout: default
 #ifndef WARSHALL_FLOYD_CPP
 #define WARSHALL_FLOYD_CPP
 /*
-@title Warchall Floyd法
 */
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
@@ -71,7 +70,7 @@ class WarshallFloyd : public Graph<T>{
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
-        rep(i,N)d[i][i] = 0;
+        for(int i = 0; i < N;i++) d[i][i] = 0;
         auto edges = Graph<T>::G;
         rep(i,N){
             for(auto e: edges[i]){
@@ -79,13 +78,15 @@ class WarshallFloyd : public Graph<T>{
             }
         }
         //WarshallFloyd
-        rep(k,N)rep(i,N)rep(j,N){
+        for(int k = 0; k < N; k++)for(int i = 0; i < N; i++)for(int j = 0; j < N; j++){
             if(d[i][k] == inf || d[k][j] == inf)continue;
             chmin(d[i][j],d[i][k] + d[k][j]);
         }
     }
     bool negative_cycle(){
-        rep(i,N)if(d[i][i] < 0)return true;
+        for(int i = 0; i < N; i++)
+            if(d[i][i] < 0)
+                return true;
         return false;
     }
     void debug(){
@@ -120,7 +121,6 @@ class WarshallFloyd : public Graph<T>{
 
 
 /*
-@title Warchall Floyd法
 */
 #line 1 "macro/macros.hpp"
 
@@ -192,7 +192,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;
@@ -205,7 +205,7 @@ class Graph {
     }
 };
 
-#line 8 "graph/shortest_path/warshall-floyd.cpp"
+#line 7 "graph/shortest_path/warshall-floyd.cpp"
 
 template<typename T>
 class WarshallFloyd : public Graph<T>{
@@ -218,7 +218,7 @@ class WarshallFloyd : public Graph<T>{
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
-        rep(i,N)d[i][i] = 0;
+        for(int i = 0; i < N;i++) d[i][i] = 0;
         auto edges = Graph<T>::G;
         rep(i,N){
             for(auto e: edges[i]){
@@ -226,13 +226,15 @@ class WarshallFloyd : public Graph<T>{
             }
         }
         //WarshallFloyd
-        rep(k,N)rep(i,N)rep(j,N){
+        for(int k = 0; k < N; k++)for(int i = 0; i < N; i++)for(int j = 0; j < N; j++){
             if(d[i][k] == inf || d[k][j] == inf)continue;
             chmin(d[i][j],d[i][k] + d[k][j]);
         }
     }
     bool negative_cycle(){
-        rep(i,N)if(d[i][i] < 0)return true;
+        for(int i = 0; i < N; i++)
+            if(d[i][i] < 0)
+                return true;
         return false;
     }
     void debug(){

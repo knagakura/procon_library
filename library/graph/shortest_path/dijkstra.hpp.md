@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 20:45:16+09:00
+    - Last commit date: 2020-03-29 21:34:17+09:00
 
 
 
@@ -166,7 +166,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;

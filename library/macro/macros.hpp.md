@@ -43,7 +43,7 @@ layout: default
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">Warchall Floyd法</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 

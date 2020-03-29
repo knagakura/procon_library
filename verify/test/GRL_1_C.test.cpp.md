@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:21:38+09:00
+    - Last commit date: 2020-03-29 21:34:17+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">Warchall Floyd法</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
@@ -65,7 +65,7 @@ int main(){
         cout << "NEGATIVE CYCLE" << endl;
         return 0;
     }
-    rep(i,V)rep(j,V){
+    for(int i = 0; i < V; i++)for(int j = 0; j < V; j++){
         if(G.d[i][j] == G.inf){
             cout << "INF";
         }
@@ -154,7 +154,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;
@@ -171,9 +171,8 @@ class Graph {
 
 
 /*
-@title Warchall Floyd法
 */
-#line 8 "graph/shortest_path/warshall-floyd.cpp"
+#line 7 "graph/shortest_path/warshall-floyd.cpp"
 
 template<typename T>
 class WarshallFloyd : public Graph<T>{
@@ -186,7 +185,7 @@ class WarshallFloyd : public Graph<T>{
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
-        rep(i,N)d[i][i] = 0;
+        for(int i = 0; i < N;i++) d[i][i] = 0;
         auto edges = Graph<T>::G;
         rep(i,N){
             for(auto e: edges[i]){
@@ -194,13 +193,15 @@ class WarshallFloyd : public Graph<T>{
             }
         }
         //WarshallFloyd
-        rep(k,N)rep(i,N)rep(j,N){
+        for(int k = 0; k < N; k++)for(int i = 0; i < N; i++)for(int j = 0; j < N; j++){
             if(d[i][k] == inf || d[k][j] == inf)continue;
             chmin(d[i][j],d[i][k] + d[k][j]);
         }
     }
     bool negative_cycle(){
-        rep(i,N)if(d[i][i] < 0)return true;
+        for(int i = 0; i < N; i++)
+            if(d[i][i] < 0)
+                return true;
         return false;
     }
     void debug(){
@@ -238,7 +239,7 @@ int main(){
         cout << "NEGATIVE CYCLE" << endl;
         return 0;
     }
-    rep(i,V)rep(j,V){
+    for(int i = 0; i < V; i++)for(int j = 0; j < V; j++){
         if(G.d[i][j] == G.inf){
             cout << "INF";
         }

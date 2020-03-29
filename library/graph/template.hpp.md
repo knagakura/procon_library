@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/template.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 19:52:39+09:00
+    - Last commit date: 2020-03-29 21:34:17+09:00
 
 
 
@@ -45,7 +45,7 @@ layout: default
 
 * :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">Warchall Floyd法</a>
+* :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 
 
 ## Verified with
@@ -88,7 +88,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;
@@ -177,7 +177,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;

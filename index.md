@@ -56,7 +56,7 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">Warchall Floyd法</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 
 
 <div id="eb320f0c2b6a25b48ca861a120eea902"></div>

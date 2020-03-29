@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:25:59+09:00
+    - Last commit date: 2020-03-29 21:34:17+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -143,7 +143,7 @@ class Graph {
     }
     //standard input
     void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
+        while(M--){
             int a, b;
             cin >> a >> b;
             a += padding;
