@@ -25,32 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/template.hpp
+# :heavy_check_mark: test/GRL_1_A_2.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/template.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 19:52:39+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A_2.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-29 20:30:20+09:00
 
 
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
-* :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/ALDS1_11_C.test.cpp.html">test/ALDS1_11_C.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
+* :heavy_check_mark: <a href="../../library/graph/template.hpp.html">graph/template.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Code
@@ -58,56 +49,29 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef GRAPH_TEMPLATE_HPP
-#define GRAPH_TEMPLATE_HPP
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
 #include "../macro/macros.hpp"
+#include "../graph/shortest_path/dijkstra.hpp"
 
-template<typename T = int>
-struct edge{
-    int to;
-    T cost;
-    int id;
-    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id) {}
-};
-
-template<class T>
-class Graph {
-  public:
-    int N;
-    vvec<edge<T>> G;
-    Graph(int _N): N(_N),G(_N){
+int main() {
+    int V, E, r;
+    cin >> V >> E >> r;
+    Dijkstra<long long> G(V, INFLL);
+    G.input(E, 0, true, true);
+    G.solve(r);
+    for(int i = 0; i < V; i++){
+        if(G.d[i] == INFLL)cout << "INF" << endl;
+        else cout << G.d[i] << endl;
     }
-    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
-        G[from].push_back({to, cost, id});
-    }
-    void add_edge(int v1, int v2, T cost = 1, int id = -1){
-        add_Directed_edge(v1, v2, cost, id);
-        add_Directed_edge(v2, v1, cost, id);
-    }
-    //standard input
-    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        rep(i,M){
-            int a, b;
-            cin >> a >> b;
-            a += padding;
-            b += padding;
-            T c = T(1);
-            if(weighted)cin >> c;
-            if(directed)add_Directed_edge(a,b,c);
-            else add_edge(a,b,c);
-        }
-    }
-};
-#endif
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/template.hpp"
-
-
+#line 1 "test/GRL_1_A_2.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
 #line 1 "macro/macros.hpp"
 
 
@@ -149,6 +113,12 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
+#line 1 "graph/shortest_path/dijkstra.hpp"
+
+
+#line 1 "graph/template.hpp"
+
+
 #line 4 "graph/template.hpp"
 
 template<typename T = int>
@@ -188,6 +158,51 @@ class Graph {
     }
 };
 
+#line 5 "graph/shortest_path/dijkstra.hpp"
+
+template<typename T>
+class Dijkstra : public Graph<T>{
+  public:
+    using Graph<T>::Graph;
+    int N;
+    vec<T> d;
+    T inf;
+    Dijkstra(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,_inf){
+    }
+    vec<T> solve(int start = 0){
+        auto edges = Graph<T>::G;
+        rep(i,N) d[i] = inf;
+        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
+        d[start] = 0;
+        pq.push({ 0,start });
+        while (!pq.empty()) {
+            T v = pq.top().first;
+            int from = pq.top().second;
+            pq.pop();
+            for (auto u : edges[from]) {
+                T w = v + u.cost;
+                if (chmin(d[u.to], w)) {
+                    pq.push({ w,u.to });
+                }
+            }
+        }
+        return d;
+    }
+};
+
+#line 4 "test/GRL_1_A_2.test.cpp"
+
+int main() {
+    int V, E, r;
+    cin >> V >> E >> r;
+    Dijkstra<long long> G(V, INFLL);
+    G.input(E, 0, true, true);
+    G.solve(r);
+    for(int i = 0; i < V; i++){
+        if(G.d[i] == INFLL)cout << "INF" << endl;
+        else cout << G.d[i] << endl;
+    }
+}
 
 ```
 {% endraw %}

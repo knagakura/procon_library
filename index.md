@@ -55,6 +55,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 
 
 <div id="eb320f0c2b6a25b48ca861a120eea902"></div>
@@ -78,6 +79,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
 

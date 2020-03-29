@@ -42,6 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">UnionFind Tree</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
@@ -53,6 +54,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
 
