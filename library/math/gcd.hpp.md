@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: 最大公約数(Greatest Common Divisor)
+# :heavy_check_mark: 最大公約数(Greatest Common Divisor)
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/ALDS1_1_B.cpp.html">test/ALDS1_1_B.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
 
 
 ## Code

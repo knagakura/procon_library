@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: test/ALDS1_1_B.cpp
+# :heavy_check_mark: test/ALDS1_1_B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_1_B.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:49:01+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_1_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 03:51:29+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :warning: <a href="../math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
 
 
 ## Code
@@ -64,7 +64,7 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/ALDS1_1_B.cpp"
+#line 1 "test/ALDS1_1_B.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B"
 
 #line 1 "macro/macros.hpp"
@@ -122,7 +122,7 @@ T gcd(T a,T b){
 template<typename T,typename U>
 T lcm(T a,T b){return a/gcd(a,b)*b;}
 
-#line 5 "test/ALDS1_1_B.cpp"
+#line 5 "test/ALDS1_1_B.test.cpp"
 
 int main(){
     int a, b;

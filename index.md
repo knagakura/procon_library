@@ -70,15 +70,8 @@ layout: default
 
 ### math
 
-* :warning: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
+* :heavy_check_mark: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
 * :heavy_check_mark: <a href="library/math/mint.hpp.html">math/mint.hpp</a>
-
-
-<div id="098f6bcd4621d373cade4e832627b4f6"></div>
-
-### test
-
-* :warning: <a href="library/test/ALDS1_1_B.cpp.html">test/ALDS1_1_B.cpp</a>
 
 
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
@@ -92,6 +85,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/example/example.test.cpp.html">example(二分探索)</a>
 * :heavy_check_mark: <a href="verify/test/ALDS1_11_C.test.cpp.html">test/ALDS1_11_C.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_A.test.cpp.html">test/DPL_5_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
