@@ -38,14 +38,15 @@ layout: default
 
 ### data_structure
 
+* :heavy_check_mark: <a href="library/data_structure/stack.hpp.html">stack</a>
 * :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
 
 
-<div id="f8b0b924ebd7046dbfa85a856e4682c8"></div>
+<div id="fff28642b706f0621a80a098b694618d"></div>
 
-### graph
+### graph/shortest_path
 
-* :heavy_check_mark: <a href="library/graph/dijkstra.cpp.html">graph/dijkstra.cpp</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 
 
 <div id="eb320f0c2b6a25b48ca861a120eea902"></div>
@@ -65,6 +66,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/example/example.test.cpp.html">example(二分探索)</a>
+* :heavy_check_mark: <a href="verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>

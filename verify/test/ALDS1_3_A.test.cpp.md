@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/GRL_1_A.test.cpp
+# :heavy_check_mark: test/ALDS1_3_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:40:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_3_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-29 16:21:43+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
+* :heavy_check_mark: <a href="../../library/data_structure/stack.hpp.html">stack</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
@@ -48,39 +48,45 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp"
 #include "../macro/macros.hpp"
-#include "../graph/shortest_path/dijkstra.cpp"
+#include "../data_structure/stack.hpp"
 
-int main() {
-    const long long INFLL = (long long)1e18+1;
-    int V, E, r;
-    cin >> V >> E >> r;
-
-    Dijkstra<long long> G(V, INFLL);
-
-    for(int _ = 0; _ < E; _++){
-        int s, t;
-        long long d;
-        cin >> s >> t >> d;
-        G.make_edge(s, t, d);
+int main(){
+    Stack<int> S(1000);
+    string c;
+    while(cin >> c){
+        if(c == "+"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b + a);
+        }
+        else if(c == "-"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b - a);
+        }
+        else if(c == "*"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b * a);
+        }
+        else{
+            int x = stoi(c);
+            S.push(x);
+        }
     }
-
-    G.solve(r);
-
-    for(int i = 0; i < V; i++){
-        if(G.cost[i] == INFLL)cout << "INF" << endl;
-        else cout << G.cost[i] << endl;
-    }
+    cout << S.pop() << endl;
 }
+
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/GRL_1_A.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
+#line 1 "test/ALDS1_3_A.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp"
 #line 2 "macro/macros.hpp"
 #include <bits/stdc++.h>
 using namespace std;
@@ -111,70 +117,74 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 */
-#line 3 "graph/shortest_path/dijkstra.cpp"
+#line 3 "data_structure/stack.hpp"
 /*
-@title Dijkstra法
+@title stack
 */
-template<class T> class Dijkstra {
-public:
+template< typename T >
+class Stack{
+  public:
     int N;
-    T inf;
-    vector<T> cost;
-    vector<vector<pair<T, int>>> edge;
- 
-    Dijkstra(const int _N, T _inf = 1e18) : N(_N), inf(_inf),cost(N), edge(N) {
-    }
- 
-    void make_edge(int from, int to, T w) {
-        edge[from].push_back({ w,to });
-    }
- 
-    void solve(int start) {
-        for(int i = 0; i < N; ++i) cost[i] = inf;
- 
-        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
-        cost[start] = 0;
-        pq.push({ 0,start });
- 
-        while (!pq.empty()) {
-            T v = pq.top().first;
-            int from = pq.top().second;
-            pq.pop();
-            for (auto u : edge[from]) {
-                T w = v + u.first;
-                int to = u.second;
-                if (w < cost[to]) {
-                    cost[to] = w;
-                    pq.push({ w,to });
-                }
-            }
+    int top = 0;
+    T data[20000];
+    Stack(int sz):N(sz), top(0){}
+    void push(int x){
+        if(isFull()){
+            cerr << "これ以上入りません" << endl;
+            return;
         }
-        return;
+        data[top] = x;
+        top++;
+    }
+    int pop(){
+        if(isEmpty()){
+            cerr << "中身は空です" << endl;
+            return -1;
+        }
+        top--;
+        return data[top];
+    }
+    bool isFull(){
+        return top >= N;
+    }
+    bool isEmpty(){
+        return top == 0;
+    }
+    void show(){
+        dump(top);
+        for(int i = 0; i < top;i++){
+            cerr << data[i] << " ";
+        }
+        cerr << endl;
     }
 };
+#line 4 "test/ALDS1_3_A.test.cpp"
 
-#line 4 "test/GRL_1_A.test.cpp"
-
-int main() {
-    const long long INFLL = (long long)1e18+1;
-    int V, E, r;
-    cin >> V >> E >> r;
-
-    Dijkstra<long long> G(V, INFLL);
-
-    for(int _ = 0; _ < E; _++){
-        int s, t;
-        long long d;
-        cin >> s >> t >> d;
-        G.make_edge(s, t, d);
+int main(){
+    Stack<int> S(1000);
+    string c;
+    while(cin >> c){
+        if(c == "+"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b + a);
+        }
+        else if(c == "-"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b - a);
+        }
+        else if(c == "*"){
+            int a = S.pop();
+            int b = S.pop();
+            S.push(b * a);
+        }
+        else{
+            int x = stoi(c);
+            S.push(x);
+        }
     }
-
-    G.solve(r);
-
-    for(int i = 0; i < V; i++){
-        if(G.cost[i] == INFLL)cout << "INF" << endl;
-        else cout << G.cost[i] << endl;
-    }
+    cout << S.pop() << endl;
 }
 
 ```
