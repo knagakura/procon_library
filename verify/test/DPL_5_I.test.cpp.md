@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_I.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 06:28:46+09:00
+    - Last commit date: 2020-03-30 06:38:54+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I</a>
@@ -210,6 +210,7 @@ struct combination {
 
 /*
 @title 第二種スターリング数
+@docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
     combination C(k+1);

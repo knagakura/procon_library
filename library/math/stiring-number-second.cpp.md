@@ -31,7 +31,24 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 06:28:46+09:00
+    - Last commit date: 2020-03-30 06:38:54+09:00
+
+
+
+
+### 計算量
+$O(Klog{N})$
+
+### 説明
+$N$個の区別できるボールを $K$個の区別できない箱に入れるとき、その入れ方の総数を求めてください。
+
+ただし、ボールの入れ方は以下のルールにしたがいます：
+- どのボールも、必ずいずれかの箱に入れる。
+- どの箱にも$1$つ以上のボールを入れる。
+#### 包除原理
+
+### 参考
+- [写像12相」を総整理！ 〜 数え上げ問題の学びの宝庫 〜](https://qiita.com/drken/items/f2ea4b58b0d21621bd51#4-%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E6%95%B0)
 
 
 
@@ -61,6 +78,7 @@ layout: default
 
 /*
 @title 第二種スターリング数
+@docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
     combination C(k+1);
@@ -217,6 +235,7 @@ struct combination {
 
 /*
 @title 第二種スターリング数
+@docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
     combination C(k+1);
