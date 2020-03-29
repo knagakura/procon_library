@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k{\rm C}_{i} (k-i)^n$)
+# :heavy_check_mark: 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k C_{i} (k-i)^n$)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 05:42:50+09:00
+    - Last commit date: 2020-03-30 05:47:20+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_C">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_C</a>
@@ -53,8 +53,8 @@ layout: default
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
-/*
-@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k{\rm C}_{i} (k-i)^n$)
+/*{}
+@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k C_{i} (k-i)^n$)
 @category 写像12相
 */
 combination C(200010);
@@ -208,8 +208,8 @@ struct combination {
 };
 
 #line 5 "test/DPL_5_C.test.cpp"
-/*
-@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k{\rm C}_{i} (k-i)^n$)
+/*{}
+@title 玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k C_{i} (k-i)^n$)
 @category 写像12相
 */
 combination C(200010);
