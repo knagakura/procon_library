@@ -1,6 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
 #include "../macro/macros.hpp"
-#include "../graph/dijkstra.cpp"
+#include "../graph/shortest_path/dijkstra.cpp"
 
 int main() {
     const long long INFLL = (long long)1e18+1;
