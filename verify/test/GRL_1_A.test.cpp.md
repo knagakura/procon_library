@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:40:03+09:00
+    - Last commit date: 2020-03-29 16:57:26+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -96,6 +96,12 @@ using namespace std;
 #define YES "YES"
 #define NO "NO"
 typedef long long ll;
+
+template< typename T1, typename T2 >
+ostream &operator<<(ostream &os, const pair< T1, T2 >& p) {
+  os << "{" <<p.first << ", " << p.second << "}";
+  return os;
+}
 template <class T> using vec = vector<T>;
 template <class T> using vvec = vector<vec<T>>;
 
@@ -105,12 +111,12 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 const int INF = (ll)1e9;
 const ll INFLL = (ll)1e18+1;
 const ll MOD = (ll)1e9+7;
+
 const double PI = acos(-1.0);
-/*
+
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-*/
 #line 3 "graph/shortest_path/dijkstra.cpp"
 /*
 @title Dijkstra法

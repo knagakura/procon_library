@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/stack.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:21:43+09:00
+    - Last commit date: 2020-03-29 16:57:26+09:00
 
 
 
@@ -115,6 +115,12 @@ using namespace std;
 #define YES "YES"
 #define NO "NO"
 typedef long long ll;
+
+template< typename T1, typename T2 >
+ostream &operator<<(ostream &os, const pair< T1, T2 >& p) {
+  os << "{" <<p.first << ", " << p.second << "}";
+  return os;
+}
 template <class T> using vec = vector<T>;
 template <class T> using vvec = vector<vec<T>>;
 
@@ -124,12 +130,12 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 const int INF = (ll)1e9;
 const ll INFLL = (ll)1e18+1;
 const ll MOD = (ll)1e9+7;
+
 const double PI = acos(-1.0);
-/*
+
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-*/
 #line 3 "data_structure/stack.hpp"
 /*
 @title stack
