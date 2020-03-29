@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/lca.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:57:26+09:00
+    - Last commit date: 2020-03-29 17:06:20+09:00
 
 
 
@@ -124,7 +124,10 @@ class LCA{
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
 */
-#line 2 "macro/macros.hpp"
+#line 1 "macro/macros.hpp"
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -160,6 +163,8 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
 #line 5 "tree/lca.cpp"
 
 class LCA{

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_3_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:57:26+09:00
+    - Last commit date: 2020-03-29 17:06:20+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp</a>
@@ -87,7 +87,10 @@ int main(){
 ```cpp
 #line 1 "test/ALDS1_3_A.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_A&lang=jp"
-#line 2 "macro/macros.hpp"
+#line 1 "macro/macros.hpp"
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -123,7 +126,12 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-#line 3 "data_structure/stack.hpp"
+
+
+#line 1 "data_structure/stack.hpp"
+
+
+#line 4 "data_structure/stack.hpp"
 /*
 @title stack
 */
@@ -164,6 +172,7 @@ class Stack{
         cerr << endl;
     }
 };
+
 #line 4 "test/ALDS1_3_A.test.cpp"
 
 int main(){

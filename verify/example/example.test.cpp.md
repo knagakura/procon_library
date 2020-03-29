@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#1a79a4d60de6718e8e5b326e338ae533">example</a>
 * <a href="{{ site.github.repository_url }}/blob/master/example/example.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:57:26+09:00
+    - Last commit date: 2020-03-29 17:06:20+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
@@ -77,7 +77,10 @@ int main() {
 ```cpp
 #line 1 "example/example.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
-#line 2 "macro/macros.hpp"
+#line 1 "macro/macros.hpp"
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -113,6 +116,8 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
 #line 3 "example/example.test.cpp"
 /*
 @title example(二分探索)

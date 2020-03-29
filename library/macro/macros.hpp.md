@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#eb320f0c2b6a25b48ca861a120eea902">macro</a>
 * <a href="{{ site.github.repository_url }}/blob/master/macro/macros.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:57:26+09:00
+    - Last commit date: 2020-03-29 17:06:20+09:00
 
 
 
@@ -59,7 +59,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
+#ifndef MACROS_HPP
+#define MACROS_HPP
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -96,13 +98,17 @@ const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
+#endif
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "macro/macros.hpp"
+#line 1 "macro/macros.hpp"
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -138,6 +144,8 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
 
 ```
 {% endraw %}

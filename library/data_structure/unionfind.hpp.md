@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/unionfind.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 16:57:26+09:00
+    - Last commit date: 2020-03-29 17:06:20+09:00
 
 
 
@@ -139,7 +139,10 @@ struct UnionFind{
 #line 1 "data_structure/unionfind.hpp"
 
 
-#line 2 "macro/macros.hpp"
+#line 1 "macro/macros.hpp"
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -175,6 +178,8 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
 #line 4 "data_structure/unionfind.hpp"
 /*
 @title UnionFind Tree
