@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/shortest_path/dijkstra.hpp
+# :heavy_check_mark: Warchall Floyd法
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 20:45:16+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-29 21:21:38+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/GRL_1_C.test.cpp.html">test/GRL_1_C.test.cpp</a>
 
 
 ## Code
@@ -52,38 +52,61 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef DIJKSTRA_HPP
-#define DIJKSTRA_HPP
+#ifndef WARSHALL_FLOYD_CPP
+#define WARSHALL_FLOYD_CPP
+/*
+@title Warchall Floyd法
+*/
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
 
 template<typename T>
-class Dijkstra : public Graph<T>{
+class WarshallFloyd : public Graph<T>{
   public:
     using Graph<T>::Graph;
     int N;
-    vec<T> d;
+    vvec<T> d;
     T inf;
-    Dijkstra(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,_inf){
-    }
-    vec<T> solve(int start = 0){
+    WarshallFloyd(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    void solve(){
+        //initialize the distance matrix
+        d.assign(N, vec<T>(N,inf));
+        rep(i,N)d[i][i] = 0;
         auto edges = Graph<T>::G;
-        rep(i,N) d[i] = inf;
-        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
-        d[start] = 0;
-        pq.push({ 0,start });
-        while (!pq.empty()) {
-            T v = pq.top().first;
-            int from = pq.top().second;
-            pq.pop();
-            for (auto u : edges[from]) {
-                T w = v + u.cost;
-                if (chmin(d[u.to], w)) {
-                    pq.push({ w,u.to });
-                }
+        rep(i,N){
+            for(auto e: edges[i]){
+                d[i][e.to] = e.cost;
             }
         }
-        return d;
+        //WarshallFloyd
+        rep(k,N)rep(i,N)rep(j,N){
+            if(d[i][k] == inf || d[k][j] == inf)continue;
+            chmin(d[i][j],d[i][k] + d[k][j]);
+        }
+    }
+    bool negative_cycle(){
+        rep(i,N)if(d[i][i] < 0)return true;
+        return false;
+    }
+    void debug(){
+        auto edges = Graph<T>::G;
+        for(int i = 0; i < N; ++i){
+            cerr<<i+1<<": ";
+            for(auto e:edges[i]){
+                cerr<<"{"<<e.to+1<<", "<<e.cost<<"}, ";
+            }
+            cerr<<endl<<endl;
+        }
+
+        cerr<<"distance_matrix"<<endl;
+        for(int i = 0; i < N; ++i){
+            for(int j = 0; j < N; ++j){
+                if(d[i][j] == inf){
+                    cerr<<-1<<" ";
+                }else cerr<<d[i][j]<<" ";
+            }
+            cerr<<endl;
+        }
     }
 };
 #endif
@@ -93,9 +116,12 @@ class Dijkstra : public Graph<T>{
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/shortest_path/dijkstra.hpp"
+#line 1 "graph/shortest_path/warshall-floyd.cpp"
 
 
+/*
+@title Warchall Floyd法
+*/
 #line 1 "macro/macros.hpp"
 
 
@@ -179,35 +205,55 @@ class Graph {
     }
 };
 
-#line 5 "graph/shortest_path/dijkstra.hpp"
+#line 8 "graph/shortest_path/warshall-floyd.cpp"
 
 template<typename T>
-class Dijkstra : public Graph<T>{
+class WarshallFloyd : public Graph<T>{
   public:
     using Graph<T>::Graph;
     int N;
-    vec<T> d;
+    vvec<T> d;
     T inf;
-    Dijkstra(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,_inf){
-    }
-    vec<T> solve(int start = 0){
+    WarshallFloyd(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    void solve(){
+        //initialize the distance matrix
+        d.assign(N, vec<T>(N,inf));
+        rep(i,N)d[i][i] = 0;
         auto edges = Graph<T>::G;
-        rep(i,N) d[i] = inf;
-        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
-        d[start] = 0;
-        pq.push({ 0,start });
-        while (!pq.empty()) {
-            T v = pq.top().first;
-            int from = pq.top().second;
-            pq.pop();
-            for (auto u : edges[from]) {
-                T w = v + u.cost;
-                if (chmin(d[u.to], w)) {
-                    pq.push({ w,u.to });
-                }
+        rep(i,N){
+            for(auto e: edges[i]){
+                d[i][e.to] = e.cost;
             }
         }
-        return d;
+        //WarshallFloyd
+        rep(k,N)rep(i,N)rep(j,N){
+            if(d[i][k] == inf || d[k][j] == inf)continue;
+            chmin(d[i][j],d[i][k] + d[k][j]);
+        }
+    }
+    bool negative_cycle(){
+        rep(i,N)if(d[i][i] < 0)return true;
+        return false;
+    }
+    void debug(){
+        auto edges = Graph<T>::G;
+        for(int i = 0; i < N; ++i){
+            cerr<<i+1<<": ";
+            for(auto e:edges[i]){
+                cerr<<"{"<<e.to+1<<", "<<e.cost<<"}, ";
+            }
+            cerr<<endl<<endl;
+        }
+
+        cerr<<"distance_matrix"<<endl;
+        for(int i = 0; i < N; ++i){
+            for(int j = 0; j < N; ++j){
+                if(d[i][j] == inf){
+                    cerr<<-1<<" ";
+                }else cerr<<d[i][j]<<" ";
+            }
+            cerr<<endl;
+        }
     }
 };
 
