@@ -13,6 +13,12 @@ using namespace std;
 #define YES "YES"
 #define NO "NO"
 typedef long long ll;
+
+template< typename T1, typename T2 >
+ostream &operator<<(ostream &os, const pair< T1, T2 >& p) {
+  os << "{" <<p.first << ", " << p.second << "}";
+  return os;
+}
 template <class T> using vec = vector<T>;
 template <class T> using vvec = vector<vec<T>>;
 
@@ -22,9 +28,9 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 const int INF = (ll)1e9;
 const ll INFLL = (ll)1e18+1;
 const ll MOD = (ll)1e9+7;
+
 const double PI = acos(-1.0);
-/*
+
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-*/
