@@ -1,5 +1,6 @@
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp"
 #include "../macro/macros.hpp"
+#include "../template.hpp"
 #include "../graph/shortest_path/dijkstra.hpp"
 
 int main() {
