@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 玉区別する、箱区別する、制限なし($k^{n}$)
+# :heavy_check_mark: 玉区別しない、箱区別する、制限なし(${}_n H _k$)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_A.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_D.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-30 04:47:10+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_A">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
 
 
@@ -48,26 +49,30 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D"
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
+#include "../math/comb.hpp"
 /*
-@title 玉区別する、箱区別する、制限なし($k^{n}$)
+@title 玉区別しない、箱区別する、制限なし(${}_n H _k$)
 @category 写像12相
 */
+
+combination C(200100);
 int main(){
     int n, k;
     cin >> n >> k;
-    cout << mint(k).modpow(n) << endl;
+    cout << C.H(n, k) << endl;
 }
+
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DPL_5_A.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/all/DPL_5_A"
+#line 1 "test/DPL_5_D.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D"
 #line 1 "macro/macros.hpp"
 
 
@@ -167,15 +172,48 @@ struct mint {
     }
 };
 
-#line 4 "test/DPL_5_A.test.cpp"
+#line 1 "math/comb.hpp"
+
+
+#line 5 "math/comb.hpp"
+
 /*
-@title 玉区別する、箱区別する、制限なし($k^{n}$)
+@title 組み合わせ(Combination)
+*/
+struct combination {
+    vector<mint> fact, ifact;
+    combination(int n):fact(n+1),ifact(n+1) {
+        assert(n < MOD);
+        fact[0] = 1;
+        for (int i = 1; i <= n; ++i) fact[i] = fact[i-1]*i;
+        ifact[n] = fact[n].inv();
+        for (int i = n; i >= 1; --i) ifact[i-1] = ifact[i]*i;
+    }
+    mint Comb(int n, int k) {
+        if (k < 0 || k > n) return 0;
+        return fact[n]*ifact[k]*ifact[n-k];
+    }
+    mint H(int n, int m){
+        return Comb(n + m - 1, n);
+    }
+    //nPk
+    mint Perm(int n, int k){
+        if (k < 0 || n < k) return 0;
+        return fact[n]*ifact[n-k];
+    }
+};
+
+#line 5 "test/DPL_5_D.test.cpp"
+/*
+@title 玉区別しない、箱区別する、制限なし(${}_n H _k$)
 @category 写像12相
 */
+
+combination C(200100);
 int main(){
     int n, k;
     cin >> n >> k;
-    cout << mint(k).modpow(n) << endl;
+    cout << C.H(n, k) << endl;
 }
 
 ```

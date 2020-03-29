@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/comb.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 04:07:36+09:00
+    - Last commit date: 2020-03-30 04:47:10+09:00
 
 
 
@@ -44,7 +44,8 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">test/DPL_5_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
 
 
 ## Code
@@ -74,7 +75,7 @@ struct combination {
         return fact[n]*ifact[k]*ifact[n-k];
     }
     mint H(int n, int m){
-        return Comb(n + m - 1, m);
+        return Comb(n + m - 1, n);
     }
     //nPk
     mint Perm(int n, int k){
@@ -210,7 +211,7 @@ struct combination {
         return fact[n]*ifact[k]*ifact[n-k];
     }
     mint H(int n, int m){
-        return Comb(n + m - 1, m);
+        return Comb(n + m - 1, n);
     }
     //nPk
     mint Perm(int n, int k){

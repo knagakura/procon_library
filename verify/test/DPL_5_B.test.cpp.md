@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DPL_5_B.test.cpp
+# :heavy_check_mark: 玉区別する、箱区別する、1個以内(${}_k P _n$)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 04:07:36+09:00
+    - Last commit date: 2020-03-30 04:47:10+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_B</a>
@@ -53,6 +53,11 @@ layout: default
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
+
+/*
+@title 玉区別する、箱区別する、1個以内(${}_k P _n$)
+@category 写像12相
+*/
 
 combination C(200100);
 int main(){
@@ -190,7 +195,7 @@ struct combination {
         return fact[n]*ifact[k]*ifact[n-k];
     }
     mint H(int n, int m){
-        return Comb(n + m - 1, m);
+        return Comb(n + m - 1, n);
     }
     //nPk
     mint Perm(int n, int k){
@@ -200,6 +205,11 @@ struct combination {
 };
 
 #line 5 "test/DPL_5_B.test.cpp"
+
+/*
+@title 玉区別する、箱区別する、1個以内(${}_k P _n$)
+@category 写像12相
+*/
 
 combination C(200100);
 int main(){
