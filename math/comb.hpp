@@ -20,7 +20,7 @@ struct combination {
         return fact[n]*ifact[k]*ifact[n-k];
     }
     mint H(int n, int m){
-        return Comb(n + m - 1, m);
+        return Comb(n + m - 1, n);
     }
     //nPk
     mint Perm(int n, int k){
