@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INCLUDED_STACK_HPP
+#define INCLUDED_STACK_HPP
 #include "../macro/macros.hpp"
 /*
 @title stack
@@ -40,3 +41,4 @@ class Stack{
         cerr << endl;
     }
 };
+#endif

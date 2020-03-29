@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MACROS_HPP
+#define MACROS_HPP
+
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -34,3 +36,5 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+#endif
