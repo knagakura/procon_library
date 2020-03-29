@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:06:20+09:00
+    - Last commit date: 2020-03-29 19:52:39+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -122,7 +122,10 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 3 "graph/shortest_path/dijkstra.cpp"
+#line 1 "graph/shortest_path/dijkstra.cpp"
+
+
+#line 4 "graph/shortest_path/dijkstra.cpp"
 /*
 @title Dijkstra法
 */
@@ -133,7 +136,7 @@ public:
     vector<T> cost;
     vector<vector<pair<T, int>>> edge;
  
-    Dijkstra(const int _N, T _inf = 1e18) : N(_N), inf(_inf),cost(N), edge(N) {
+    Dijkstra(const int _N, T _inf = INFLL) : N(_N), inf(_inf),cost(N), edge(N) {
     }
  
     void make_edge(int from, int to, T w) {

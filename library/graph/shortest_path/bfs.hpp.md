@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Dijkstra法
+# :heavy_check_mark: graph/shortest_path/bfs.hpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
-* <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/bfs.hpp">View this file on GitHub</a>
     - Last commit date: 2020-03-29 19:52:39+09:00
 
 
@@ -38,12 +38,13 @@ layout: default
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../../macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/ALDS1_11_C.test.cpp.html">test/ALDS1_11_C.test.cpp</a>
 
 
 ## Code
@@ -51,58 +52,43 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef DIJKSTRA_CPP
-#define DIJKSTRA_CPP
+#ifndef BFS_HPP
+#define BFS_HPP
 #include "../../macro/macros.hpp"
-/*
-@title Dijkstra法
-*/
-template<class T> class Dijkstra {
-public:
+#include "../template.hpp"
+
+template<typename T>
+class BFS : public Graph<T>{
+  public:
+    using Graph<T>::Graph;
     int N;
-    T inf;
-    vector<T> cost;
-    vector<vector<pair<T, int>>> edge;
- 
-    Dijkstra(const int _N, T _inf = INFLL) : N(_N), inf(_inf),cost(N), edge(N) {
+    vec<T> d;
+    BFS(int _N):N(_N), Graph<T>::Graph(_N), d(_N,-1){
     }
- 
-    void make_edge(int from, int to, T w) {
-        edge[from].push_back({ w,to });
-    }
- 
-    void solve(int start) {
-        for(int i = 0; i < N; ++i) cost[i] = inf;
- 
-        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
-        cost[start] = 0;
-        pq.push({ 0,start });
- 
-        while (!pq.empty()) {
-            T v = pq.top().first;
-            int from = pq.top().second;
-            pq.pop();
-            for (auto u : edge[from]) {
-                T w = v + u.first;
-                int to = u.second;
-                if (w < cost[to]) {
-                    cost[to] = w;
-                    pq.push({ w,to });
-                }
+    vec<T> bfs(int start = 0){
+        auto edges = Graph<T>::G;
+        queue<int> q;
+        q.push(start);
+        d[start] = 0;
+        while(!q.empty()){
+            int cur = q.front(); q.pop();
+            for(auto nv: edges[cur]){
+                if(d[nv.to] != -1)continue;
+                d[nv.to] = d[cur] + 1;
+                q.push(nv.to);
             }
         }
-        return;
+        return d;
     }
 };
 #endif
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "graph/shortest_path/dijkstra.cpp"
+#line 1 "graph/shortest_path/bfs.hpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -146,45 +132,72 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 4 "graph/shortest_path/dijkstra.cpp"
-/*
-@title Dijkstra法
-*/
-template<class T> class Dijkstra {
-public:
+#line 1 "graph/template.hpp"
+
+
+#line 4 "graph/template.hpp"
+
+template<typename T = int>
+struct edge{
+    int to;
+    T cost;
+    int id;
+    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id) {}
+};
+
+template<class T>
+class Graph {
+  public:
     int N;
-    T inf;
-    vector<T> cost;
-    vector<vector<pair<T, int>>> edge;
- 
-    Dijkstra(const int _N, T _inf = INFLL) : N(_N), inf(_inf),cost(N), edge(N) {
+    vvec<edge<T>> G;
+    Graph(int _N): N(_N),G(_N){
     }
- 
-    void make_edge(int from, int to, T w) {
-        edge[from].push_back({ w,to });
+    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
+        G[from].push_back({to, cost, id});
     }
- 
-    void solve(int start) {
-        for(int i = 0; i < N; ++i) cost[i] = inf;
- 
-        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
-        cost[start] = 0;
-        pq.push({ 0,start });
- 
-        while (!pq.empty()) {
-            T v = pq.top().first;
-            int from = pq.top().second;
-            pq.pop();
-            for (auto u : edge[from]) {
-                T w = v + u.first;
-                int to = u.second;
-                if (w < cost[to]) {
-                    cost[to] = w;
-                    pq.push({ w,to });
-                }
+    void add_edge(int v1, int v2, T cost = 1, int id = -1){
+        add_Directed_edge(v1, v2, cost, id);
+        add_Directed_edge(v2, v1, cost, id);
+    }
+    //standard input
+    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
+        rep(i,M){
+            int a, b;
+            cin >> a >> b;
+            a += padding;
+            b += padding;
+            T c = T(1);
+            if(weighted)cin >> c;
+            if(directed)add_Directed_edge(a,b,c);
+            else add_edge(a,b,c);
+        }
+    }
+};
+
+#line 5 "graph/shortest_path/bfs.hpp"
+
+template<typename T>
+class BFS : public Graph<T>{
+  public:
+    using Graph<T>::Graph;
+    int N;
+    vec<T> d;
+    BFS(int _N):N(_N), Graph<T>::Graph(_N), d(_N,-1){
+    }
+    vec<T> bfs(int start = 0){
+        auto edges = Graph<T>::G;
+        queue<int> q;
+        q.push(start);
+        d[start] = 0;
+        while(!q.empty()){
+            int cur = q.front(); q.pop();
+            for(auto nv: edges[cur]){
+                if(d[nv.to] != -1)continue;
+                d[nv.to] = d[cur] + 1;
+                q.push(nv.to);
             }
         }
-        return;
+        return d;
     }
 };
 

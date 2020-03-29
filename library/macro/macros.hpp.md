@@ -40,13 +40,16 @@ layout: default
 
 * :heavy_check_mark: <a href="../data_structure/stack.hpp.html">stack</a>
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
+* :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/example/example.test.cpp.html">example(二分探索)</a>
+* :heavy_check_mark: <a href="../../verify/test/ALDS1_11_C.test.cpp.html">test/ALDS1_11_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
