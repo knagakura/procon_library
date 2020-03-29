@@ -50,7 +50,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_k C_{i} (k-i)^n$)</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
