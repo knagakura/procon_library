@@ -1,5 +1,5 @@
-#ifndef BFS_HPP
-#define BFS_HPP
+#ifndef DIJKSTRA_HPP
+#define DIJKSTRA_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
 
