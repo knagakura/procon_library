@@ -1,7 +1,6 @@
 #ifndef WARSHALL_FLOYD_CPP
 #define WARSHALL_FLOYD_CPP
 /*
-@title Warchall Floyd法
 */
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
@@ -17,7 +16,7 @@ class WarshallFloyd : public Graph<T>{
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
-        rep(i,N)d[i][i] = 0;
+        for(int i = 0; i < N;i++) d[i][i] = 0;
         auto edges = Graph<T>::G;
         rep(i,N){
             for(auto e: edges[i]){
@@ -25,13 +24,15 @@ class WarshallFloyd : public Graph<T>{
             }
         }
         //WarshallFloyd
-        rep(k,N)rep(i,N)rep(j,N){
+        for(int k = 0; k < N; k++)for(int i = 0; i < N; i++)for(int j = 0; j < N; j++){
             if(d[i][k] == inf || d[k][j] == inf)continue;
             chmin(d[i][j],d[i][k] + d[k][j]);
         }
     }
     bool negative_cycle(){
-        rep(i,N)if(d[i][i] < 0)return true;
+        for(int i = 0; i < N; i++)
+            if(d[i][i] < 0)
+                return true;
         return false;
     }
     void debug(){

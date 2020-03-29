@@ -14,7 +14,7 @@ int main(){
         cout << "NEGATIVE CYCLE" << endl;
         return 0;
     }
-    rep(i,V)rep(j,V){
+    for(int i = 0; i < V; i++)for(int j = 0; j < V; j++){
         if(G.d[i][j] == G.inf){
             cout << "INF";
         }
