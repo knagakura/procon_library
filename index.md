@@ -66,6 +66,20 @@ layout: default
 * :heavy_check_mark: <a href="library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
+<div id="7e676e9e663beb40fd133f5ee24487c2"></div>
+
+### math
+
+* :warning: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
+
+
+<div id="098f6bcd4621d373cade4e832627b4f6"></div>
+
+### test
+
+* :warning: <a href="library/test/ALDS1_1_B.cpp.html">test/ALDS1_1_B.cpp</a>
+
+
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
 
 ### tree
