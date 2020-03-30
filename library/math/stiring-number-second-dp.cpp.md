@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 第二種スターリング数(DP($O(N^2)))
+# :heavy_check_mark: 第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second-dp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:09:27+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 
@@ -70,7 +70,7 @@ DPで計算する
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
+* :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
 ## Verified with
@@ -90,7 +90,7 @@ DPで計算する
 #include "comb.hpp"
 
 /*
-@title 第二種スターリング数(DP($O(N^2)))
+@title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.
 @category 写像12相
 @docs ../docs/math/stiring-number-second-dp.md
 */
@@ -171,7 +171,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
@@ -258,7 +260,7 @@ struct combination {
 #line 6 "math/stiring-number-second-dp.cpp"
 
 /*
-@title 第二種スターリング数(DP($O(N^2)))
+@title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.
 @category 写像12相
 @docs ../docs/math/stiring-number-second-dp.md
 */

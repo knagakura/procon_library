@@ -70,13 +70,10 @@ layout: default
 
 ### math
 
-* :heavy_check_mark: <a href="library/math/bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="library/math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
-* :heavy_check_mark: <a href="library/math/mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="library/math/partition-number.cpp.html">分割数($0(NK))</a>
-* :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
+* :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
@@ -90,7 +87,10 @@ layout: default
 
 ### 写像12相
 
-* :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
+* :heavy_check_mark: <a href="library/math/bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
+* :heavy_check_mark: <a href="library/math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
+* :heavy_check_mark: <a href="library/math/partition-number.cpp.html">分割数(Partition Number)</a>
+* :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 
 
 ## Verify Files

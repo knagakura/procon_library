@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_J.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:40:57+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_J</a>
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/partition-number.cpp.html">分割数($0(NK))</a>
+* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
+* :heavy_check_mark: <a href="../../library/math/partition-number.cpp.html">分割数(Partition Number)</a>
 
 
 ## Code
@@ -117,7 +117,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
@@ -176,7 +178,8 @@ struct mint {
 #line 5 "math/partition-number.cpp"
 
 /*
-@title 分割数($0(NK))
+@title 分割数(Partition Number)
+@category 写像12相
 @docs ../docs/math/partition-number.md
 */
 

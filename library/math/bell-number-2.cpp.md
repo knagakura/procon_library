@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: ベル数($O(NK\log N)$)
+# :heavy_check_mark: ベル数(Bell Number) slower ver.
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/bell-number-2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 18:11:58+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 
@@ -51,8 +51,8 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
+* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 ## Verified with
@@ -72,7 +72,8 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 #include "comb.hpp"
 #include "stiring-number-second.cpp"
 /*
-@title ベル数($O(NK\log N)$)
+@title ベル数(Bell Number) slower ver.
+@category 写像12相
 @docs ../docs/math/bell-number-2.md
 */
 mint bell_number_2(int n, int k){
@@ -139,7 +140,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
@@ -229,7 +232,7 @@ struct combination {
 #line 6 "math/stiring-number-second.cpp"
 
 /*
-@title 第二種スターリング数
+@title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind)
 @docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
@@ -246,7 +249,8 @@ mint stirling_number_second(int n, int k){
 
 #line 7 "math/bell-number-2.cpp"
 /*
-@title ベル数($O(NK\log N)$)
+@title ベル数(Bell Number) slower ver.
+@category 写像12相
 @docs ../docs/math/bell-number-2.md
 */
 mint bell_number_2(int n, int k){

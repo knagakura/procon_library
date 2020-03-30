@@ -45,13 +45,13 @@ layout: default
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="../math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
+* :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
+* :heavy_check_mark: <a href="../math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
 * :heavy_check_mark: <a href="../math/comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="../math/mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="../math/partition-number.cpp.html">分割数($0(NK))</a>
-* :heavy_check_mark: <a href="../math/stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
-* :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="../math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
+* :heavy_check_mark: <a href="../math/partition-number.cpp.html">分割数(Partition Number)</a>
+* :heavy_check_mark: <a href="../math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
+* :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mint.hpp
+# :heavy_check_mark: 合同算術(Modular Arithmetic)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mint.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 03:47:21+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 
@@ -43,12 +43,12 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
+* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
+* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="partition-number.cpp.html">分割数($0(NK))</a>
-* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="partition-number.cpp.html">分割数(Partition Number)</a>
+* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
+* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 ## Verified with
@@ -76,7 +76,9 @@ layout: default
 #define MINT_HPP
 
 #include "../macro/macros.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
@@ -181,7 +183,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}

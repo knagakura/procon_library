@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 分割数($0(NK))
+# :heavy_check_mark: 分割数(Partition Number)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/partition-number.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:40:57+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 
@@ -68,7 +68,7 @@ $P(n, k) = P(n, k-1) + P(n-k, k)$
 ## Depends on
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
+* :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
 ## Verified with
@@ -88,7 +88,8 @@ $P(n, k) = P(n, k-1) + P(n-k, k)$
 #include "mint.hpp"
 
 /*
-@title 分割数($0(NK))
+@title 分割数(Partition Number)
+@category 写像12相
 @docs ../docs/math/partition-number.md
 */
 
@@ -170,7 +171,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
@@ -226,7 +229,8 @@ struct mint {
 #line 5 "math/partition-number.cpp"
 
 /*
-@title 分割数($0(NK))
+@title 分割数(Partition Number)
+@category 写像12相
 @docs ../docs/math/partition-number.md
 */
 

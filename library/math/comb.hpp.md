@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/comb.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 04:47:10+09:00
+    - Last commit date: 2020-03-30 20:51:46+09:00
 
 
 
@@ -39,15 +39,15 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
+* :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
-* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
+* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
+* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
+* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 ## Verified with
@@ -154,7 +154,9 @@ const string dir = "DRUL";
 
 
 #line 5 "math/mint.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
