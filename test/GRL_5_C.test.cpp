@@ -17,16 +17,6 @@ int main() {
         }
     }
     G.dfs();
-    /*
-    for(int i = 0; i < N ;i ++ ){
-        cerr << "from: " << i <<endl;
-        for(auto e: G.G[i]){
-            cerr << e.to << endl;
-        }
-    }
-    for(int i = 0; i < G.bitlen; i++){
-        print(G.anc[i]);
-    }*/
     int Q;
     cin >> Q;
     while(Q--){
