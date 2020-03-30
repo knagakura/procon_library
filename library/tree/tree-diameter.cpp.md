@@ -31,10 +31,31 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/tree-diameter.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 05:41:23+09:00
+    - Last commit date: 2020-03-31 05:56:21+09:00
 
 
 
+
+### 計算量
+$O(V)$
+
+### 説明
+#### 問題
+[問題へのリンク](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp)
+
+>非負の重みをもつ無向の木 T の直径を求めてください. 木の最遠頂点間の距離を木の直径といいます.
+
+##### step1 問題の言い換え
+木の直径は、任意の頂点からDFSにより最遠頂点を求めて、そこからもう一度DFSにより最遠頂点を求めたときの距離に等しい。今回はこの解法ではなく、全方位木DP（Rerooting）により求めたい。
+そのためにまず、問題を以下のように言い換える。
+
+>非負の重みをもつ無向の木 T が与えられる. それぞれの頂点について, その頂点を通るパスの長さの最長を求めよ.
+木の直径は、このうちの最大値である。コード内でいう`dp2`。
+
+##### step2
+
+### 参考
+[ei1333の日記](https://ei1333.hateblo.jp/entry/2017/04/10/224413)
 
 ## Depends on
 
@@ -56,6 +77,7 @@ layout: default
 /*
 @title 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
 @category tree
+@docs ../docs/tree/tree-diameter.md
 */
 #include "../macro/macros.hpp"
 #include "template.cpp"
@@ -65,27 +87,27 @@ class Diameter :  public Tree<T>{
   public:
     using Tree<T>::N;
     using Tree<T>::G;
-    vector<T> d;
-    vector<T> ans;
+    vector<T> dp;
+    vector<T> dp2;
     T diameter;
-    Diameter(int _N):Tree<T>::Tree(_N), d(_N,0), ans(_N){}
+    Diameter(int _N):Tree<T>::Tree(_N), dp(_N,0), dp2(_N){}
     //Calc distance and start Rerooting
     void build(int start = 0, int pre = -1, bool debug = false){
         dfs1(start, pre);
         dfs2(start, pre);
         if(debug){
-            print(d);
-            print(ans);
+            print(dp);
+            print(dp2);
         }
-        diameter = *max_element(ans.begin(), ans.end());
+        diameter = *max_element(dp2.begin(), dp2.end());
     }
     //calculate the distance from start
     void dfs1(int cur = 0, int pre = -1){
-        d[cur] = 0;
+        dp[cur] = 0;
         for(edge<T>& ne: G[cur]){
             if(ne.to == pre)continue;
             dfs1(ne.to, cur);
-            d[cur] = max(d[cur],d[ne.to] + ne.cost);
+            dp[cur] = max(dp[cur],dp[ne.to] + ne.cost);
         }
     }
     void dfs2(int cur = 0, int pre = -1, T d_par = 0){
@@ -93,12 +115,14 @@ class Diameter :  public Tree<T>{
         vector<pair<T,int>> childs;
         childs.push_back({0, -1}); //番兵 次数が1だと壊れるので
         for(auto ne: G[cur]){
-            if(ne.to == pre)childs.push_back({d_par + ne.cost, ne.to});
-            else childs.push_back({d[ne.to] + ne.cost, ne.to});
+            if(ne.to == pre)
+                childs.push_back({d_par + ne.cost, ne.to});
+            else 
+                childs.push_back({dp[ne.to] + ne.cost, ne.to});
         }
-        sort(all(childs), greater<pair<T, int>>());
         //大きい二つ
-        ans[cur] = childs[0].first + childs[1].first;
+        sort(all(childs), greater<pair<T, int>>());
+        dp2[cur] = childs[0].first + childs[1].first;
         for(auto ne: G[cur]){
             if(ne.to == pre)continue;
             //降りる辺が最大値
@@ -123,6 +147,7 @@ class Diameter :  public Tree<T>{
 /*
 @title 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
 @category tree
+@docs ../docs/tree/tree-diameter.md
 */
 #line 1 "macro/macros.hpp"
 
@@ -254,34 +279,34 @@ class Tree {
 };
 
 
-#line 7 "tree/tree-diameter.cpp"
+#line 8 "tree/tree-diameter.cpp"
 
 template<typename T>
 class Diameter :  public Tree<T>{
   public:
     using Tree<T>::N;
     using Tree<T>::G;
-    vector<T> d;
-    vector<T> ans;
+    vector<T> dp;
+    vector<T> dp2;
     T diameter;
-    Diameter(int _N):Tree<T>::Tree(_N), d(_N,0), ans(_N){}
+    Diameter(int _N):Tree<T>::Tree(_N), dp(_N,0), dp2(_N){}
     //Calc distance and start Rerooting
     void build(int start = 0, int pre = -1, bool debug = false){
         dfs1(start, pre);
         dfs2(start, pre);
         if(debug){
-            print(d);
-            print(ans);
+            print(dp);
+            print(dp2);
         }
-        diameter = *max_element(ans.begin(), ans.end());
+        diameter = *max_element(dp2.begin(), dp2.end());
     }
     //calculate the distance from start
     void dfs1(int cur = 0, int pre = -1){
-        d[cur] = 0;
+        dp[cur] = 0;
         for(edge<T>& ne: G[cur]){
             if(ne.to == pre)continue;
             dfs1(ne.to, cur);
-            d[cur] = max(d[cur],d[ne.to] + ne.cost);
+            dp[cur] = max(dp[cur],dp[ne.to] + ne.cost);
         }
     }
     void dfs2(int cur = 0, int pre = -1, T d_par = 0){
@@ -289,12 +314,14 @@ class Diameter :  public Tree<T>{
         vector<pair<T,int>> childs;
         childs.push_back({0, -1}); //番兵 次数が1だと壊れるので
         for(auto ne: G[cur]){
-            if(ne.to == pre)childs.push_back({d_par + ne.cost, ne.to});
-            else childs.push_back({d[ne.to] + ne.cost, ne.to});
+            if(ne.to == pre)
+                childs.push_back({d_par + ne.cost, ne.to});
+            else 
+                childs.push_back({dp[ne.to] + ne.cost, ne.to});
         }
-        sort(all(childs), greater<pair<T, int>>());
         //大きい二つ
-        ans[cur] = childs[0].first + childs[1].first;
+        sort(all(childs), greater<pair<T, int>>());
+        dp2[cur] = childs[0].first + childs[1].first;
         for(auto ne: G[cur]){
             if(ne.to == pre)continue;
             //降りる辺が最大値
