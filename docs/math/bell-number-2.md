@@ -6,4 +6,4 @@ $O(NK \log N)$
 
 $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
-である。より高速に求める方法は[こちら]()。
+である。より高速に求める方法は[こちら](https://knagakura.github.io/procon_library/library/math/bell-number.cpp.html)。
