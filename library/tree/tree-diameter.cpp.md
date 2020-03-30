@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Tree Class
+# :heavy_check_mark: 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#66f6181bcb4cff4cd38fbc804a036db6">template</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tree/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+* category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
+* <a href="{{ site.github.repository_url }}/blob/master/tree/tree-diameter.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 05:41:23+09:00
 
 
 
@@ -40,18 +40,12 @@ layout: default
 
 * :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
-* :heavy_check_mark: <a href="tree-diameter.cpp.html">木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)</a>
+* :heavy_check_mark: <a href="template.cpp.html">Tree Class</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/GRL_5_A.test.cpp.html">test/GRL_5_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
 
 
 ## Code
@@ -59,54 +53,77 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef TREE_TEMPLATE_CPP
-#define TREE_TEMPLATE_CPP
-#include "../macro/macros.hpp"
-#include "../graph/template.hpp"
-
 /*
-@title Tree Class
-@category template
+@title 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
+@category tree
 */
-template<class T>
-class Tree {
+#include "../macro/macros.hpp"
+#include "template.cpp"
+
+template<typename T>
+class Diameter :  public Tree<T>{
   public:
-    int N;
-    vvec<edge<T>> G;
-    Tree(int _N): N(_N),G(_N){
-    }
-    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
-        G[from].push_back({to, cost, id});
-    }
-    void add_edge(int v1, int v2, T cost = 1, int id = -1){
-        add_Directed_edge(v1, v2, cost, id);
-        add_Directed_edge(v2, v1, cost, id);
-    }
-    //standard input
-    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        while(M--){
-            int a, b;
-            cin >> a >> b;
-            a += padding;
-            b += padding;
-            T c = T(1);
-            if(weighted)cin >> c;
-            if(directed)add_Directed_edge(a,b,c);
-            else add_edge(a,b,c);
+    using Tree<T>::N;
+    using Tree<T>::G;
+    vector<T> d;
+    vector<T> ans;
+    T diameter;
+    Diameter(int _N):Tree<T>::Tree(_N), d(_N,0), ans(_N){}
+    //Calc distance and start Rerooting
+    void build(int start = 0, int pre = -1, bool debug = false){
+        dfs1(start, pre);
+        dfs2(start, pre);
+        if(debug){
+            print(d);
+            print(ans);
         }
+        diameter = *max_element(ans.begin(), ans.end());
+    }
+    //calculate the distance from start
+    void dfs1(int cur = 0, int pre = -1){
+        d[cur] = 0;
+        for(edge<T>& ne: G[cur]){
+            if(ne.to == pre)continue;
+            dfs1(ne.to, cur);
+            d[cur] = max(d[cur],d[ne.to] + ne.cost);
+        }
+    }
+    void dfs2(int cur = 0, int pre = -1, T d_par = 0){
+        //rerooting
+        vector<pair<T,int>> childs;
+        childs.push_back({0, -1}); //番兵 次数が1だと壊れるので
+        for(auto ne: G[cur]){
+            if(ne.to == pre)childs.push_back({d_par + ne.cost, ne.to});
+            else childs.push_back({d[ne.to] + ne.cost, ne.to});
+        }
+        sort(all(childs), greater<pair<T, int>>());
+        //大きい二つ
+        ans[cur] = childs[0].first + childs[1].first;
+        for(auto ne: G[cur]){
+            if(ne.to == pre)continue;
+            //降りる辺が最大値
+            if(childs[0].second == ne.to)
+                dfs2(ne.to, cur, childs[1].first);
+            else 
+                dfs2(ne.to, cur, childs[0].first);
+        }
+    }
+    T get_diameter(){
+        return diameter;
     }
 };
 
-#endif
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tree/template.cpp"
-
-
+#line 1 "tree/tree-diameter.cpp"
+/*
+@title 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
+@category tree
+*/
 #line 1 "macro/macros.hpp"
 
 
@@ -150,6 +167,9 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "tree/template.cpp"
 
 
 #line 1 "graph/template.hpp"
@@ -234,6 +254,60 @@ class Tree {
 };
 
 
+#line 7 "tree/tree-diameter.cpp"
+
+template<typename T>
+class Diameter :  public Tree<T>{
+  public:
+    using Tree<T>::N;
+    using Tree<T>::G;
+    vector<T> d;
+    vector<T> ans;
+    T diameter;
+    Diameter(int _N):Tree<T>::Tree(_N), d(_N,0), ans(_N){}
+    //Calc distance and start Rerooting
+    void build(int start = 0, int pre = -1, bool debug = false){
+        dfs1(start, pre);
+        dfs2(start, pre);
+        if(debug){
+            print(d);
+            print(ans);
+        }
+        diameter = *max_element(ans.begin(), ans.end());
+    }
+    //calculate the distance from start
+    void dfs1(int cur = 0, int pre = -1){
+        d[cur] = 0;
+        for(edge<T>& ne: G[cur]){
+            if(ne.to == pre)continue;
+            dfs1(ne.to, cur);
+            d[cur] = max(d[cur],d[ne.to] + ne.cost);
+        }
+    }
+    void dfs2(int cur = 0, int pre = -1, T d_par = 0){
+        //rerooting
+        vector<pair<T,int>> childs;
+        childs.push_back({0, -1}); //番兵 次数が1だと壊れるので
+        for(auto ne: G[cur]){
+            if(ne.to == pre)childs.push_back({d_par + ne.cost, ne.to});
+            else childs.push_back({d[ne.to] + ne.cost, ne.to});
+        }
+        sort(all(childs), greater<pair<T, int>>());
+        //大きい二つ
+        ans[cur] = childs[0].first + childs[1].first;
+        for(auto ne: G[cur]){
+            if(ne.to == pre)continue;
+            //降りる辺が最大値
+            if(childs[0].second == ne.to)
+                dfs2(ne.to, cur, childs[1].first);
+            else 
+                dfs2(ne.to, cur, childs[0].first);
+        }
+    }
+    T get_diameter(){
+        return diameter;
+    }
+};
 
 ```
 {% endraw %}
