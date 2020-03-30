@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/bfs.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 03:30:59+09:00
+    - Last commit date: 2020-03-31 03:34:38+09:00
 
 
 
@@ -62,7 +62,7 @@ class BFS : public Graph<T>{
   public:
     using Graph<T>::N;
     using Graph<T>::G;
-    vec<T> d;
+    vector<T> d;
     BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){
     }
     vec<T> bfs(int start = 0){
@@ -180,7 +180,7 @@ class BFS : public Graph<T>{
   public:
     using Graph<T>::N;
     using Graph<T>::G;
-    vec<T> d;
+    vector<T> d;
     BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){
     }
     vec<T> bfs(int start = 0){

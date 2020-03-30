@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 03:30:59+09:00
+    - Last commit date: 2020-03-31 03:34:38+09:00
 
 
 
@@ -65,13 +65,13 @@ class WarshallFloyd : public Graph<T>{
     using Graph<T>::N;
     using Graph<T>::G;
     T inf;
-    vvec<T> d;
-    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    vector<vector<T>> d;
+    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vector<T>(_N,_inf)){}
     void solve(){
         //initialize the distance matrix
-        d.assign(N, vec<T>(N,inf));
-        for(int i = 0; i < N;i++) d[i][i] = 0;
-        rep(i,N){
+        d.assign(N, vector<T>(N,inf));
+        for(int i = 0; i < N; i++) d[i][i] = 0;
+        for(int i = 0; i < N; i++){
             for(auto e: G[i]){
                 d[i][e.to] = e.cost;
             }
@@ -211,13 +211,13 @@ class WarshallFloyd : public Graph<T>{
     using Graph<T>::N;
     using Graph<T>::G;
     T inf;
-    vvec<T> d;
-    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    vector<vector<T>> d;
+    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vector<T>(_N,_inf)){}
     void solve(){
         //initialize the distance matrix
-        d.assign(N, vec<T>(N,inf));
-        for(int i = 0; i < N;i++) d[i][i] = 0;
-        rep(i,N){
+        d.assign(N, vector<T>(N,inf));
+        for(int i = 0; i < N; i++) d[i][i] = 0;
+        for(int i = 0; i < N; i++){
             for(auto e: G[i]){
                 d[i][e.to] = e.cost;
             }

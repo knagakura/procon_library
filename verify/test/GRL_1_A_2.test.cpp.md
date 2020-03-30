@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 03:30:59+09:00
+    - Last commit date: 2020-03-31 03:34:38+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -167,10 +167,10 @@ class Dijkstra : public Graph<T>{
     using Graph<T>::G;
     using Graph<T>::N;
     T inf;
-    vec<T> d;
+    vector<T> d;
     Dijkstra(int _N, T _inf): Graph<T>::Graph(_N), inf(_inf), d(_N,_inf){
     }
-    vec<T> solve(int start = 0){
+    vector<T> solve(int start = 0){
         rep(i,N) d[i] = inf;
         priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
         d[start] = 0;
@@ -182,7 +182,7 @@ class Dijkstra : public Graph<T>{
             for (auto u : G[from]) {
                 T w = v + u.cost;
                 if (chmin(d[u.to], w)) {
-                    pq.push({ w,u.to });
+                    pq.push({w, u.to});
                 }
             }
         }
