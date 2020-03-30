@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_5_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:06:20+09:00
+    - Last commit date: 2020-03-31 04:09:54+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C&lang=ja</a>
@@ -39,8 +39,10 @@ layout: default
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../library/graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="../../library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
+* :heavy_check_mark: <a href="../../library/tree/template.cpp.html">tree/template.cpp</a>
 
 
 ## Code
@@ -56,18 +58,27 @@ layout: default
 int main() {
     int N;
     cin >> N;
-    vector<vector<int>> g(N);
+    LCA<long long> G(N);
     for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        for(int j = 0; j < k;j++){
+        while(k--){
             int a;
             cin >> a;
-            g[i].push_back(a);
-            g[a].push_back(i);
+            G.add_edge(i, a);
         }
     }
-    LCA G(N, g);
+    G.dfs();
+    /*
+    for(int i = 0; i < N ;i ++ ){
+        cerr << "from: " << i <<endl;
+        for(auto e: G.G[i]){
+            cerr << e.to << endl;
+        }
+    }
+    for(int i = 0; i < G.bitlen; i++){
+        print(G.anc[i]);
+    }*/
     int Q;
     cin >> Q;
     while(Q--){
@@ -130,21 +141,95 @@ const string dir = "DRUL";
 /*
 @title 最小共通祖先/LCA(Lowest Common Acestor)
 */
-#line 5 "tree/lca.cpp"
+#line 1 "tree/template.cpp"
 
-class LCA{
+
+#line 1 "graph/template.hpp"
+
+
+#line 4 "graph/template.hpp"
+
+template<typename T = int>
+struct edge{
+    int to;
+    T cost;
+    int id;
+    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id) {}
+};
+
+template<class T>
+class Graph {
   public:
     int N;
+    vvec<edge<T>> G;
+    Graph(int _N): N(_N),G(_N){
+    }
+    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
+        G[from].push_back({to, cost, id});
+    }
+    void add_edge(int v1, int v2, T cost = 1, int id = -1){
+        add_Directed_edge(v1, v2, cost, id);
+        add_Directed_edge(v2, v1, cost, id);
+    }
+    //standard input
+    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
+        while(M--){
+            int a, b;
+            cin >> a >> b;
+            a += padding;
+            b += padding;
+            T c = T(1);
+            if(weighted)cin >> c;
+            if(directed)add_Directed_edge(a,b,c);
+            else add_edge(a,b,c);
+        }
+    }
+};
+
+#line 5 "tree/template.cpp"
+
+template<class T>
+class Tree {
+  public:
+    int N;
+    vvec<edge<T>> G;
+    Tree(int _N): N(_N),G(_N){
+    }
+    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
+        G[from].push_back({to, cost, id});
+    }
+    void add_edge(int v1, int v2, T cost = 1, int id = -1){
+        add_Directed_edge(v1, v2, cost, id);
+        add_Directed_edge(v2, v1, cost, id);
+    }
+    //standard input
+    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
+        while(M--){
+            int a, b;
+            cin >> a >> b;
+            a += padding;
+            b += padding;
+            T c = T(1);
+            if(weighted)cin >> c;
+            if(directed)add_Directed_edge(a,b,c);
+            else add_edge(a,b,c);
+        }
+    }
+};
+
+
+#line 6 "tree/lca.cpp"
+
+template<typename T>
+class LCA :  public Tree<T>{
+  public:
+    using Tree<T>::N;
+    using Tree<T>::G;
     int bitlen = 1;
-    vector<vector<int>> edges;
     vector<int> d; //depth
     vector<vector<int>> anc; // bitlen * N
-    // the number of vertexs
-    LCA(int _N):N(_N){
-        init(N);
-    }
-    LCA(int _N, vector< vector<int>> G):N(_N){
-        init(N, G);
+    LCA(int _N):Tree<T>::Tree(_N){
+        init(_N);
     }
     void init(int n){
         while((1 << bitlen) < n){
@@ -152,20 +237,15 @@ class LCA{
         }
         d.assign(n, 0);
         anc.assign(bitlen, vector<int>(n,-1));
-        dfs();
-    }
-    void init(int n, vector<vector<int>> G){
-        edges = G;
-        init(n);
     }
     void dfs(int v = 0, int p = -1){
         anc[0][v] = p;
         for(int i = 0; i+1 < bitlen; ++i){
             anc[i+1][v] = (anc[i][v] >= 0) ? anc[i][anc[i][v]] : -1;
         }
-        for(auto nv: edges[v]) if(nv != p){
-            d[nv] = d[v]+1;
-            dfs(nv, v);
+        for(auto ne: G[v]) if(ne.to != p){
+            d[ne.to] = d[v]+1;
+            dfs(ne.to, v);
         }
     }
     int lca(int u, int v){
@@ -194,18 +274,27 @@ class LCA{
 int main() {
     int N;
     cin >> N;
-    vector<vector<int>> g(N);
+    LCA<long long> G(N);
     for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        for(int j = 0; j < k;j++){
+        while(k--){
             int a;
             cin >> a;
-            g[i].push_back(a);
-            g[a].push_back(i);
+            G.add_edge(i, a);
         }
     }
-    LCA G(N, g);
+    G.dfs();
+    /*
+    for(int i = 0; i < N ;i ++ ){
+        cerr << "from: " << i <<endl;
+        for(auto e: G.G[i]){
+            cerr << e.to << endl;
+        }
+    }
+    for(int i = 0; i < G.bitlen; i++){
+        print(G.anc[i]);
+    }*/
     int Q;
     cin >> Q;
     while(Q--){

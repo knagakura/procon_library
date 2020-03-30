@@ -80,6 +80,7 @@ layout: default
 ### tree
 
 * :heavy_check_mark: <a href="library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
+* :heavy_check_mark: <a href="library/tree/template.cpp.html">tree/template.cpp</a>
 
 
 <div id="9f51e9d7dafe7714c7b48d2b6a166473"></div>

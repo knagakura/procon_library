@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 最小共通祖先/LCA(Lowest Common Acestor)
+# :heavy_check_mark: tree/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tree/lca.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/tree/template.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-31 04:09:54+09:00
 
 
@@ -40,7 +40,11 @@ layout: default
 
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="template.cpp.html">tree/template.cpp</a>
+
+
+## Required by
+
+* :heavy_check_mark: <a href="lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 
 ## Verified with
@@ -53,72 +57,50 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-/*
-@title 最小共通祖先/LCA(Lowest Common Acestor)
-*/
+#ifndef TREE_TEMPLATE_CPP
+#define TREE_TEMPLATE_CPP
 #include "../macro/macros.hpp"
-#include "template.cpp"
+#include "../graph/template.hpp"
 
-template<typename T>
-class LCA :  public Tree<T>{
+template<class T>
+class Tree {
   public:
-    using Tree<T>::N;
-    using Tree<T>::G;
-    int bitlen = 1;
-    vector<int> d; //depth
-    vector<vector<int>> anc; // bitlen * N
-    LCA(int _N):Tree<T>::Tree(_N){
-        init(_N);
+    int N;
+    vvec<edge<T>> G;
+    Tree(int _N): N(_N),G(_N){
     }
-    void init(int n){
-        while((1 << bitlen) < n){
-            bitlen++;
-        }
-        d.assign(n, 0);
-        anc.assign(bitlen, vector<int>(n,-1));
+    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
+        G[from].push_back({to, cost, id});
     }
-    void dfs(int v = 0, int p = -1){
-        anc[0][v] = p;
-        for(int i = 0; i+1 < bitlen; ++i){
-            anc[i+1][v] = (anc[i][v] >= 0) ? anc[i][anc[i][v]] : -1;
-        }
-        for(auto ne: G[v]) if(ne.to != p){
-            d[ne.to] = d[v]+1;
-            dfs(ne.to, v);
-        }
+    void add_edge(int v1, int v2, T cost = 1, int id = -1){
+        add_Directed_edge(v1, v2, cost, id);
+        add_Directed_edge(v2, v1, cost, id);
     }
-    int lca(int u, int v){
-        if(d[u] > d[v]) swap(u, v);
-        for(int i = 0; i < bitlen;i++){
-            if((d[v] - d[u]) & (1<<i)){
-                v = anc[i][v];
-            }
+    //standard input
+    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
+        while(M--){
+            int a, b;
+            cin >> a >> b;
+            a += padding;
+            b += padding;
+            T c = T(1);
+            if(weighted)cin >> c;
+            if(directed)add_Directed_edge(a,b,c);
+            else add_edge(a,b,c);
         }
-        if(u == v) return u;
-        for(int i = bitlen-1; i >= 0;i--){
-            if(anc[i][u] != anc[i][v]){
-                u = anc[i][u];
-                v = anc[i][v];
-            }
-        }
-        return anc[0][u];
-    }
-    int calc_dist(int u, int v) {
-		int l = lca(u, v);
-		return d[u] + d[v] - d[l] * 2;
     }
 };
 
+#endif
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tree/lca.cpp"
-/*
-@title 最小共通祖先/LCA(Lowest Common Acestor)
-*/
+#line 1 "tree/template.cpp"
+
+
 #line 1 "macro/macros.hpp"
 
 
@@ -158,9 +140,6 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-
-
-#line 1 "tree/template.cpp"
 
 
 #line 1 "graph/template.hpp"
@@ -237,57 +216,6 @@ class Tree {
 };
 
 
-#line 6 "tree/lca.cpp"
-
-template<typename T>
-class LCA :  public Tree<T>{
-  public:
-    using Tree<T>::N;
-    using Tree<T>::G;
-    int bitlen = 1;
-    vector<int> d; //depth
-    vector<vector<int>> anc; // bitlen * N
-    LCA(int _N):Tree<T>::Tree(_N){
-        init(_N);
-    }
-    void init(int n){
-        while((1 << bitlen) < n){
-            bitlen++;
-        }
-        d.assign(n, 0);
-        anc.assign(bitlen, vector<int>(n,-1));
-    }
-    void dfs(int v = 0, int p = -1){
-        anc[0][v] = p;
-        for(int i = 0; i+1 < bitlen; ++i){
-            anc[i+1][v] = (anc[i][v] >= 0) ? anc[i][anc[i][v]] : -1;
-        }
-        for(auto ne: G[v]) if(ne.to != p){
-            d[ne.to] = d[v]+1;
-            dfs(ne.to, v);
-        }
-    }
-    int lca(int u, int v){
-        if(d[u] > d[v]) swap(u, v);
-        for(int i = 0; i < bitlen;i++){
-            if((d[v] - d[u]) & (1<<i)){
-                v = anc[i][v];
-            }
-        }
-        if(u == v) return u;
-        for(int i = bitlen-1; i >= 0;i--){
-            if(anc[i][u] != anc[i][v]){
-                u = anc[i][u];
-                v = anc[i][v];
-            }
-        }
-        return anc[0][u];
-    }
-    int calc_dist(int u, int v) {
-		int l = lca(u, v);
-		return d[u] + d[v] - d[l] * 2;
-    }
-};
 
 ```
 {% endraw %}

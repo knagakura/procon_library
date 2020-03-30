@@ -53,6 +53,7 @@ layout: default
 * :heavy_check_mark: <a href="../math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 * :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
+* :heavy_check_mark: <a href="../tree/template.cpp.html">tree/template.cpp</a>
 
 
 ## Verified with
