@@ -3,6 +3,10 @@
 #include "../macro/macros.hpp"
 #include "../graph/template.hpp"
 
+/*
+@title Tree Class
+@category template
+*/
 template<class T>
 class Tree {
   public:

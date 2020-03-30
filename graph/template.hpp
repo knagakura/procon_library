@@ -2,6 +2,10 @@
 #define GRAPH_TEMPLATE_HPP
 #include "../macro/macros.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;
