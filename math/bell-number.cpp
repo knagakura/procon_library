@@ -3,11 +3,12 @@
 #include "../macro/macros.hpp"
 #include "mint.hpp"
 #include "comb.hpp"
-#include "stiring-number-second.cpp"
+
 /*
 @title ベル数($O(\min(N,K) \log N)$)
 @docs ../docs/math/bell-number.md
 */
+
 template<typename T>
 mint bell_number(T n, T k){
     combination C(max(n, k)+1);
