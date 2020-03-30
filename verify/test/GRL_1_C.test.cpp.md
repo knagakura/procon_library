@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Code

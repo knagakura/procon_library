@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
+* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :question: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
+* :question: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
 
 
 ## Code

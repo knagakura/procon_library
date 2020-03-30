@@ -25,25 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+# :x: 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_G_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 16:55:27+09:00
+    - Last commit date: 2020-03-30 17:04:02+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
-* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
+* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :x: <a href="../../library/math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :question: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
+* :question: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
+* :question: <a href="../../library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Code
@@ -52,6 +51,7 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
+#define IGNORE
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
@@ -75,6 +75,7 @@ int main(){
 ```cpp
 #line 1 "test/DPL_5_G_2.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
+#define IGNORE
 #line 1 "macro/macros.hpp"
 
 
@@ -243,7 +244,7 @@ mint bell_number_2(int n, int k){
 }
 
 
-#line 7 "test/DPL_5_G_2.test.cpp"
+#line 8 "test/DPL_5_G_2.test.cpp"
 /*
 @title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
 @category 写像12相

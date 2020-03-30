@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: ベル数($O(NK)$)
+# :x: ベル数($O(NK)$)
 
 <a href="../../index.html">Back to top page</a>
 
@@ -49,15 +49,15 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :question: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
+* :question: <a href="comb.hpp.html">組み合わせ(Combination)</a>
+* :question: <a href="mint.hpp.html">math/mint.hpp</a>
+* :question: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
+* :x: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
 
 
 ## Code
