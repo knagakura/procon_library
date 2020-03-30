@@ -79,14 +79,12 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 
 ## Required by
 
-* :warning: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
-* :warning: <a href="../test/DPL_5_G.test_2.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
+* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
 
 

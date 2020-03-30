@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_G.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 16:42:47+09:00
+    - Last commit date: 2020-03-30 16:55:27+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
@@ -43,7 +43,6 @@ layout: default
 * :heavy_check_mark: <a href="../../library/math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Code
@@ -207,32 +206,13 @@ struct combination {
 #line 1 "math/bell-number.cpp"
 
 
-#line 1 "math/stiring-number-second.cpp"
+#line 6 "math/bell-number.cpp"
 
-
-#line 6 "math/stiring-number-second.cpp"
-
-/*
-@title 第二種スターリング数
-@docs ../docs/math/stiring-number-second.md
-*/
-mint stirling_number_second(int n, int k){
-    combination C(k+1);
-    mint res = 0;
-    for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
-    }
-    res *= C.ifact[k];
-    return res;
-}
-
-
-#line 7 "math/bell-number.cpp"
 /*
 @title ベル数($O(\min(N,K) \log N)$)
 @docs ../docs/math/bell-number.md
 */
+
 template<typename T>
 mint bell_number(T n, T k){
     combination C(max(n, k)+1);

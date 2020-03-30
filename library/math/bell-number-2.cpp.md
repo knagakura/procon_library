@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: ベル数($O(NK)$)
+# :heavy_check_mark: ベル数($O(NK)$)
 
 <a href="../../index.html">Back to top page</a>
 
@@ -55,9 +55,9 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 * :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="../test/DPL_5_G.test_2.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
 
 
 ## Code

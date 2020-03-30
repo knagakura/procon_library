@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/bell-number.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 16:42:47+09:00
+    - Last commit date: 2020-03-30 16:55:27+09:00
 
 
 
@@ -77,7 +77,6 @@ $\sum_{j=0}^{k-i} \frac{(-1)^{j}}{{j}!}$については前処理により$O(K)$�
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Verified with
@@ -95,11 +94,12 @@ $\sum_{j=0}^{k-i} \frac{(-1)^{j}}{{j}!}$については前処理により$O(K)$�
 #include "../macro/macros.hpp"
 #include "mint.hpp"
 #include "comb.hpp"
-#include "stiring-number-second.cpp"
+
 /*
 @title ベル数($O(\min(N,K) \log N)$)
 @docs ../docs/math/bell-number.md
 */
+
 template<typename T>
 mint bell_number(T n, T k){
     combination C(max(n, k)+1);
@@ -255,32 +255,13 @@ struct combination {
     }
 };
 
-#line 1 "math/stiring-number-second.cpp"
+#line 6 "math/bell-number.cpp"
 
-
-#line 6 "math/stiring-number-second.cpp"
-
-/*
-@title 第二種スターリング数
-@docs ../docs/math/stiring-number-second.md
-*/
-mint stirling_number_second(int n, int k){
-    combination C(k+1);
-    mint res = 0;
-    for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
-    }
-    res *= C.ifact[k];
-    return res;
-}
-
-
-#line 7 "math/bell-number.cpp"
 /*
 @title ベル数($O(\min(N,K) \log N)$)
 @docs ../docs/math/bell-number.md
 */
+
 template<typename T>
 mint bell_number(T n, T k){
     combination C(max(n, k)+1);
