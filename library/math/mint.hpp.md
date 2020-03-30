@@ -55,7 +55,9 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_H.test.cpp.html">玉区別する、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
+* :heavy_check_mark: <a href="../../verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 
 
 ## Code

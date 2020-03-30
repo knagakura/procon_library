@@ -25,38 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 組み合わせ(Combination)
+# :heavy_check_mark: 玉区別する、箱区別しない、1個以内(0 or 1)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/comb.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 04:47:10+09:00
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_H.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 14:21:06+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_H.test.cpp.html">玉区別する、箱区別しない、1個以内(0 or 1)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
+* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
 
 
 ## Code
@@ -64,46 +49,28 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef COMB_HPP
-#define COMB_HPP
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H"
 #include "../macro/macros.hpp"
-#include "mint.hpp"
+#include "../math/mint.hpp"
+#include "../math/comb.hpp"
 
 /*
-@title 組み合わせ(Combination)
+@title 玉区別する、箱区別しない、1個以内(0 or 1)
+@category 写像12相
 */
-struct combination {
-    vector<mint> fact, ifact;
-    combination(int n):fact(n+1),ifact(n+1) {
-        assert(n < MOD);
-        fact[0] = 1;
-        for (int i = 1; i <= n; ++i) fact[i] = fact[i-1]*i;
-        ifact[n] = fact[n].inv();
-        for (int i = n; i >= 1; --i) ifact[i-1] = ifact[i]*i;
-    }
-    mint Comb(int n, int k) {
-        if (k < 0 || k > n) return 0;
-        return fact[n]*ifact[k]*ifact[n-k];
-    }
-    mint H(int n, int m){
-        return Comb(n + m - 1, n);
-    }
-    //nPk
-    mint Perm(int n, int k){
-        if (k < 0 || n < k) return 0;
-        return fact[n]*ifact[n-k];
-    }
-};
-#endif
+int main(){
+    int n, k;
+    cin >> n >> k;
+    cout << ((n <= k) ? 1: 0) << endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/comb.hpp"
-
-
+#line 1 "test/DPL_5_H.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H"
 #line 1 "macro/macros.hpp"
 
 
@@ -203,6 +170,9 @@ struct mint {
     }
 };
 
+#line 1 "math/comb.hpp"
+
+
 #line 5 "math/comb.hpp"
 
 /*
@@ -231,6 +201,17 @@ struct combination {
     }
 };
 
+#line 5 "test/DPL_5_H.test.cpp"
+
+/*
+@title 玉区別する、箱区別しない、1個以内(0 or 1)
+@category 写像12相
+*/
+int main(){
+    int n, k;
+    cin >> n >> k;
+    cout << ((n <= k) ? 1: 0) << endl;
+}
 
 ```
 {% endraw %}
