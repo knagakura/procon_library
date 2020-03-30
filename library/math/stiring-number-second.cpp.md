@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: 第二種スターリング数
+# :heavy_check_mark: 第二種スターリング数
 
 <a href="../../index.html">Back to top page</a>
 
@@ -72,19 +72,13 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 
 ## Depends on
 
-* :question: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :question: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :question: <a href="mint.hpp.html">math/mint.hpp</a>
-
-
-## Required by
-
-* :x: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
+* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
 
 

@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
-* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Code

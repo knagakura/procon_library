@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
-* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 ## Code

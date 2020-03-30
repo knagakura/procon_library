@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="../../library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 
