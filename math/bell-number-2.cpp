@@ -5,7 +5,6 @@
 #include "comb.hpp"
 #include "stiring-number-second.cpp"
 /*
-@ignore
 @title ベル数($O(NK)$)
 @docs ../docs/math/bell-number-2.md
 */
