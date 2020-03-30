@@ -11,13 +11,13 @@ class WarshallFloyd : public Graph<T>{
     using Graph<T>::N;
     using Graph<T>::G;
     T inf;
-    vvec<T> d;
-    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    vector<vector<T>> d;
+    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vector<T>(_N,_inf)){}
     void solve(){
         //initialize the distance matrix
-        d.assign(N, vec<T>(N,inf));
-        for(int i = 0; i < N;i++) d[i][i] = 0;
-        rep(i,N){
+        d.assign(N, vector<T>(N,inf));
+        for(int i = 0; i < N; i++) d[i][i] = 0;
+        for(int i = 0; i < N; i++){
             for(auto e: G[i]){
                 d[i][e.to] = e.cost;
             }

@@ -8,7 +8,7 @@ class BFS : public Graph<T>{
   public:
     using Graph<T>::N;
     using Graph<T>::G;
-    vec<T> d;
+    vector<T> d;
     BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){
     }
     vec<T> bfs(int start = 0){

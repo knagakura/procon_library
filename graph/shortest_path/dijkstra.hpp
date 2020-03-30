@@ -9,10 +9,10 @@ class Dijkstra : public Graph<T>{
     using Graph<T>::G;
     using Graph<T>::N;
     T inf;
-    vec<T> d;
+    vector<T> d;
     Dijkstra(int _N, T _inf): Graph<T>::Graph(_N), inf(_inf), d(_N,_inf){
     }
-    vec<T> solve(int start = 0){
+    vector<T> solve(int start = 0){
         rep(i,N) d[i] = inf;
         priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
         d[start] = 0;
@@ -24,7 +24,7 @@ class Dijkstra : public Graph<T>{
             for (auto u : G[from]) {
                 T w = v + u.cost;
                 if (chmin(d[u.to], w)) {
-                    pq.push({ w,u.to });
+                    pq.push({w, u.to});
                 }
             }
         }
