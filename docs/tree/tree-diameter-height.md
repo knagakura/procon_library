@@ -2,7 +2,7 @@
 $O(V)$
 
 ### 説明
-#### 問題
+#### 木の直径
 [問題へのリンク](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp)
 
 >非負の重みをもつ無向の木 T の直径を求めてください. 木の最遠頂点間の距離を木の直径といいます.
@@ -16,5 +16,6 @@ $O(V)$
 
 ##### step2
 
+#### 木の高さ
 ### 参考
 [ei1333の日記](https://ei1333.hateblo.jp/entry/2017/04/10/224413)
