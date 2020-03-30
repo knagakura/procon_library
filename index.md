@@ -73,7 +73,6 @@ layout: default
 * :heavy_check_mark: <a href="library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
 * :heavy_check_mark: <a href="library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
-* :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
@@ -91,6 +90,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
 * :heavy_check_mark: <a href="library/math/partition-number.cpp.html">分割数(Partition Number)</a>
 * :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
+* :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 
 
 ## Verify Files

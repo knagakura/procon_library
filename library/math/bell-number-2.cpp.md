@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/bell-number-2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:51:46+09:00
+    - Last commit date: 2020-03-30 21:00:16+09:00
 
 
 
@@ -233,6 +233,7 @@ struct combination {
 
 /*
 @title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind)
+@category 写像12相
 @docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
