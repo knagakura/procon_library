@@ -25,44 +25,54 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mint.hpp
+# :heavy_check_mark: 分割数($0(NK))
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mint.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 03:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/partition-number.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 20:40:57+09:00
 
 
 
+
+
+### 計算量
+$O(NK)$
+
+### 解説
+#### 漸化式
+分割数を$P(n, k)$とすると
+
+$P(n, k) = P(n, k-1) + P(n-k, k)$
+
+が成り立つ
+#### 証明
+空のグループの有無で場合わけする。
+- 空のグループが1つ以上ある場合
+
+    その空のグループの一つを無視すると、グループ数が1小さい部分問題に落ちる。P(n, k-1)通り。
+
+
+- 空のグループが一つもない場合
+
+    全てのグループに1つ以上の玉があるので、全てから一律に1ずつ引いて残りの$n-k$個の球を$k$グループに分ける部分問題に帰着する。よって$P(n-k, k)$
+
+以上より
+
+$P(n, k) = P(n, k-1) + P(n-k, k)$
+
+### 実装
+簡単なDPで求めることができる。直接求める方法は知られていない。
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
-* :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="partition-number.cpp.html">分割数($0(NK))</a>
-* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
+* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I_DP.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_J.test.cpp.html">玉区別しない、箱区別しない、制限なし(分割数$P(n,k)$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_L.test.cpp.html">玉区別しない、箱区別しない、1個以上(分割数$P(n-k,k)$)</a>
 
@@ -72,62 +82,38 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef MINT_HPP
-#define MINT_HPP
-
+#ifndef PARTITION_NUMBER_CPP
+#define PARTITION_NUMBER_CPP
 #include "../macro/macros.hpp"
+#include "mint.hpp"
 
-struct mint {
-    long long x;
-    mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
-    mint operator-() const { return mint(-x);}
-    mint& operator+=(const mint a) {
-        if ((x += a.x) >= MOD) x -= MOD;
-        return *this;
+/*
+@title 分割数($0(NK))
+@docs ../docs/math/partition-number.md
+*/
+
+template<typename T = mint>
+struct Partition{
+    int N,K;
+    vector<vector<mint>> Par;
+    Partition(int _N, int _K):N(_N),K(_K),Par(N+1, vector<mint>(K+1, 0)){
+        build();
     }
-    mint& operator-=(const mint a) {
-        if ((x += MOD-a.x) >= MOD) x -= MOD;
-        return *this;
+    void build(){
+        for(int k = 0; k <= K;k++)Par[0][k] = 1;
+        for(int n = 1; n <= N; n++){
+            for(int k = 1; k <= K; k++){
+                if(k-1 >= 0)Par[n][k] += Par[n][k-1];
+                if(n-k >= 0)Par[n][k] += Par[n-k][k];
+            }
+        }
     }
-    mint& operator*=(const mint a) {
-        (x *= a.x) %= MOD;
-        return *this;
-    }
-    mint operator+(const mint a) const {
-        mint res(*this);
-        return res+=a;
-    }
-    mint operator-(const mint a) const {
-        mint res(*this);
-        return res-=a;
-    }
-    mint operator*(const mint a) const {
-        mint res(*this);
-        return res*=a;
-    }
-    mint modpow(long long t) const {
-        if (!t) return 1;
-        mint a = modpow(t>>1);
-        a *= a;
-        if (t&1) a *= *this;
-        return a;
-    }
-    // for prime MOD
-    mint inv() const {
-        return modpow(MOD-2);
-    }
-    mint& operator/=(const mint a) {
-        return (*this) *= a.inv();
-    }
-    mint operator/(const mint a) const {
-        mint res(*this);
-        return res/=a;
-    }
-    friend std::ostream& operator<<(std::ostream& os, const mint& a){
-        os << a.x;
-        return os;
+    mint get(int n, int k){
+        if(n < 0 || k < 0)return 0;
+        return Par[n][k];
     }
 };
+
 #endif
 ```
 {% endraw %}
@@ -135,8 +121,7 @@ struct mint {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/mint.hpp"
-
+#line 1 "math/partition-number.cpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -178,6 +163,10 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "math/mint.hpp"
+
 
 
 #line 5 "math/mint.hpp"
@@ -233,6 +222,36 @@ struct mint {
         return os;
     }
 };
+
+#line 5 "math/partition-number.cpp"
+
+/*
+@title 分割数($0(NK))
+@docs ../docs/math/partition-number.md
+*/
+
+template<typename T = mint>
+struct Partition{
+    int N,K;
+    vector<vector<mint>> Par;
+    Partition(int _N, int _K):N(_N),K(_K),Par(N+1, vector<mint>(K+1, 0)){
+        build();
+    }
+    void build(){
+        for(int k = 0; k <= K;k++)Par[0][k] = 1;
+        for(int n = 1; n <= N; n++){
+            for(int k = 1; k <= K; k++){
+                if(k-1 >= 0)Par[n][k] += Par[n][k-1];
+                if(n-k >= 0)Par[n][k] += Par[n-k][k];
+            }
+        }
+    }
+    mint get(int n, int k){
+        if(n < 0 || k < 0)return 0;
+        return Par[n][k];
+    }
+};
+
 
 
 ```
