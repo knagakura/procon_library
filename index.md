@@ -85,6 +85,13 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 
 
+<div id="9f51e9d7dafe7714c7b48d2b6a166473"></div>
+
+### 写像12相
+
+* :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
+
+
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/example/example.test.cpp.html">example(二分探索)</a>
@@ -101,6 +108,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_H.test.cpp.html">玉区別する、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
+* :heavy_check_mark: <a href="verify/test/DPL_5_I_DP.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>

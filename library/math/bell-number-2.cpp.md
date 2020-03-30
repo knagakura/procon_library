@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/bell-number-2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 17:53:13+09:00
+    - Last commit date: 2020-03-30 18:11:58+09:00
 
 
 
@@ -44,7 +44,7 @@ $O(NK \log N)$
 
 $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
-である。より高速に求める方法は[こちら]()。
+である。より高速に求める方法は[こちら](https://knagakura.github.io/procon_library/library/math/bell-number.cpp.html)。
 
 
 ## Depends on
@@ -236,8 +236,8 @@ mint stirling_number_second(int n, int k){
     combination C(k+1);
     mint res = 0;
     for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
+        mint x = C.Comb(k, i) * mint(i).modpow(n);
+        res += ((k-i) & 1) ? -x:x;
     }
     res *= C.ifact[k];
     return res;

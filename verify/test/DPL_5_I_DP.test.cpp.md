@@ -25,43 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mint.hpp
+# :heavy_check_mark: 玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mint.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 03:47:21+09:00
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_I_DP.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 20:09:27+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
-* :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
-* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_D.test.cpp.html">玉区別しない、箱区別する、制限なし(${}_n H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_E.test.cpp.html">玉区別しない、箱区別する、1個以内(${}_k C _n$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I_DP.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
+* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(DP($O(N^2)))</a>
 
 
 ## Code
@@ -69,73 +50,30 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef MINT_HPP
-#define MINT_HPP
-
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I"
 #include "../macro/macros.hpp"
+#include "../math/mint.hpp"
+#include "../math/comb.hpp"
+#include "../math/stiring-number-second-dp.cpp"
 
-struct mint {
-    long long x;
-    mint(long long _x=0):x((_x%MOD+MOD)%MOD){}
-    mint operator-() const { return mint(-x);}
-    mint& operator+=(const mint a) {
-        if ((x += a.x) >= MOD) x -= MOD;
-        return *this;
-    }
-    mint& operator-=(const mint a) {
-        if ((x += MOD-a.x) >= MOD) x -= MOD;
-        return *this;
-    }
-    mint& operator*=(const mint a) {
-        (x *= a.x) %= MOD;
-        return *this;
-    }
-    mint operator+(const mint a) const {
-        mint res(*this);
-        return res+=a;
-    }
-    mint operator-(const mint a) const {
-        mint res(*this);
-        return res-=a;
-    }
-    mint operator*(const mint a) const {
-        mint res(*this);
-        return res*=a;
-    }
-    mint modpow(long long t) const {
-        if (!t) return 1;
-        mint a = modpow(t>>1);
-        a *= a;
-        if (t&1) a *= *this;
-        return a;
-    }
-    // for prime MOD
-    mint inv() const {
-        return modpow(MOD-2);
-    }
-    mint& operator/=(const mint a) {
-        return (*this) *= a.inv();
-    }
-    mint operator/(const mint a) const {
-        mint res(*this);
-        return res/=a;
-    }
-    friend std::ostream& operator<<(std::ostream& os, const mint& a){
-        os << a.x;
-        return os;
-    }
-};
-#endif
+/*
+@title 玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))
+@category 写像12相
+*/
+int main(){
+    int n, k;
+    cin >> n >> k;
+    Stiring_dp<mint> Sl(n);
+    cout << Sl.get(n, k) <<endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/mint.hpp"
-
-
-
+#line 1 "test/DPL_5_I_DP.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_I"
 #line 1 "macro/macros.hpp"
 
 
@@ -175,6 +113,10 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "math/mint.hpp"
+
 
 
 #line 5 "math/mint.hpp"
@@ -231,6 +173,81 @@ struct mint {
     }
 };
 
+#line 1 "math/comb.hpp"
+
+
+#line 5 "math/comb.hpp"
+
+/*
+@title 組み合わせ(Combination)
+*/
+struct combination {
+    vector<mint> fact, ifact;
+    combination(int n):fact(n+1),ifact(n+1) {
+        assert(n < MOD);
+        fact[0] = 1;
+        for (int i = 1; i <= n; ++i) fact[i] = fact[i-1]*i;
+        ifact[n] = fact[n].inv();
+        for (int i = n; i >= 1; --i) ifact[i-1] = ifact[i]*i;
+    }
+    mint Comb(int n, int k) {
+        if (k < 0 || k > n) return 0;
+        return fact[n]*ifact[k]*ifact[n-k];
+    }
+    mint H(int n, int m){
+        return Comb(n + m - 1, n);
+    }
+    //nPk
+    mint Perm(int n, int k){
+        if (k < 0 || n < k) return 0;
+        return fact[n]*ifact[n-k];
+    }
+};
+
+#line 1 "math/stiring-number-second-dp.cpp"
+
+
+#line 6 "math/stiring-number-second-dp.cpp"
+
+/*
+@title 第二種スターリング数(DP($O(N^2)))
+@category 写像12相
+@docs ../docs/math/stiring-number-second-dp.md
+*/
+template<typename T = mint>
+struct Stiring_dp{
+    int N;
+    vector<vector<mint>> S;
+    Stiring_dp(int _N):N(_N), S(N+1, vector<mint>(N+1, 0)){
+        build();
+    }
+    void build(){
+        S[0][0] = 1;
+        for(int i = 1; i <= N; i++){
+            for(int j = 1; j <= N; j++){
+                S[i][j] = S[i-1][j-1] + mint(j)*S[i-1][j];
+            }
+        }
+    }
+    mint get(int n, int k){
+        if(n < 0 || k < 0 || n < k)return 0;
+        return S[n][k];
+    }
+};
+
+
+#line 6 "test/DPL_5_I_DP.test.cpp"
+
+/*
+@title 玉区別する、箱区別しない、1個以上(第二種スターリング数(DP))
+@category 写像12相
+*/
+int main(){
+    int n, k;
+    cin >> n >> k;
+    Stiring_dp<mint> Sl(n);
+    cout << Sl.get(n, k) <<endl;
+}
 
 ```
 {% endraw %}

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_G_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 17:53:13+09:00
+    - Last commit date: 2020-03-30 18:11:58+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
@@ -218,8 +218,8 @@ mint stirling_number_second(int n, int k){
     combination C(k+1);
     mint res = 0;
     for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
+        mint x = C.Comb(k, i) * mint(i).modpow(n);
+        res += ((k-i) & 1) ? -x:x;
     }
     res *= C.ifact[k];
     return res;

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 06:38:54+09:00
+    - Last commit date: 2020-03-30 18:11:58+09:00
 
 
 
@@ -107,8 +107,8 @@ mint stirling_number_second(int n, int k){
     combination C(k+1);
     mint res = 0;
     for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
+        mint x = C.Comb(k, i) * mint(i).modpow(n);
+        res += ((k-i) & 1) ? -x:x;
     }
     res *= C.ifact[k];
     return res;
@@ -264,8 +264,8 @@ mint stirling_number_second(int n, int k){
     combination C(k+1);
     mint res = 0;
     for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
+        mint x = C.Comb(k, i) * mint(i).modpow(n);
+        res += ((k-i) & 1) ? -x:x;
     }
     res *= C.ifact[k];
     return res;
