@@ -25,67 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 第二種スターリング数
+# :heavy_check_mark: 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 06:38:54+09:00
+* category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_G_2.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 17:49:58+09:00
 
 
-
-
-### 定義
-$S(n, k) $
-
-$:= \frac{1}{k!}\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$
-
-$i$ を $k - i$に変換して
-
-$= \frac{1}{k!}\sum_{i=0}^{k} (-1)^{k-i} {}_{k} C _{i} {i}^n$ 　　$({}_k C _{k-i} = {}_k C _ i)$を用いた
-
-### 計算量
-$O(Klog{N})$
-
-### 説明
-#### 問題
-$n$個の区別できる玉を $k$個の区別できない箱に入れるとき、その入れ方の総数を求めてください。
-
-ただし、玉の入れ方は以下のルールにしたがいます：
-- どの玉も、必ずいずれかの箱に入れる。
-- どの箱にも$1$つ以上の玉を入れる。
-
-#### 方針
-簡単のため、箱の区別もあるものとして問題を考え、最後に$k!$で割ることにする（これで玉も箱も区別ができ、扱いやすくなる）。
-
-$k$個の箱全てに1つ以上のボールが入っているということは、「玉をちょうど$k$グループに分ける」問題と捉えることができる。つまり、「空のグループを1つも作ってはいけない」ということである。
-「1つも作ってはいけない」というのは考えにくいが、よくある余事象の考え方になれば、空のグループが少なくとも$1$個ある場合の数を、全事象から引けばよいということがわかる。
-
-余事象は包除原理を用いればよい。空のグループ数で場合わけして、包除原理を適用すると少なくとも1個空の分け方が求めることができる。
-
-### 参考
-- [写像12相」を総整理！ 〜 数え上げ問題の学びの宝庫 〜](https://qiita.com/drken/items/f2ea4b58b0d21621bd51#4-%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E6%95%B0)
-
-
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
-* :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
+* :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
+* :heavy_check_mark: <a href="../../library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Code
@@ -93,37 +51,30 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef STIRING_NUMBER_SECOND_CPP
-#define STIRING_NUMBER_SECOND_CPP
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
 #include "../macro/macros.hpp"
-#include "mint.hpp"
-#include "comb.hpp"
-
+#include "../math/mint.hpp"
+#include "../math/comb.hpp"
+#include "../math/stiring-number-second.cpp"
+#include "../math/bell-number-2.cpp"
 /*
-@title 第二種スターリング数
-@docs ../docs/math/stiring-number-second.md
+@title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+@category 写像12相
 */
-mint stirling_number_second(int n, int k){
-    combination C(k+1);
-    mint res = 0;
-    for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
-    }
-    res *= C.ifact[k];
-    return res;
+int main(){
+    int n, k;
+    cin >> n >> k;
+    cout << bell_number_2(n, k) << endl;
 }
 
-#endif
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/stiring-number-second.cpp"
-
-
+#line 1 "test/DPL_5_G_2.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G"
 #line 1 "macro/macros.hpp"
 
 
@@ -254,6 +205,9 @@ struct combination {
     }
 };
 
+#line 1 "math/stiring-number-second.cpp"
+
+
 #line 6 "math/stiring-number-second.cpp"
 
 /*
@@ -272,6 +226,33 @@ mint stirling_number_second(int n, int k){
 }
 
 
+#line 1 "math/bell-number-2.cpp"
+
+
+#line 7 "math/bell-number-2.cpp"
+/*
+@title ベル数($O(NK)$)
+@docs ../docs/math/bell-number-2.md
+*/
+mint bell_number_2(int n, int k){
+    mint res = 0;
+    for(int j = 0; j <= k;j++){
+        res += stirling_number_second(n, j);
+    }
+    return res;
+}
+
+
+#line 7 "test/DPL_5_G_2.test.cpp"
+/*
+@title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+@category 写像12相
+*/
+int main(){
+    int n, k;
+    cin >> n >> k;
+    cout << bell_number_2(n, k) << endl;
+}
 
 ```
 {% endraw %}
