@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: macro/macros.hpp
+# :heavy_check_mark: Macro
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#eb320f0c2b6a25b48ca861a120eea902">macro</a>
+* category: <a href="../../index.html#66f6181bcb4cff4cd38fbc804a036db6">template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/macro/macros.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:06:20+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
-* :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
+* :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
 * :heavy_check_mark: <a href="../math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
 * :heavy_check_mark: <a href="../math/comb.hpp.html">組み合わせ(Combination)</a>
@@ -53,7 +53,7 @@ layout: default
 * :heavy_check_mark: <a href="../math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 * :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
-* :heavy_check_mark: <a href="../tree/template.cpp.html">tree/template.cpp</a>
+* :heavy_check_mark: <a href="../tree/template.cpp.html">Tree Class</a>
 
 
 ## Verified with
@@ -92,6 +92,10 @@ layout: default
 #ifndef MACROS_HPP
 #define MACROS_HPP
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -139,6 +143,10 @@ const string dir = "DRUL";
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)

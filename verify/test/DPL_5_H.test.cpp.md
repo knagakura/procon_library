@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_H.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 18:02:33+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -70,6 +70,10 @@ int main(){
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)

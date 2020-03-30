@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#1a79a4d60de6718e8e5b326e338ae533">example</a>
 * <a href="{{ site.github.repository_url }}/blob/master/example/example.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 17:06:20+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -81,6 +81,10 @@ int main() {
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)

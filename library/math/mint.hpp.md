@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mint.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:51:46+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 
 
 ## Required by
@@ -145,6 +145,10 @@ struct mint {
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)

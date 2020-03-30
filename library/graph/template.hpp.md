@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/template.hpp
+# :heavy_check_mark: Graph Class
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f8b0b924ebd7046dbfa85a856e4682c8">graph</a>
+* category: <a href="../../index.html#66f6181bcb4cff4cd38fbc804a036db6">template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/template.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:34:17+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 
 
 ## Required by
@@ -47,7 +47,7 @@ layout: default
 * :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
-* :heavy_check_mark: <a href="../tree/template.cpp.html">tree/template.cpp</a>
+* :heavy_check_mark: <a href="../tree/template.cpp.html">Tree Class</a>
 
 
 ## Verified with
@@ -67,6 +67,10 @@ layout: default
 #define GRAPH_TEMPLATE_HPP
 #include "../macro/macros.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;
@@ -117,6 +121,10 @@ class Graph {
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -156,6 +164,10 @@ const string dir = "DRUL";
 
 #line 4 "graph/template.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;

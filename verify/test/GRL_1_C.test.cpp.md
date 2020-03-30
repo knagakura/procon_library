@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 03:34:38+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja</a>
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
-* :heavy_check_mark: <a href="../../library/graph/template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -88,6 +88,10 @@ int main(){
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -130,6 +134,10 @@ const string dir = "DRUL";
 
 #line 4 "graph/template.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;

@@ -31,16 +31,16 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/lca.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:09:54+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="template.cpp.html">tree/template.cpp</a>
+* :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="template.cpp.html">Tree Class</a>
 
 
 ## Verified with
@@ -123,6 +123,10 @@ class LCA :  public Tree<T>{
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -168,6 +172,10 @@ const string dir = "DRUL";
 
 #line 4 "graph/template.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;
@@ -207,6 +215,10 @@ class Graph {
 
 #line 5 "tree/template.cpp"
 
+/*
+@title Tree Class
+@category template
+*/
 template<class T>
 class Tree {
   public:

@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 19:52:39+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../../macro/macros.hpp.html">Macro</a>
 
 
 ## Verified with
@@ -109,6 +109,10 @@ public:
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)

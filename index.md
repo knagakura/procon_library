@@ -42,13 +42,6 @@ layout: default
 * :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
 
 
-<div id="f8b0b924ebd7046dbfa85a856e4682c8"></div>
-
-### graph
-
-* :heavy_check_mark: <a href="library/graph/template.hpp.html">graph/template.hpp</a>
-
-
 <div id="fff28642b706f0621a80a098b694618d"></div>
 
 ### graph/shortest_path
@@ -57,13 +50,6 @@ layout: default
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
-
-
-<div id="eb320f0c2b6a25b48ca861a120eea902"></div>
-
-### macro
-
-* :heavy_check_mark: <a href="library/macro/macros.hpp.html">macro/macros.hpp</a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
@@ -75,12 +61,20 @@ layout: default
 * :heavy_check_mark: <a href="library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
+<div id="66f6181bcb4cff4cd38fbc804a036db6"></div>
+
+### template
+
+* :heavy_check_mark: <a href="library/graph/template.hpp.html">Graph Class</a>
+* :heavy_check_mark: <a href="library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="library/tree/template.cpp.html">Tree Class</a>
+
+
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
 
 ### tree
 
 * :heavy_check_mark: <a href="library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
-* :heavy_check_mark: <a href="library/tree/template.cpp.html">tree/template.cpp</a>
 
 
 <div id="9f51e9d7dafe7714c7b48d2b6a166473"></div>

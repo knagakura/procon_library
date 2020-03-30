@@ -31,15 +31,15 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 03:34:38+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../template.hpp.html">Graph Class</a>
+* :heavy_check_mark: <a href="../../macro/macros.hpp.html">Macro</a>
 
 
 ## Verified with
@@ -124,6 +124,10 @@ class WarshallFloyd : public Graph<T>{
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
@@ -166,6 +170,10 @@ const string dir = "DRUL";
 
 #line 4 "graph/template.hpp"
 
+/*
+@title Graph Class
+@category template
+*/
 template<typename T = int>
 struct edge{
     int to;

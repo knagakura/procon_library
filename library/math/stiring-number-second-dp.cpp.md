@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second-dp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 20:51:46+09:00
+    - Last commit date: 2020-03-31 04:16:41+09:00
 
 
 
@@ -68,7 +68,7 @@ DPで計算する
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
@@ -129,6 +129,10 @@ struct Stiring_dp{
 
 
 
+/*
+@title Macro
+@category template
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for(int i=0;i<int(N);++i)
