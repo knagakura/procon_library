@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_5_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 05:56:21+09:00
+    - Last commit date: 2020-03-31 06:16:00+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_A</a>
@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/tree/template.cpp.html">Tree Class</a>
-* :heavy_check_mark: <a href="../../library/tree/tree-diameter.cpp.html">木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)</a>
+* :heavy_check_mark: <a href="../../library/tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 
 
 ## Code
@@ -53,13 +53,13 @@ layout: default
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_A"
 #include "../macro/macros.hpp"
 #include "../tree/template.cpp"
-#include "../tree/tree-diameter.cpp"
+#include "../tree/tree-diameter-height.cpp"
 
 
 int main(){
     int N;
     cin >> N;
-    Diameter<long long> G(N);
+    Tree_DH<long long> G(N);
     G.input(N-1, 0, true, false);
     G.build(N/2);
     cout << G.get_diameter() << endl;
@@ -202,23 +202,22 @@ class Tree {
 };
 
 
-#line 1 "tree/tree-diameter.cpp"
+#line 1 "tree/tree-diameter-height.cpp"
 /*
-@title 木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)
+@title 木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)
 @category tree
-@docs ../docs/tree/tree-diameter.md
+@docs ../docs/tree/tree-diameter-height.md
 */
-#line 8 "tree/tree-diameter.cpp"
+#line 8 "tree/tree-diameter-height.cpp"
 
 template<typename T>
-class Diameter :  public Tree<T>{
+class Tree_DH :  public Tree<T>{
   public:
     using Tree<T>::N;
     using Tree<T>::G;
-    vector<T> dp;
-    vector<T> dp2;
+    vector<T> dp, dp2, height;
     T diameter;
-    Diameter(int _N):Tree<T>::Tree(_N), dp(_N,0), dp2(_N){}
+    Tree_DH(int _N):Tree<T>::Tree(_N), dp(_N,0), dp2(_N), height(_N){}
     //Calc distance and start Rerooting
     void build(int start = 0, int pre = -1, bool debug = false){
         dfs1(start, pre);
@@ -226,6 +225,7 @@ class Diameter :  public Tree<T>{
         if(debug){
             print(dp);
             print(dp2);
+            print(height);
         }
         diameter = *max_element(dp2.begin(), dp2.end());
     }
@@ -251,6 +251,7 @@ class Diameter :  public Tree<T>{
         //大きい二つ
         sort(all(childs), greater<pair<T, int>>());
         dp2[cur] = childs[0].first + childs[1].first;
+        height[cur] = childs[0].first;
         for(auto ne: G[cur]){
             if(ne.to == pre)continue;
             //降りる辺が最大値
@@ -263,6 +264,9 @@ class Diameter :  public Tree<T>{
     T get_diameter(){
         return diameter;
     }
+    vector<T> get_height(){
+        return height;
+    }
 };
 #line 5 "test/GRL_5_A.test.cpp"
 
@@ -270,7 +274,7 @@ class Diameter :  public Tree<T>{
 int main(){
     int N;
     cin >> N;
-    Diameter<long long> G(N);
+    Tree_DH<long long> G(N);
     G.input(N-1, 0, true, false);
     G.build(N/2);
     cout << G.get_diameter() << endl;

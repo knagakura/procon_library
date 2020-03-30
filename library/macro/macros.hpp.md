@@ -54,7 +54,7 @@ layout: default
 * :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 * :heavy_check_mark: <a href="../tree/template.cpp.html">Tree Class</a>
-* :heavy_check_mark: <a href="../tree/tree-diameter.cpp.html">木の直径/Diameter of a Tree (全方位木DP/Rerooting ver.)</a>
+* :heavy_check_mark: <a href="../tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 
 
 ## Verified with
@@ -82,6 +82,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_C.test.cpp.html">test/GRL_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_5_A.test.cpp.html">test/GRL_5_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/GRL_5_B.test.cpp.html">test/GRL_5_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/union_find_tree.yosupo.test.cpp.html">test/union_find_tree.yosupo.test.cpp</a>
 

@@ -25,34 +25,24 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Tree Class
+# :heavy_check_mark: test/GRL_5_B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#66f6181bcb4cff4cd38fbc804a036db6">template</a>
-* <a href="{{ site.github.repository_url }}/blob/master/tree/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/GRL_5_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 06:16:00+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
-* :heavy_check_mark: <a href="tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/GRL_5_A.test.cpp.html">test/GRL_5_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/GRL_5_B.test.cpp.html">test/GRL_5_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/GRL_5_C.test.cpp.html">test/GRL_5_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/tree/template.cpp.html">Tree Class</a>
+* :heavy_check_mark: <a href="../../library/tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 
 
 ## Code
@@ -60,54 +50,31 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef TREE_TEMPLATE_CPP
-#define TREE_TEMPLATE_CPP
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B"
 #include "../macro/macros.hpp"
-#include "../graph/template.hpp"
+#include "../tree/template.cpp"
+#include "../tree/tree-diameter-height.cpp"
 
-/*
-@title Tree Class
-@category template
-*/
-template<class T>
-class Tree {
-  public:
+
+int main(){
     int N;
-    vvec<edge<T>> G;
-    Tree(int _N): N(_N),G(_N){
+    cin >> N;
+    Tree_DH<long long> G(N);
+    G.input(N-1, 0, true, false);
+    G.build();
+    auto ans = G.get_height();
+    for(auto x: ans){
+        cout << x << endl;
     }
-    void add_Directed_edge(int from, int to, T cost = 1, int id = -1){
-        G[from].push_back({to, cost, id});
-    }
-    void add_edge(int v1, int v2, T cost = 1, int id = -1){
-        add_Directed_edge(v1, v2, cost, id);
-        add_Directed_edge(v2, v1, cost, id);
-    }
-    //standard input
-    void input(int M, int padding = -1, bool weighted = false, bool directed = false){
-        while(M--){
-            int a, b;
-            cin >> a >> b;
-            a += padding;
-            b += padding;
-            T c = T(1);
-            if(weighted)cin >> c;
-            if(directed)add_Directed_edge(a,b,c);
-            else add_edge(a,b,c);
-        }
-    }
-};
-
-#endif
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "tree/template.cpp"
-
-
+#line 1 "test/GRL_5_B.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B"
 #line 1 "macro/macros.hpp"
 
 
@@ -151,6 +118,9 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "tree/template.cpp"
 
 
 #line 1 "graph/template.hpp"
@@ -235,6 +205,86 @@ class Tree {
 };
 
 
+#line 1 "tree/tree-diameter-height.cpp"
+/*
+@title 木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)
+@category tree
+@docs ../docs/tree/tree-diameter-height.md
+*/
+#line 8 "tree/tree-diameter-height.cpp"
+
+template<typename T>
+class Tree_DH :  public Tree<T>{
+  public:
+    using Tree<T>::N;
+    using Tree<T>::G;
+    vector<T> dp, dp2, height;
+    T diameter;
+    Tree_DH(int _N):Tree<T>::Tree(_N), dp(_N,0), dp2(_N), height(_N){}
+    //Calc distance and start Rerooting
+    void build(int start = 0, int pre = -1, bool debug = false){
+        dfs1(start, pre);
+        dfs2(start, pre);
+        if(debug){
+            print(dp);
+            print(dp2);
+            print(height);
+        }
+        diameter = *max_element(dp2.begin(), dp2.end());
+    }
+    //calculate the distance from start
+    void dfs1(int cur = 0, int pre = -1){
+        dp[cur] = 0;
+        for(edge<T>& ne: G[cur]){
+            if(ne.to == pre)continue;
+            dfs1(ne.to, cur);
+            dp[cur] = max(dp[cur],dp[ne.to] + ne.cost);
+        }
+    }
+    void dfs2(int cur = 0, int pre = -1, T d_par = 0){
+        //rerooting
+        vector<pair<T,int>> childs;
+        childs.push_back({0, -1}); //番兵 次数が1だと壊れるので
+        for(auto ne: G[cur]){
+            if(ne.to == pre)
+                childs.push_back({d_par + ne.cost, ne.to});
+            else 
+                childs.push_back({dp[ne.to] + ne.cost, ne.to});
+        }
+        //大きい二つ
+        sort(all(childs), greater<pair<T, int>>());
+        dp2[cur] = childs[0].first + childs[1].first;
+        height[cur] = childs[0].first;
+        for(auto ne: G[cur]){
+            if(ne.to == pre)continue;
+            //降りる辺が最大値
+            if(childs[0].second == ne.to)
+                dfs2(ne.to, cur, childs[1].first);
+            else 
+                dfs2(ne.to, cur, childs[0].first);
+        }
+    }
+    T get_diameter(){
+        return diameter;
+    }
+    vector<T> get_height(){
+        return height;
+    }
+};
+#line 5 "test/GRL_5_B.test.cpp"
+
+
+int main(){
+    int N;
+    cin >> N;
+    Tree_DH<long long> G(N);
+    G.input(N-1, 0, true, false);
+    G.build();
+    auto ans = G.get_height();
+    for(auto x: ans){
+        cout << x << endl;
+    }
+}
 
 ```
 {% endraw %}
