@@ -6,6 +6,7 @@
 
 /*
 @title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind)
+@category 写像12相
 @docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){
