@@ -2,13 +2,14 @@
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
-#include "../math/bell-number.cpp"
+#include "../math/stiring-number-second.cpp"
+#include "../math/bell-number-2.cpp"
 /*
-@title 玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))
+@title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
 @category 写像12相
 */
 int main(){
     int n, k;
     cin >> n >> k;
-    cout << bell_number(n, k) << endl;
+    cout << bell_number_2(n, k) << endl;
 }
