@@ -6,18 +6,27 @@
 int main() {
     int N;
     cin >> N;
-    vector<vector<int>> g(N);
+    LCA<long long> G(N);
     for(int i = 0; i < N; i++){
         int k;
         cin >> k;
-        for(int j = 0; j < k;j++){
+        while(k--){
             int a;
             cin >> a;
-            g[i].push_back(a);
-            g[a].push_back(i);
+            G.add_edge(i, a);
         }
     }
-    LCA G(N, g);
+    G.dfs();
+    /*
+    for(int i = 0; i < N ;i ++ ){
+        cerr << "from: " << i <<endl;
+        for(auto e: G.G[i]){
+            cerr << e.to << endl;
+        }
+    }
+    for(int i = 0; i < G.bitlen; i++){
+        print(G.anc[i]);
+    }*/
     int Q;
     cin >> Q;
     while(Q--){
