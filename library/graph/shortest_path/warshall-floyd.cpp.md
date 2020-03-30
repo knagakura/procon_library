@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:34:17+09:00
+    - Last commit date: 2020-03-31 03:30:59+09:00
 
 
 
@@ -62,18 +62,17 @@ layout: default
 template<typename T>
 class WarshallFloyd : public Graph<T>{
   public:
-    using Graph<T>::Graph;
-    int N;
-    vvec<T> d;
+    using Graph<T>::N;
+    using Graph<T>::G;
     T inf;
-    WarshallFloyd(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    vvec<T> d;
+    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
         for(int i = 0; i < N;i++) d[i][i] = 0;
-        auto edges = Graph<T>::G;
         rep(i,N){
-            for(auto e: edges[i]){
+            for(auto e: G[i]){
                 d[i][e.to] = e.cost;
             }
         }
@@ -90,10 +89,9 @@ class WarshallFloyd : public Graph<T>{
         return false;
     }
     void debug(){
-        auto edges = Graph<T>::G;
         for(int i = 0; i < N; ++i){
             cerr<<i+1<<": ";
-            for(auto e:edges[i]){
+            for(auto e: G[i]){
                 cerr<<"{"<<e.to+1<<", "<<e.cost<<"}, ";
             }
             cerr<<endl<<endl;
@@ -210,18 +208,17 @@ class Graph {
 template<typename T>
 class WarshallFloyd : public Graph<T>{
   public:
-    using Graph<T>::Graph;
-    int N;
-    vvec<T> d;
+    using Graph<T>::N;
+    using Graph<T>::G;
     T inf;
-    WarshallFloyd(int _N, T _inf):N(_N), Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
+    vvec<T> d;
+    WarshallFloyd(int _N, T _inf):Graph<T>::Graph(_N), inf(_inf), d(_N,vec<T>(_N,_inf)){}
     void solve(){
         //initialize the distance matrix
         d.assign(N, vec<T>(N,inf));
         for(int i = 0; i < N;i++) d[i][i] = 0;
-        auto edges = Graph<T>::G;
         rep(i,N){
-            for(auto e: edges[i]){
+            for(auto e: G[i]){
                 d[i][e.to] = e.cost;
             }
         }
@@ -238,10 +235,9 @@ class WarshallFloyd : public Graph<T>{
         return false;
     }
     void debug(){
-        auto edges = Graph<T>::G;
         for(int i = 0; i < N; ++i){
             cerr<<i+1<<": ";
-            for(auto e:edges[i]){
+            for(auto e: G[i]){
                 cerr<<"{"<<e.to+1<<", "<<e.cost<<"}, ";
             }
             cerr<<endl<<endl;
