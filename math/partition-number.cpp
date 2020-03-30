@@ -4,7 +4,8 @@
 #include "mint.hpp"
 
 /*
-@title 分割数($0(NK))
+@title 分割数(Partition Number)
+@category 写像12相
 @docs ../docs/math/partition-number.md
 */
 

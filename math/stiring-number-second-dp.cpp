@@ -5,7 +5,7 @@
 #include "comb.hpp"
 
 /*
-@title 第二種スターリング数(DP($O(N^2)))
+@title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.
 @category 写像12相
 @docs ../docs/math/stiring-number-second-dp.md
 */

@@ -5,7 +5,7 @@
 #include "comb.hpp"
 
 /*
-@title 第二種スターリング数
+@title 第二種スターリング数(Stirling-Number-Of-The-Second-Kind)
 @docs ../docs/math/stiring-number-second.md
 */
 mint stirling_number_second(int n, int k){

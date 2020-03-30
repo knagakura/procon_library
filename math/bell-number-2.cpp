@@ -5,7 +5,8 @@
 #include "comb.hpp"
 #include "stiring-number-second.cpp"
 /*
-@title ベル数($O(NK\log N)$)
+@title ベル数(Bell Number) slower ver.
+@category 写像12相
 @docs ../docs/math/bell-number-2.md
 */
 mint bell_number_2(int n, int k){

@@ -2,7 +2,9 @@
 #define MINT_HPP
 
 #include "../macro/macros.hpp"
-
+/*
+@title 合同算術(Modular Arithmetic)
+*/
 struct mint {
     long long x;
     mint(long long _x=0):x((_x%MOD+MOD)%MOD){}

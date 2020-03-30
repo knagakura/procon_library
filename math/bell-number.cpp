@@ -5,7 +5,8 @@
 #include "comb.hpp"
 
 /*
-@title ベル数($O(\min(N,K) \log N)$)
+@title ベル数(Bell Number) faster ver.
+@category 写像12相
 @docs ../docs/math/bell-number.md
 */
 
