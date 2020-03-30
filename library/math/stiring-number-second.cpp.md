@@ -79,7 +79,7 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 
 ## Required by
 
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
 
 
 ## Verified with

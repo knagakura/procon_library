@@ -45,7 +45,7 @@ layout: default
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">graph/template.hpp</a>
-* :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
 * :heavy_check_mark: <a href="../math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="../math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../math/mint.hpp.html">math/mint.hpp</a>

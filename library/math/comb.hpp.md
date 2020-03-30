@@ -44,7 +44,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
 * :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
 
@@ -58,9 +58,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_F.test.cpp.html">玉区別しない、箱区別する、1個以上(${}_{n-k} H _k$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_G.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_G_2.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_H.test.cpp.html">玉区別する、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 
 
 ## Code

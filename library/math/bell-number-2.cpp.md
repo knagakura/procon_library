@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: ベル数($O(NK)$)
+# :heavy_check_mark: ベル数($O(NK\log N)$)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/bell-number-2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 17:49:58+09:00
+    - Last commit date: 2020-03-30 17:53:13+09:00
 
 
 
@@ -72,7 +72,7 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 #include "comb.hpp"
 #include "stiring-number-second.cpp"
 /*
-@title ベル数($O(NK)$)
+@title ベル数($O(NK\log N)$)
 @docs ../docs/math/bell-number-2.md
 */
 mint bell_number_2(int n, int k){
@@ -246,7 +246,7 @@ mint stirling_number_second(int n, int k){
 
 #line 7 "math/bell-number-2.cpp"
 /*
-@title ベル数($O(NK)$)
+@title ベル数($O(NK\log N)$)
 @docs ../docs/math/bell-number-2.md
 */
 mint bell_number_2(int n, int k){

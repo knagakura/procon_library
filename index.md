@@ -70,7 +70,7 @@ layout: default
 
 ### math
 
-* :heavy_check_mark: <a href="library/math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="library/math/bell-number-2.cpp.html">ベル数($O(NK\log N)$)</a>
 * :heavy_check_mark: <a href="library/math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
