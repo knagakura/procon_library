@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+# :heavy_check_mark: 玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#9f51e9d7dafe7714c7b48d2b6a166473">写像12相</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DPL_5_G.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 15:50:37+09:00
+    - Last commit date: 2020-03-30 16:42:47+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_G</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">macro/macros.hpp</a>
-* :heavy_check_mark: <a href="../../library/math/bell-number-2.cpp.html">ベル数($O(NK)$)</a>
+* :heavy_check_mark: <a href="../../library/math/bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
 * :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">math/mint.hpp</a>
 * :heavy_check_mark: <a href="../../library/math/stiring-number-second.cpp.html">第二種スターリング数</a>
@@ -55,16 +55,15 @@ layout: default
 #include "../macro/macros.hpp"
 #include "../math/mint.hpp"
 #include "../math/comb.hpp"
-#include "../math/stiring-number-second.cpp"
-#include "../math/bell-number-2.cpp"
+#include "../math/bell-number.cpp"
 /*
-@title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+@title 玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))
 @category 写像12相
 */
 int main(){
     int n, k;
     cin >> n >> k;
-    cout << bell_number_2(n, k) << endl;
+    cout << bell_number(n, k) << endl;
 }
 
 ```
@@ -205,6 +204,9 @@ struct combination {
     }
 };
 
+#line 1 "math/bell-number.cpp"
+
+
 #line 1 "math/stiring-number-second.cpp"
 
 
@@ -226,32 +228,36 @@ mint stirling_number_second(int n, int k){
 }
 
 
-#line 1 "math/bell-number-2.cpp"
-
-
-#line 7 "math/bell-number-2.cpp"
+#line 7 "math/bell-number.cpp"
 /*
-@title ベル数($O(NK)$)
-@docs ../docs/math/bell-number-2.md
+@title ベル数($O(\min(N,K) \log N)$)
+@docs ../docs/math/bell-number.md
 */
-mint bell_number_2(int n, int k){
+template<typename T>
+mint bell_number(T n, T k){
+    combination C(max(n, k)+1);
+    vector<mint> temp(k+1);
+    temp[0] = 1;
+    for(int j = 1; j <= k;j++){
+        temp[j] = temp[j-1] + ((j & 1) ? -C.ifact[j]: C.ifact[j]);
+    }
     mint res = 0;
-    for(int j = 0; j <= k;j++){
-        res += stirling_number_second(n, j);
+    for(int i = 0; i <= k;i++){
+        res += mint(i).modpow(n) * C.ifact[i] * temp[k-i];
     }
     return res;
 }
 
 
-#line 7 "test/DPL_5_G.test.cpp"
+#line 6 "test/DPL_5_G.test.cpp"
 /*
-@title 玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))
+@title 玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))
 @category 写像12相
 */
 int main(){
     int n, k;
     cin >> n >> k;
-    cout << bell_number_2(n, k) << endl;
+    cout << bell_number(n, k) << endl;
 }
 
 ```

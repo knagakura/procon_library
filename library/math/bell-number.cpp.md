@@ -25,49 +25,51 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 第二種スターリング数
+# :heavy_check_mark: ベル数($O(\min(N,K) \log N)$)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/stiring-number-second.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-30 06:38:54+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/bell-number.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-30 16:42:47+09:00
 
 
 
-
-### 定義
-$S(n, k) $
-
-$:= \frac{1}{k!}\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$
-
-$i$ を $k - i$に変換して
-
-$= \frac{1}{k!}\sum_{i=0}^{k} (-1)^{k-i} {}_{k} C _{i} {i}^n$ 　　$({}_k C _{k-i} = {}_k C _ i)$を用いた
 
 ### 計算量
-$O(Klog{N})$
+$O(\min(N,K) \log N)$
 
 ### 説明
-#### 問題
-$n$個の区別できる玉を $k$個の区別できない箱に入れるとき、その入れ方の総数を求めてください。
+[第二種スターリング数](https://knagakura.github.io/procon_library/library/math/stiring-number-second.cpp.html)を$S(n, k)$とすると、ベル数は
 
-ただし、玉の入れ方は以下のルールにしたがいます：
-- どの玉も、必ずいずれかの箱に入れる。
-- どの箱にも$1$つ以上の玉を入れる。
+$B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
-#### 方針
-簡単のため、箱の区別もあるものとして問題を考え、最後に$k!$で割ることにする（これで玉も箱も区別ができ、扱いやすくなる）。
+と表される。第二種スターリング数を「ちょうど$k$個のグループに分ける場合の数」だと考えると、ベル数は「$k$個以下のグループに分ける場合の数」と考えることができるからである。
 
-$k$個の箱全てに1つ以上のボールが入っているということは、「玉をちょうど$k$グループに分ける」問題と捉えることができる。つまり、「空のグループを1つも作ってはいけない」ということである。
-「1つも作ってはいけない」というのは考えにくいが、よくある余事象の考え方になれば、空のグループが少なくとも$1$個ある場合の数を、全事象から引けばよいということがわかる。
+愚直に計算すると$O(NK\log N)$かかる計算量が、以下のような式変形により、第二種スターリング数の直接計算と同等の計算量に落ちる。
 
-余事象は包除原理を用いればよい。空のグループ数で場合わけして、包除原理を適用すると少なくとも1個空の分け方が求めることができる。
+$B(n, k)$
 
-### 参考
-- [写像12相」を総整理！ 〜 数え上げ問題の学びの宝庫 〜](https://qiita.com/drken/items/f2ea4b58b0d21621bd51#4-%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E6%95%B0)
+$= \sum_{j = 0}^{k}S(n, j)$
+
+$=  \sum_{j = 0}^{k} \frac{1}{j!}\sum_{i=0}^{j} (-1)^{j-i} {}_{j} C _{i} {i}^n$
+
+$= \sum_{i = 0}^{k} \frac{1}{j!}\sum_{j=i}^{k} (-1)^{j-i} {}_{j} C _{i} {i}^n$　　　　($\sum$の入れ替え。$i \leq j$が保たれていればよい)
+
+$= \sum_{i = 0}^{k} \sum_{j=i}^{k} \frac{1}{j!}(-1)^{j-i} {}_{j} C _{i} {i}^n$
+
+$= \sum_{i = 0}^{k} \sum_{j=i}^{k} \frac{1}{j!}(-1)^{j-i} \frac{j!}{i!(j-i)!} {i}^n$
+
+$= \sum_{i = 0}^{k} \sum_{j=i}^{k}  \frac{(-1)^{j-i}}{i!(j-i)!} {i}^n$　　 
+
+$ = \sum_{i = 0}^{k} \sum_{j=0}^{k-i} \frac{(-1)^{j}}{i!{j}!} {i}^n$　　　　($j' = j - i$と変数変換し、$j' = j$と置き換える)
 
 
+$ = \sum_{i = 0}^{k}\frac{{i}^n}{i!} \sum_{j=0}^{k-i} \frac{(-1)^{j}}{{j}!}$
+
+
+
+$\sum_{j=0}^{k-i} \frac{(-1)^{j}}{{j}!}$については前処理により$O(K)$で計算可能なので、ベル数$B(n, k)$を$k$個の足し算で計算できる。$i^n$に$O(\log N)$だけかかるので、全体として$O(\min(N,K) \log N)$である。
 
 
 ## Depends on
@@ -75,19 +77,12 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">macro/macros.hpp</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">math/mint.hpp</a>
-
-
-## Required by
-
-* :warning: <a href="bell-number-2.cpp.html">ベル数($O(NK)$)</a>
-* :heavy_check_mark: <a href="bell-number.cpp.html">ベル数($O(\min(N,K) \log N)$)</a>
-* :warning: <a href="../test/DPL_5_G.test_2.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(NKlog N$))</a>
+* :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_G.test.cpp.html">玉区別する、箱区別しない、制限なし(ベル数($O(\min(N,K)log N$))</a>
-* :heavy_check_mark: <a href="../../verify/test/DPL_5_I.test.cpp.html">玉区別する、箱区別しない、1個以上(第二種スターリング数)</a>
 
 
 ## Code
@@ -95,24 +90,28 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef STIRING_NUMBER_SECOND_CPP
-#define STIRING_NUMBER_SECOND_CPP
+#ifndef BELL_NUMBER_CPP
+#define BELL_NUMBER_CPP
 #include "../macro/macros.hpp"
 #include "mint.hpp"
 #include "comb.hpp"
-
+#include "stiring-number-second.cpp"
 /*
-@title 第二種スターリング数
-@docs ../docs/math/stiring-number-second.md
+@title ベル数($O(\min(N,K) \log N)$)
+@docs ../docs/math/bell-number.md
 */
-mint stirling_number_second(int n, int k){
-    combination C(k+1);
+template<typename T>
+mint bell_number(T n, T k){
+    combination C(max(n, k)+1);
+    vector<mint> temp(k+1);
+    temp[0] = 1;
+    for(int j = 1; j <= k;j++){
+        temp[j] = temp[j-1] + ((j & 1) ? -C.ifact[j]: C.ifact[j]);
+    }
     mint res = 0;
     for(int i = 0; i <= k;i++){
-        mint x = C.Comb(k, i) * mint(k-i).modpow(n);
-        res += (i & 1) ? -x:x;
+        res += mint(i).modpow(n) * C.ifact[i] * temp[k-i];
     }
-    res *= C.ifact[k];
     return res;
 }
 
@@ -123,7 +122,7 @@ mint stirling_number_second(int n, int k){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/stiring-number-second.cpp"
+#line 1 "math/bell-number.cpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -256,6 +255,9 @@ struct combination {
     }
 };
 
+#line 1 "math/stiring-number-second.cpp"
+
+
 #line 6 "math/stiring-number-second.cpp"
 
 /*
@@ -270,6 +272,27 @@ mint stirling_number_second(int n, int k){
         res += (i & 1) ? -x:x;
     }
     res *= C.ifact[k];
+    return res;
+}
+
+
+#line 7 "math/bell-number.cpp"
+/*
+@title ベル数($O(\min(N,K) \log N)$)
+@docs ../docs/math/bell-number.md
+*/
+template<typename T>
+mint bell_number(T n, T k){
+    combination C(max(n, k)+1);
+    vector<mint> temp(k+1);
+    temp[0] = 1;
+    for(int j = 1; j <= k;j++){
+        temp[j] = temp[j-1] + ((j & 1) ? -C.ifact[j]: C.ifact[j]);
+    }
+    mint res = 0;
+    for(int i = 0; i <= k;i++){
+        res += mint(i).modpow(n) * C.ifact[i] * temp[k-i];
+    }
     return res;
 }
 
