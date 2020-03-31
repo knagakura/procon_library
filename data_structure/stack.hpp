@@ -3,6 +3,8 @@
 #include "../macro/macros.hpp"
 /*
 @title stack
+@category データ構造
+@ignore
 */
 template< typename T >
 class Stack{
