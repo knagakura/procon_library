@@ -8,6 +8,6 @@ T gcd(T a,T b){
     if(b == 0) return a;
     return gcd(b, a%b);
 }
-template<typename T,typename U>
+template<typename T>
 T lcm(T a,T b){return a/gcd(a,b)*b;}
 #endif
