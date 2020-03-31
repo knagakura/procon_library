@@ -25,31 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: BIT(Binary Indexed Tree)
+# :heavy_check_mark: test/ALDS1_5_D.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structure/bit.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 17:09:13+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_5_D.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 20:25:31+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/ALDS1_5_D.test.cpp.html">test/ALDS1_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
+* :heavy_check_mark: <a href="../../library/data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -57,54 +49,27 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef BIT_CPP
-#define BIT_CPP
-#include "../macro/macros.hpp"
-/*
-@title BIT(Binary Indexed Tree)
-@category データ構造
-*/
-template<typename T>
-class BIT{
-  public:
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D"
+
+#include "../data_structure/inversion-num.cpp"
+
+int main(){
     int N;
-    vector<T> data;
-    BIT(T _N):N(_N){
-        data.assign(N+1, 0);
-    };
-    
-    // a is 1-indexed
-    void add(int a, T w){
-        for(int x = a; x <= N; x += x & -x)data[x] += w;
-    }
-    // 1-indexed sum of prefix [0, a]
-    T sum(int a){
-        T res = 0;
-        for(int x = a; x > 0; x -= x & -x)res += data[x];
-        return res;
-    }
-    // 1-indexed sum of range [l, r]
-    T sum(int l, int r){return sum(r) - sum(l-1);}
-
-    // 0-indexed add
-    void add0(int a, T w){add(a + 1, w);}
-    // 0-indexed sum
-    T sum0(int a){return sum(a + 1);}
-    // 0-indexed sum of range
-    T sum0(int l, int r){return sum0(r) - sum0(l-1);}
-    // show the value
-    void debug(){print(data);}
-};
-
-#endif
-
+    cin >> N;
+    vector<ll> A(N);
+    rep(i,N)cin>>A[i];
+    cout << Inversion_num(A) << endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "data_structure/bit.cpp"
+#line 1 "test/ALDS1_5_D.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D"
+
+#line 1 "data_structure/inversion-num.cpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -152,6 +117,9 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
+#line 1 "data_structure/bit.cpp"
+
+
 #line 4 "data_structure/bit.cpp"
 /*
 @title BIT(Binary Indexed Tree)
@@ -190,6 +158,42 @@ class BIT{
 };
 
 
+#line 5 "data_structure/inversion-num.cpp"
+/*
+@title 転倒数(The Number of Inversion)
+@category データ構造
+@docs ../docs/data_structure/inversion-num.md
+*/
+template<typename T> 
+T Inversion_num(vector<T>& v){
+    int N = v.size();
+    BIT<T> Tree(N);
+    vector<int> B(N);
+    vector<pair<T, int>> ap;
+    for(int i = 0; i < N; i++){
+        ap.push_back(make_pair(v[i],i));
+    }
+    sort(all(ap));
+    for(int i = 0; i < N; i++){
+        B[ap[i].second] =  i;
+    }
+    T res = 0;
+    for(int i = 0; i < N; i++){
+        res += i - Tree.sum0(B[i]);
+        Tree.add0(B[i], 1);
+    }
+    return res;
+}
+
+#line 4 "test/ALDS1_5_D.test.cpp"
+
+int main(){
+    int N;
+    cin >> N;
+    vector<ll> A(N);
+    rep(i,N)cin>>A[i];
+    cout << Inversion_num(A) << endl;
+}
 
 ```
 {% endraw %}

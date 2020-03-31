@@ -25,31 +25,33 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: BIT(Binary Indexed Tree)
+# :heavy_check_mark: 転倒数(The Number of Inversion)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structure/bit.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 17:09:13+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/data_structure/inversion-num.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 20:25:31+09:00
 
 
 
+
+### 計算量
+BITによる高速化で$O(N\log N)$
+
+### 説明
+#### 反転数とは
+数列[tex: A = a_0, a_1, a_2, ... a_N ]があるとき、[tex: i \lt  j] のとき [tex: a_i \gt a_j]となる[tex: (i,  j)]の組みの数。
 
 ## Depends on
 
+* :heavy_check_mark: <a href="bit.cpp.html">BIT(Binary Indexed Tree)</a>
 * :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Required by
-
-* :heavy_check_mark: <a href="inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_5_D.test.cpp.html">test/ALDS1_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 
 
 ## Code
@@ -57,54 +59,43 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef BIT_CPP
-#define BIT_CPP
+#ifndef INVERSION_NUM_CPP
+#define INVERSION_NUM_CPP
 #include "../macro/macros.hpp"
+#include "../data_structure/bit.cpp"
 /*
-@title BIT(Binary Indexed Tree)
+@title 転倒数(The Number of Inversion)
 @category データ構造
+@docs ../docs/data_structure/inversion-num.md
 */
-template<typename T>
-class BIT{
-  public:
-    int N;
-    vector<T> data;
-    BIT(T _N):N(_N){
-        data.assign(N+1, 0);
-    };
-    
-    // a is 1-indexed
-    void add(int a, T w){
-        for(int x = a; x <= N; x += x & -x)data[x] += w;
+template<typename T> 
+T Inversion_num(vector<T>& v){
+    int N = v.size();
+    BIT<T> Tree(N);
+    vector<int> B(N);
+    vector<pair<T, int>> ap;
+    for(int i = 0; i < N; i++){
+        ap.push_back(make_pair(v[i],i));
     }
-    // 1-indexed sum of prefix [0, a]
-    T sum(int a){
-        T res = 0;
-        for(int x = a; x > 0; x -= x & -x)res += data[x];
-        return res;
+    sort(all(ap));
+    for(int i = 0; i < N; i++){
+        B[ap[i].second] =  i;
     }
-    // 1-indexed sum of range [l, r]
-    T sum(int l, int r){return sum(r) - sum(l-1);}
-
-    // 0-indexed add
-    void add0(int a, T w){add(a + 1, w);}
-    // 0-indexed sum
-    T sum0(int a){return sum(a + 1);}
-    // 0-indexed sum of range
-    T sum0(int l, int r){return sum0(r) - sum0(l-1);}
-    // show the value
-    void debug(){print(data);}
-};
-
+    T res = 0;
+    for(int i = 0; i < N; i++){
+        res += i - Tree.sum0(B[i]);
+        Tree.add0(B[i], 1);
+    }
+    return res;
+}
 #endif
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "data_structure/bit.cpp"
+#line 1 "data_structure/inversion-num.cpp"
 
 
 #line 1 "macro/macros.hpp"
@@ -152,6 +143,9 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
+#line 1 "data_structure/bit.cpp"
+
+
 #line 4 "data_structure/bit.cpp"
 /*
 @title BIT(Binary Indexed Tree)
@@ -189,6 +183,33 @@ class BIT{
     void debug(){print(data);}
 };
 
+
+#line 5 "data_structure/inversion-num.cpp"
+/*
+@title 転倒数(The Number of Inversion)
+@category データ構造
+@docs ../docs/data_structure/inversion-num.md
+*/
+template<typename T> 
+T Inversion_num(vector<T>& v){
+    int N = v.size();
+    BIT<T> Tree(N);
+    vector<int> B(N);
+    vector<pair<T, int>> ap;
+    for(int i = 0; i < N; i++){
+        ap.push_back(make_pair(v[i],i));
+    }
+    sort(all(ap));
+    for(int i = 0; i < N; i++){
+        B[ap[i].second] =  i;
+    }
+    T res = 0;
+    for(int i = 0; i < N; i++){
+        res += i - Tree.sum0(B[i]);
+        Tree.add0(B[i], 1);
+    }
+    return res;
+}
 
 
 ```

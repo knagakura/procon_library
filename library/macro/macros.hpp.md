@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
+* :heavy_check_mark: <a href="../data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
@@ -65,6 +66,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_1_C.test.cpp.html">test/ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/ALDS1_5_D.test.cpp.html">test/ALDS1_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_7_A.test.cpp.html">test/ALDS1_7_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_7_B.test.cpp.html">test/ALDS1_7_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
