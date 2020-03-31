@@ -38,8 +38,8 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../data_structure/stack.hpp.html">stack</a>
-* :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
+* :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
@@ -80,6 +80,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_L.test.cpp.html">玉区別しない、箱区別しない、1個以上(分割数$P(n-k,k)$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/GRL_1_C.test.cpp.html">test/GRL_1_C.test.cpp</a>

@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/union_find_tree.yosupo.test.cpp
+# :heavy_check_mark: BIT(Binary Indexed Tree)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/union_find_tree.yosupo.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 17:09:20+09:00
+* category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
+* <a href="{{ site.github.repository_url }}/blob/master/data_structure/bit.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 17:09:13+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 
 
 ## Code
@@ -48,25 +51,46 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#ifndef BIT_CPP
+#define BIT_CPP
 #include "../macro/macros.hpp"
-#include "../data_structure/unionfind.hpp"
-
-using namespace std;
-
-int main() {
-    int n, q; cin >> n >> q;
-    UnionFind uft(n);
-    rep (i, q) {
-        int t, u, v; cin >> t >> u >> v;
-        if (t == 0) {
-            uft.unite(u, v);
-        } else if (t == 1) {
-            cout << uft.same(u, v) << endl;
-        }
+/*
+@title BIT(Binary Indexed Tree)
+@category データ構造
+*/
+template<typename T>
+class BIT{
+  public:
+    int N;
+    vector<T> data;
+    BIT(T _N):N(_N){
+        data.assign(N+1, 0);
+    };
+    
+    // a is 1-indexed
+    void add(int a, T w){
+        for(int x = a; x <= N; x += x & -x)data[x] += w;
     }
-    return 0;
-}
+    // 1-indexed sum of prefix [0, a]
+    T sum(int a){
+        T res = 0;
+        for(int x = a; x > 0; x -= x & -x)res += data[x];
+        return res;
+    }
+    // 1-indexed sum of range [l, r]
+    T sum(int l, int r){return sum(r) - sum(l-1);}
+
+    // 0-indexed add
+    void add0(int a, T w){add(a + 1, w);}
+    // 0-indexed sum
+    T sum0(int a){return sum(a + 1);}
+    // 0-indexed sum of range
+    T sum0(int l, int r){return sum0(r) - sum0(l-1);}
+    // show the value
+    void debug(){print(data);}
+};
+
+#endif
 
 ```
 {% endraw %}
@@ -74,8 +98,9 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/union_find_tree.yosupo.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#line 1 "data_structure/bit.cpp"
+
+
 #line 1 "macro/macros.hpp"
 
 
@@ -121,64 +146,44 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 1 "data_structure/unionfind.hpp"
-
-
-#line 4 "data_structure/unionfind.hpp"
+#line 4 "data_structure/bit.cpp"
 /*
-@title 素集合データ構造(UnionFind Tree)
+@title BIT(Binary Indexed Tree)
 @category データ構造
-@docs ../docs/data_structure/unionfind.md
 */
-struct UnionFind{
-    int n;
-    vector<int> Parent;
-    vector<int> sizes;
-    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){ rep(i,n)Parent[i]=i; }
-    //find the root of x
-    int root(int x){
-        if(x!=Parent[x]){
-        Parent[x] = root(Parent[x]);
-        }
-        return Parent[x];
+template<typename T>
+class BIT{
+  public:
+    int N;
+    vector<T> data;
+    BIT(T _N):N(_N){
+        data.assign(N+1, 0);
+    };
+    
+    // a is 1-indexed
+    void add(int a, T w){
+        for(int x = a; x <= N; x += x & -x)data[x] += w;
     }
-    //merge x and y
-    void unite(int x,int y){
-        x = root(x);
-        y = root(y);
-        if(x == y) return;
-        if(sizes[x] < sizes[y]) swap(x, y);
-        Parent[y] = x;
-        sizes[x] += sizes[y];
+    // 1-indexed sum of prefix [0, a]
+    T sum(int a){
+        T res = 0;
+        for(int x = a; x > 0; x -= x & -x)res += data[x];
+        return res;
     }
-    bool same(int x,int y){ return root(x) == root(y); }
-    int size(int x){ return sizes[root(x)]; }
-    int group_num(){
-        set<int> s;
-        for(int i = 0; i < n; ++i){
-            s.insert(root(i));
-        }
-        return int(s.size());
-    }
+    // 1-indexed sum of range [l, r]
+    T sum(int l, int r){return sum(r) - sum(l-1);}
+
+    // 0-indexed add
+    void add0(int a, T w){add(a + 1, w);}
+    // 0-indexed sum
+    T sum0(int a){return sum(a + 1);}
+    // 0-indexed sum of range
+    T sum0(int l, int r){return sum0(r) - sum0(l-1);}
+    // show the value
+    void debug(){print(data);}
 };
 
-#line 4 "test/union_find_tree.yosupo.test.cpp"
 
-using namespace std;
-
-int main() {
-    int n, q; cin >> n >> q;
-    UnionFind uft(n);
-    rep (i, q) {
-        int t, u, v; cin >> t >> u >> v;
-        if (t == 0) {
-            uft.unite(u, v);
-        } else if (t == 1) {
-            cout << uft.same(u, v) << endl;
-        }
-    }
-    return 0;
-}
 
 ```
 {% endraw %}

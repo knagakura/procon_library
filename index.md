@@ -34,14 +34,6 @@ layout: default
 
 ## Library Files
 
-<div id="c8f6850ec2ec3fb32f203c1f4e3c2fd2"></div>
-
-### data_structure
-
-* :heavy_check_mark: <a href="library/data_structure/stack.hpp.html">stack</a>
-* :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
-
-
 <div id="fff28642b706f0621a80a098b694618d"></div>
 
 ### graph/shortest_path
@@ -79,6 +71,14 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 
 
+<div id="c1c7278649b583761cecd13e0628181d"></div>
+
+### データ構造
+
+* :heavy_check_mark: <a href="library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
+* :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
+
+
 <div id="9f51e9d7dafe7714c7b48d2b6a166473"></div>
 
 ### 写像12相
@@ -112,6 +112,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_L.test.cpp.html">玉区別しない、箱区別しない、1個以上(分割数$P(n-k,k)$)</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_C.test.cpp.html">test/GRL_1_C.test.cpp</a>

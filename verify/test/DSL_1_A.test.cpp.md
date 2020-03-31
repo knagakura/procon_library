@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-03-31 17:09:20+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/unionfind.hpp.html">UnionFind Tree</a>
+* :heavy_check_mark: <a href="../../library/data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
@@ -124,8 +124,8 @@ const string dir = "DRUL";
 
 #line 4 "data_structure/unionfind.hpp"
 /*
-@title UnionFind Tree
-@category data_structure
+@title 素集合データ構造(UnionFind Tree)
+@category データ構造
 @docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{

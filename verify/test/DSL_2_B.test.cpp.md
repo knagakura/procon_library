@@ -25,25 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: stack
+# :heavy_check_mark: test/DSL_2_B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structure/stack.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-03-31 17:09:13+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -51,58 +48,34 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef INCLUDED_STACK_HPP
-#define INCLUDED_STACK_HPP
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+
 #include "../macro/macros.hpp"
-/*
-@title stack
-*/
-template< typename T >
-class Stack{
-  public:
-    int N;
-    int top = 0;
-    T data[20000];
-    Stack(int sz):N(sz), top(0){}
-    void push(int x){
-        if(isFull()){
-            cerr << "これ以上入りません" << endl;
-            return;
+#include "../data_structure/bit.cpp"
+
+int main(){
+    int n, q;
+    cin >> n >> q;
+    BIT<long long> Bit(n);
+    while(q--){
+        int ord, x, y;
+        cin >> ord >> x >> y;
+        if(ord == 0){
+            Bit.add(x, y);
         }
-        data[top] = x;
-        top++;
-    }
-    int pop(){
-        if(isEmpty()){
-            cerr << "中身は空です" << endl;
-            return -1;
+        if(ord == 1){
+            cout << Bit.sum(x, y) << endl;
         }
-        top--;
-        return data[top];
     }
-    bool isFull(){
-        return top >= N;
-    }
-    bool isEmpty(){
-        return top == 0;
-    }
-    void show(){
-        dump(top);
-        for(int i = 0; i < top;i++){
-            cerr << data[i] << " ";
-        }
-        cerr << endl;
-    }
-};
-#endif
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "data_structure/stack.hpp"
-
+#line 1 "test/DSL_2_B.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
 
 #line 1 "macro/macros.hpp"
 
@@ -149,48 +122,64 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 4 "data_structure/stack.hpp"
+#line 1 "data_structure/bit.cpp"
+
+
+#line 4 "data_structure/bit.cpp"
 /*
-@title stack
+@title BIT(Binary Indexed Tree)
+@category データ構造
 */
-template< typename T >
-class Stack{
+template<typename T>
+class BIT{
   public:
     int N;
-    int top = 0;
-    T data[20000];
-    Stack(int sz):N(sz), top(0){}
-    void push(int x){
-        if(isFull()){
-            cerr << "これ以上入りません" << endl;
-            return;
-        }
-        data[top] = x;
-        top++;
+    vector<T> data;
+    BIT(T _N):N(_N){
+        data.assign(N+1, 0);
+    };
+    
+    // a is 1-indexed
+    void add(int a, T w){
+        for(int x = a; x <= N; x += x & -x)data[x] += w;
     }
-    int pop(){
-        if(isEmpty()){
-            cerr << "中身は空です" << endl;
-            return -1;
-        }
-        top--;
-        return data[top];
+    // 1-indexed sum of prefix [0, a]
+    T sum(int a){
+        T res = 0;
+        for(int x = a; x > 0; x -= x & -x)res += data[x];
+        return res;
     }
-    bool isFull(){
-        return top >= N;
-    }
-    bool isEmpty(){
-        return top == 0;
-    }
-    void show(){
-        dump(top);
-        for(int i = 0; i < top;i++){
-            cerr << data[i] << " ";
-        }
-        cerr << endl;
-    }
+    // 1-indexed sum of range [l, r]
+    T sum(int l, int r){return sum(r) - sum(l-1);}
+
+    // 0-indexed add
+    void add0(int a, T w){add(a + 1, w);}
+    // 0-indexed sum
+    T sum0(int a){return sum(a + 1);}
+    // 0-indexed sum of range
+    T sum0(int l, int r){return sum0(r) - sum0(l-1);}
+    // show the value
+    void debug(){print(data);}
 };
 
+
+#line 5 "test/DSL_2_B.test.cpp"
+
+int main(){
+    int n, q;
+    cin >> n >> q;
+    BIT<long long> Bit(n);
+    while(q--){
+        int ord, x, y;
+        cin >> ord >> x >> y;
+        if(ord == 0){
+            Bit.add(x, y);
+        }
+        if(ord == 1){
+            cout << Bit.sum(x, y) << endl;
+        }
+    }
+}
 
 ```
 {% endraw %}

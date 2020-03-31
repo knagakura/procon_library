@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: UnionFind Tree
+# :heavy_check_mark: 素集合データ構造(UnionFind Tree)
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
+* category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/unionfind.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-03-31 17:09:20+09:00
 
 
 
@@ -94,8 +94,8 @@ layout: default
 #define INCLUDED_UNIONFIND_HPP
 #include "../macro/macros.hpp"
 /*
-@title UnionFind Tree
-@category data_structure
+@title 素集合データ構造(UnionFind Tree)
+@category データ構造
 @docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
@@ -186,8 +186,8 @@ const string dir = "DRUL";
 
 #line 4 "data_structure/unionfind.hpp"
 /*
-@title UnionFind Tree
-@category data_structure
+@title 素集合データ構造(UnionFind Tree)
+@category データ構造
 @docs ../docs/data_structure/unionfind.md
 */
 struct UnionFind{
