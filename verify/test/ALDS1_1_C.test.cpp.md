@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/ALDS1_1_B.test.cpp
+# :heavy_check_mark: test/ALDS1_1_C.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_1_B.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_1_C.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-03-31 16:47:02+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_1_C</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
-* :heavy_check_mark: <a href="../../library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
+* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">エラトステネスの篩(Sieve of Eratosthenes)</a>
 
 
 ## Code
@@ -48,15 +48,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B"
-
-#include "../macro/macros.hpp"
-#include "../math/gcd.hpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_1_C"
+#include "../math/sieve_of_eratosthenes.cpp"
 
 int main(){
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b) << endl;
+    vector<bool> is_prime = sieve(100100100);
+    int n;
+    cin >> n;
+    int ans = 0;
+    while(n--){
+        int x;
+        cin >> x;
+        ans += is_prime[x];
+    }
+    cout << ans << endl;
 }
 ```
 {% endraw %}
@@ -64,8 +69,10 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/ALDS1_1_B.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B"
+#line 1 "test/ALDS1_1_C.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/all/ALDS1_1_C"
+#line 1 "math/sieve_of_eratosthenes.cpp"
+
 
 #line 1 "macro/macros.hpp"
 
@@ -112,26 +119,41 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 1 "math/gcd.hpp"
-
+#line 4 "math/sieve_of_eratosthenes.cpp"
 
 /*
-@title 最大公約数(Greatest Common Divisor)
+@title エラトステネスの篩(Sieve of Eratosthenes)
+@category math
+@brief 計算量$O($NloglogN$)$
+
 */
 template<typename T>
-T gcd(T a,T b){
-    if(b == 0) return a;
-    return gcd(b, a%b);
+vector<bool> sieve(T x){
+    vector<bool> is_prime(x + 1, true);
+    if(x >= 0)is_prime[0] = false;
+    if(x >= 1)is_prime[1] = false;
+    for(T i = 2; i * i <= x;i++){
+        if(!is_prime[i])continue;
+        for(T j = i + i; j <= x;j+=i){
+            is_prime[j] = false;
+        }
+    }
+    return is_prime;
 }
-template<typename T>
-T lcm(T a,T b){return a/gcd(a,b)*b;}
 
-#line 5 "test/ALDS1_1_B.test.cpp"
+#line 3 "test/ALDS1_1_C.test.cpp"
 
 int main(){
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b) << endl;
+    vector<bool> is_prime = sieve(100100100);
+    int n;
+    cin >> n;
+    int ans = 0;
+    while(n--){
+        int x;
+        cin >> x;
+        ans += is_prime[x];
+    }
+    cout << ans << endl;
 }
 
 ```

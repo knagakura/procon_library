@@ -50,6 +50,7 @@ layout: default
 * :heavy_check_mark: <a href="../math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
 * :heavy_check_mark: <a href="../math/partition-number.cpp.html">分割数(Partition Number)</a>
+* :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">エラトステネスの篩(Sieve of Eratosthenes)</a>
 * :heavy_check_mark: <a href="../math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 * :heavy_check_mark: <a href="../math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
@@ -62,6 +63,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/example/example.test.cpp.html">example(二分探索)</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_11_C.test.cpp.html">test/ALDS1_11_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_1_B.test.cpp.html">test/ALDS1_1_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/ALDS1_1_C.test.cpp.html">test/ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_3_A.test.cpp.html">test/ALDS1_3_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>

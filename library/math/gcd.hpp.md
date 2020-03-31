@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/gcd.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-29 21:49:01+09:00
+    - Last commit date: 2020-03-31 16:47:02+09:00
 
 
 
@@ -56,7 +56,7 @@ T gcd(T a,T b){
     if(b == 0) return a;
     return gcd(b, a%b);
 }
-template<typename T,typename U>
+template<typename T>
 T lcm(T a,T b){return a/gcd(a,b)*b;}
 #endif
 ```
@@ -76,7 +76,7 @@ T gcd(T a,T b){
     if(b == 0) return a;
     return gcd(b, a%b);
 }
-template<typename T,typename U>
+template<typename T>
 T lcm(T a,T b){return a/gcd(a,b)*b;}
 
 
