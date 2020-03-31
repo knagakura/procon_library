@@ -16,7 +16,7 @@ T Inversion_num(vector<T>& v){
     for(int i = 0; i < N; i++){
         ap.push_back(make_pair(v[i],i));
     }
-    sort(all(ap));
+    sort(ap.begin(), ap.end());
     for(int i = 0; i < N; i++){
         B[ap[i].second] =  i;
     }
