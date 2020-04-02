@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-03 00:14:38+09:00
+    - Last commit date: 2020-04-03 00:19:39+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
@@ -58,10 +58,10 @@ int main(){
     int N, Q;
     cin >> N >> Q;
     long long inf = (1LL << 31) - 1;
-    auto f = [&](int a, int b){
+    auto f = [&](long long a, long long b){
         return min(a, b);
     };
-    auto g = [&](int a, int b){
+    auto g = [&](long long a, long long b){
         return b;
     };
     SegTree<long long> Tree(N,inf,f,g);
@@ -191,10 +191,10 @@ int main(){
     int N, Q;
     cin >> N >> Q;
     long long inf = (1LL << 31) - 1;
-    auto f = [&](int a, int b){
+    auto f = [&](long long a, long long b){
         return min(a, b);
     };
-    auto g = [&](int a, int b){
+    auto g = [&](long long a, long long b){
         return b;
     };
     SegTree<long long> Tree(N,inf,f,g);

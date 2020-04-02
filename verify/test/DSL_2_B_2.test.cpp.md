@@ -25,26 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/segment-tree.cpp
+# :heavy_check_mark: test/DSL_2_B_2.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
-* <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment-tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-03 00:14:38+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_B_2.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-03 00:19:39+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/DSL_2_A.test.cpp.html">test/DSL_2_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/DSL_2_B_2.test.cpp.html">test/DSL_2_B_2.test.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/segment-tree.cpp.html">data_structure/segment-tree.cpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -52,67 +48,44 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef SEGMENT_TREE_CPP
-#define SEGMENT_TREE_CPP
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
+
 #include "../macro/macros.hpp"
+#include "../data_structure/segment-tree.cpp"
 
-template<typename T>
-class SegTree {
-  public:
-    int N;//葉の数
-    vector<T> data;//配列
-    T unit;//単位元
-    function<T(T,T)> op;//区間クエリで使う処理
-    function<T(T,T)> update;//点更新で使う処理
-    T _query(int a, int b, int k, int l, int r) {
-        if(r <= a || b <= l)return unit;
-        if(a <= l && r <= b){
-            return data[k];
+int main(){
+    
+    int N, Q;
+    cin >> N >> Q;
+
+    auto f = [&](long long a, long long b){
+        return a + b;
+    };
+    auto g = [&](long long a, long long b){
+        return a + b;
+    };
+    SegTree<long long> Tree(N,0LL,f,g);
+    while(Q--){
+        long long ord, x, y;
+        cin >> ord >> x >> y;
+        x--;
+        if(ord == 0){
+            Tree.change(x, y);
         }
-        else{
-            T c1 = _query(a, b, 2 * k + 1, l, (l + r) / 2); //左の子
-            T c2 = _query(a, b, 2 * k + 2, (l + r) / 2, r); //左の子
-            return op(c1, c2);
-        }
-    }
-    //コンストラクター
-    //_N: 必要サイズ, _unit: 初期値かつ単位元, _op: クエリ関数, _update: 更新関数
-    SegTree(int _N, T _unit, function<T(T, T)> _op, function<T(T, T)> _update) 
-        :unit(_unit), op(_op), update(_update){
-        N = 1;
-        while(N < _N)N *= 2;
-        data.assign(2 * N - 1, unit);
-    }
-    //i(0-indexed)の値にupdate関数を適用
-    void change(int i, T x){
-        i += N - 1;
-        data[i] = update(data[i], x);
-        while(i > 0){
-            i = (i - 1) / 2;
-            data[i] = op(data[i * 2 + 1], data[i * 2 + 2]);
+        if(ord == 1){
+            y--;
+            cout << Tree.query(x, y+1) << endl;
         }
     }
-    //[a, b)の区間クエリの実行
-    T query(int a, int b){
-        return _query(a, b, 0, 0, N);
-    }
-    //添字でアクセス
-    T operator[](int i) {
-        return data[i + N - 1];
-    }
-};
-
-
-
-#endif
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "data_structure/segment-tree.cpp"
-
+#line 1 "test/DSL_2_B_2.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
 
 #line 1 "macro/macros.hpp"
 
@@ -157,6 +130,9 @@ const double PI = acos(-1.0);
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
+
+
+#line 1 "data_structure/segment-tree.cpp"
 
 
 #line 4 "data_structure/segment-tree.cpp"
@@ -210,6 +186,33 @@ class SegTree {
 
 
 
+#line 5 "test/DSL_2_B_2.test.cpp"
+
+int main(){
+    
+    int N, Q;
+    cin >> N >> Q;
+
+    auto f = [&](long long a, long long b){
+        return a + b;
+    };
+    auto g = [&](long long a, long long b){
+        return a + b;
+    };
+    SegTree<long long> Tree(N,0LL,f,g);
+    while(Q--){
+        long long ord, x, y;
+        cin >> ord >> x >> y;
+        x--;
+        if(ord == 0){
+            Tree.change(x, y);
+        }
+        if(ord == 1){
+            y--;
+            cout << Tree.query(x, y+1) << endl;
+        }
+    }
+}
 
 ```
 {% endraw %}
