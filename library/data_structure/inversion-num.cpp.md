@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/inversion-num.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 20:25:31+09:00
+    - Last commit date: 2020-03-31 20:30:22+09:00
 
 
 
@@ -78,7 +78,7 @@ T Inversion_num(vector<T>& v){
     for(int i = 0; i < N; i++){
         ap.push_back(make_pair(v[i],i));
     }
-    sort(all(ap));
+    sort(ap.begin(), ap.end());
     for(int i = 0; i < N; i++){
         B[ap[i].second] =  i;
     }
@@ -200,7 +200,7 @@ T Inversion_num(vector<T>& v){
     for(int i = 0; i < N; i++){
         ap.push_back(make_pair(v[i],i));
     }
-    sort(all(ap));
+    sort(ap.begin(), ap.end());
     for(int i = 0; i < N; i++){
         B[ap[i].second] =  i;
     }

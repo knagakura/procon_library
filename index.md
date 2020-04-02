@@ -34,6 +34,13 @@ layout: default
 
 ## Library Files
 
+<div id="c8f6850ec2ec3fb32f203c1f4e3c2fd2"></div>
+
+### data_structure
+
+* :heavy_check_mark: <a href="library/data_structure/segment-tree.cpp.html">data_structure/segment-tree.cpp</a>
+
+
 <div id="fff28642b706f0621a80a098b694618d"></div>
 
 ### graph/shortest_path
@@ -116,6 +123,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/DPL_5_K.test.cpp.html">玉区別しない、箱区別しない、1個以内(0 or 1)</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_L.test.cpp.html">玉区別しない、箱区別しない、1個以上(分割数$P(n-k,k)$)</a>
 * :heavy_check_mark: <a href="verify/test/DSL_1_A.test.cpp.html">test/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/DSL_2_A.test.cpp.html">test/DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>

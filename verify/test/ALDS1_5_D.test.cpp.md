@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 20:25:31+09:00
+    - Last commit date: 2020-03-31 20:30:22+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D</a>
@@ -173,7 +173,7 @@ T Inversion_num(vector<T>& v){
     for(int i = 0; i < N; i++){
         ap.push_back(make_pair(v[i],i));
     }
-    sort(all(ap));
+    sort(ap.begin(), ap.end());
     for(int i = 0; i < N; i++){
         B[ap[i].second] =  i;
     }
