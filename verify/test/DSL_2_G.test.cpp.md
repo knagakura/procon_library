@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/DSL_2_B_2.test.cpp
+# :heavy_check_mark: test/DSL_2_G.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_B_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-03 01:52:08+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_G.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-03 02:33:04+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/segment-tree.cpp.html">抽象化セグ木</a>
+* :heavy_check_mark: <a href="../../library/data_structure/lazy-segment-tree-raq.cpp.html">data_structure/lazy-segment-tree-raq.cpp</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
@@ -48,33 +48,31 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
 #include "../macro/macros.hpp"
-#include "../data_structure/segment-tree.cpp"
+#include "../data_structure/lazy-segment-tree-raq.cpp"
+
 
 int main(){
-    
     int N, Q;
     cin >> N >> Q;
-
-    auto f = [&](long long a, long long b){
-        return a + b;
-    };
-    auto g = [&](long long a, long long b){
-        return a + b;
-    };
-    SegTree<long long> Tree(N,0LL,f,g);
+    vector<long long> v(N,0);
+    LazySegTree<long long> Seg(v);
     while(Q--){
-        long long ord, x, y;
-        cin >> ord >> x >> y;
-        x--;
+        int ord;
+        cin >> ord;
         if(ord == 0){
-            Tree.change(x, y);
+            int s, t;
+            long long x;
+            cin >> s >> t >> x;
+            s--;t--;
+            Seg.add(s, t+1, x);
         }
         if(ord == 1){
-            y--;
-            cout << Tree.query(x, y+1) << endl;
+            int s, t;
+            cin >> s >> t;
+            s--;t--;
+            cout << Seg.query(s, t+1) << endl;
         }
     }
 }
@@ -84,9 +82,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/DSL_2_B_2.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B"
-
+#line 1 "test/DSL_2_G.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G"
 #line 1 "macro/macros.hpp"
 
 
@@ -132,50 +129,63 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 1 "data_structure/segment-tree.cpp"
+#line 1 "data_structure/lazy-segment-tree-raq.cpp"
 
 
-#line 4 "data_structure/segment-tree.cpp"
+#line 4 "data_structure/lazy-segment-tree-raq.cpp"
 
 /*
-@title 抽象化セグ木
-@category データ構造
+@遅延評価セグメント木(Lazy Segment Tree) 区間加算
 */
 template<typename T>
-class SegTree {
+class LazySegTree {
   public:
     int N;//葉の数
     vector<T> data;//配列
-    T unit;//単位元
-    function<T(T,T)> op;//区間クエリで使う処理
-    function<T(T,T)> update;//点更新で使う処理
-    T _query(int a, int b, int k, int l, int r) {
-        if(r <= a || b <= l)return unit;
+    vector<T> lazy;//遅延評価
+    void _add(int a, int b, T x, int k, int l, int r){
+        eval(k, l, r);
+        if(b <= l || r <= a)return;
         if(a <= l && r <= b){
-            return data[k];
+            lazy[k] += (r - l) * x;
+            eval(k, l, r);
         }
         else{
-            T c1 = _query(a, b, 2 * k + 1, l, (l + r) / 2); //左の子
-            T c2 = _query(a, b, 2 * k + 2, (l + r) / 2, r); //左の子
-            return op(c1, c2);
+            _add(a, b, x, 2*k+1, l, (l+r)/2);
+            _add(a, b, x, 2*k+2, (l+r)/2, r);
+            data[k] = data[2*k+1] + data[2*k+2];
         }
+    }
+    T _query(int a, int b, int k, int l, int r) {
+        if(r <= a || b <= l) return 0;
+        eval(k, l, r);
+        if(a <= l && r <= b) return data[k];
+        T c1 = _query(a, b, 2*k+1, l, (l+r)/2);
+        T c2 = _query(a, b, 2*k+2, (l+r)/2, r);
+        return c1 + c2;
     }
     //コンストラクター
-    //_N: 必要サイズ, _unit: 初期値かつ単位元, _op: クエリ関数, _update: 更新関数
-    SegTree(int _N, T _unit, function<T(T, T)> _op, function<T(T, T)> _update) 
-        :unit(_unit), op(_op), update(_update){
+    LazySegTree(vector<T> v){
+        int sz = v.size();
         N = 1;
-        while(N < _N)N *= 2;
-        data.assign(2 * N - 1, unit);
+        while(N < sz)N *= 2;
+        data.assign(2 * N - 1, 0);
+        lazy.assign(2 * N - 1, 0);
+        for(int i = 0; i < sz; i++) data[N-1+i] = v[i];
+        for(int i = N - 2; i >= 0; i--) data[i] = data[i*2+1] + data[i*2+2];
     }
-    //i(0-indexed)の値にupdate関数を適用
-    void change(int i, T x){
-        i += N - 1;
-        data[i] = update(data[i], x);
-        while(i > 0){
-            i = (i - 1) / 2;
-            data[i] = op(data[i * 2 + 1], data[i * 2 + 2]);
+    //遅延評価
+    void eval(int k, int l, int r){
+        if(lazy[k] == 0)return;
+        data[k] += lazy[k];
+        if(r - l > 1){
+            lazy[2*k+1] += lazy[k] / 2;
+            lazy[2*k+2] += lazy[k] / 2;
         }
+        lazy[k] = 0;
+    }
+    void add(int a, int b, T x){
+        _add(a, b, x, 0, 0, N);
     }
     //[a, b)の区間クエリの実行
     T query(int a, int b){
@@ -188,32 +198,29 @@ class SegTree {
 };
 
 
+#line 4 "test/DSL_2_G.test.cpp"
 
-
-#line 5 "test/DSL_2_B_2.test.cpp"
 
 int main(){
-    
     int N, Q;
     cin >> N >> Q;
-
-    auto f = [&](long long a, long long b){
-        return a + b;
-    };
-    auto g = [&](long long a, long long b){
-        return a + b;
-    };
-    SegTree<long long> Tree(N,0LL,f,g);
+    vector<long long> v(N,0);
+    LazySegTree<long long> Seg(v);
     while(Q--){
-        long long ord, x, y;
-        cin >> ord >> x >> y;
-        x--;
+        int ord;
+        cin >> ord;
         if(ord == 0){
-            Tree.change(x, y);
+            int s, t;
+            long long x;
+            cin >> s >> t >> x;
+            s--;t--;
+            Seg.add(s, t+1, x);
         }
         if(ord == 1){
-            y--;
-            cout << Tree.query(x, y+1) << endl;
+            int s, t;
+            cin >> s >> t;
+            s--;t--;
+            cout << Seg.query(s, t+1) << endl;
         }
     }
 }

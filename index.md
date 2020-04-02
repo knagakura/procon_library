@@ -38,7 +38,7 @@ layout: default
 
 ### data_structure
 
-* :heavy_check_mark: <a href="library/data_structure/segment-tree.cpp.html">data_structure/segment-tree.cpp</a>
+* :heavy_check_mark: <a href="library/data_structure/lazy-segment-tree-raq.cpp.html">data_structure/lazy-segment-tree-raq.cpp</a>
 
 
 <div id="fff28642b706f0621a80a098b694618d"></div>
@@ -84,6 +84,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
 * :heavy_check_mark: <a href="library/data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
+* :heavy_check_mark: <a href="library/data_structure/segment-tree.cpp.html">抽象化セグ木</a>
 * :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 
 
@@ -126,6 +127,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/DSL_2_A.test.cpp.html">test/DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_2_B.test.cpp.html">test/DSL_2_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DSL_2_B_2.test.cpp.html">test/DSL_2_B_2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/DSL_2_G.test.cpp.html">test/DSL_2_G.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A.test.cpp.html">test/GRL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_A_2.test.cpp.html">test/GRL_1_A_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/GRL_1_C.test.cpp.html">test/GRL_1_C.test.cpp</a>
