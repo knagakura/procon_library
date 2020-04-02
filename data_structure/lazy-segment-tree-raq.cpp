@@ -3,7 +3,8 @@
 #include "../macro/macros.hpp"
 
 /*
-@遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@title 遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@category データ構造
 */
 template<typename T>
 class LazySegTree {
