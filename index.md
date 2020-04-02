@@ -34,13 +34,6 @@ layout: default
 
 ## Library Files
 
-<div id="c8f6850ec2ec3fb32f203c1f4e3c2fd2"></div>
-
-### data_structure
-
-* :heavy_check_mark: <a href="library/data_structure/lazy-segment-tree-raq.cpp.html">data_structure/lazy-segment-tree-raq.cpp</a>
-
-
 <div id="fff28642b706f0621a80a098b694618d"></div>
 
 ### graph/shortest_path
@@ -84,6 +77,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
 * :heavy_check_mark: <a href="library/data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
+* :heavy_check_mark: <a href="library/data_structure/lazy-segment-tree-raq.cpp.html">遅延評価セグメント木(Lazy Segment Tree) 区間加算</a>
 * :heavy_check_mark: <a href="library/data_structure/segment-tree.cpp.html">抽象化セグ木</a>
 * :heavy_check_mark: <a href="library/data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 

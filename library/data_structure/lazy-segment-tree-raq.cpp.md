@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/lazy-segment-tree-raq.cpp
+# :heavy_check_mark: 遅延評価セグメント木(Lazy Segment Tree) 区間加算
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#c8f6850ec2ec3fb32f203c1f4e3c2fd2">data_structure</a>
+* category: <a href="../../index.html#c1c7278649b583761cecd13e0628181d">データ構造</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/lazy-segment-tree-raq.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-03 02:33:04+09:00
+    - Last commit date: 2020-04-03 02:57:30+09:00
 
 
 
@@ -56,7 +56,8 @@ layout: default
 #include "../macro/macros.hpp"
 
 /*
-@遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@title 遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@category データ構造
 */
 template<typename T>
 class LazySegTree {
@@ -176,7 +177,8 @@ const string dir = "DRUL";
 #line 4 "data_structure/lazy-segment-tree-raq.cpp"
 
 /*
-@遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@title 遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@category データ構造
 */
 template<typename T>
 class LazySegTree {

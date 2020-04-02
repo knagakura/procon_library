@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/DSL_2_G.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-03 02:33:04+09:00
+    - Last commit date: 2020-04-03 02:57:30+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_G</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/data_structure/lazy-segment-tree-raq.cpp.html">data_structure/lazy-segment-tree-raq.cpp</a>
+* :heavy_check_mark: <a href="../../library/data_structure/lazy-segment-tree-raq.cpp.html">遅延評価セグメント木(Lazy Segment Tree) 区間加算</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
@@ -135,7 +135,8 @@ const string dir = "DRUL";
 #line 4 "data_structure/lazy-segment-tree-raq.cpp"
 
 /*
-@遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@title 遅延評価セグメント木(Lazy Segment Tree) 区間加算
+@category データ構造
 */
 template<typename T>
 class LazySegTree {

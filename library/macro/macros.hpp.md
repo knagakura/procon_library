@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
 * :heavy_check_mark: <a href="../data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
-* :heavy_check_mark: <a href="../data_structure/lazy-segment-tree-raq.cpp.html">data_structure/lazy-segment-tree-raq.cpp</a>
+* :heavy_check_mark: <a href="../data_structure/lazy-segment-tree-raq.cpp.html">遅延評価セグメント木(Lazy Segment Tree) 区間加算</a>
 * :heavy_check_mark: <a href="../data_structure/segment-tree.cpp.html">抽象化セグ木</a>
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
