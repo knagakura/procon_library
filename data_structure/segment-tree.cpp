@@ -2,6 +2,10 @@
 #define SEGMENT_TREE_CPP
 #include "../macro/macros.hpp"
 
+/*
+@title 抽象化セグ木
+@category データ構造
+*/
 template<typename T>
 class SegTree {
   public:
