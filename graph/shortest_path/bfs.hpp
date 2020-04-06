@@ -2,7 +2,11 @@
 #define BFS_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
-
+/*
+@title 幅優先探索
+@category 最短経路問題
+@docs ../docs/graph/shortest_path/bfs.md
+*/
 template<typename T>
 class BFS : public Graph<T>{
   public:
@@ -19,7 +23,7 @@ class BFS : public Graph<T>{
             int cur = q.front(); q.pop();
             for(auto nv: G[cur]){
                 if(d[nv.to] != -1)continue;
-                d[nv.to] = d[cur] + 1;
+                d[nv.to] = d[cur] + nv.cost;
                 q.push(nv.to);
             }
         }
