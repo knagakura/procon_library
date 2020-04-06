@@ -3,8 +3,8 @@
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
 /*
-@title 幅優先探索
-@category 最短経路問題
+@title 幅優先探索(Breadth-first search)
+@category グラフ/最短経路問題
 @docs ../docs/graph/shortest_path/bfs.md
 */
 template<typename T>

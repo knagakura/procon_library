@@ -2,7 +2,8 @@
 #define DIJKSTRA_CPP
 #include "../../macro/macros.hpp"
 /*
-@title Dijkstra法
+@title Dijkstra法(Simple Class)
+@category グラフ/最短経路問題
 */
 template<class T> class Dijkstra {
 public:

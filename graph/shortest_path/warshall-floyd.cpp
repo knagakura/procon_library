@@ -1,6 +1,9 @@
 #ifndef WARSHALL_FLOYD_CPP
 #define WARSHALL_FLOYD_CPP
 /*
+@title ワーシャルフロイド法
+@category グラフ/最短経路問題
+
 */
 #include "../../macro/macros.hpp"
 #include "../template.hpp"

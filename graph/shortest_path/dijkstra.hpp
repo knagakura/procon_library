@@ -2,7 +2,11 @@
 #define DIJKSTRA_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
+/*
+@title Dikstra法
+@category グラフ/最短経路問題
 
+*/
 template<typename T>
 class Dijkstra : public Graph<T>{
   public:
