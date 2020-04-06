@@ -38,7 +38,6 @@ layout: default
 
 ### graph/shortest_path
 
-* :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
@@ -91,6 +90,13 @@ layout: default
 * :heavy_check_mark: <a href="library/math/partition-number.cpp.html">分割数(Partition Number)</a>
 * :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 * :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
+
+
+<div id="0267ddb49558f7d3be87477febd8f525"></div>
+
+### 最短経路問題
+
+* :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">幅優先探索</a>
 
 
 ## Verify Files

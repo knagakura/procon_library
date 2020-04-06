@@ -43,7 +43,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">graph/shortest_path/bfs.hpp</a>
+* :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">幅優先探索</a>
 * :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
 * :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>

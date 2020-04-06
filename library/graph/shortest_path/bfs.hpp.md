@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/shortest_path/bfs.hpp
+# :heavy_check_mark: 幅優先探索
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
+* category: <a href="../../../index.html#0267ddb49558f7d3be87477febd8f525">最短経路問題</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/bfs.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:13:03+09:00
 
 
 
@@ -56,7 +56,11 @@ layout: default
 #define BFS_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
-
+/*
+@title 幅優先探索
+@category 最短経路問題
+@docs ../docs/graph/shortest_path/bfs.md
+*/
 template<typename T>
 class BFS : public Graph<T>{
   public:
@@ -73,7 +77,7 @@ class BFS : public Graph<T>{
             int cur = q.front(); q.pop();
             for(auto nv: G[cur]){
                 if(d[nv.to] != -1)continue;
-                d[nv.to] = d[cur] + 1;
+                d[nv.to] = d[cur] + nv.cost;
                 q.push(nv.to);
             }
         }
@@ -182,7 +186,11 @@ class Graph {
 };
 
 #line 5 "graph/shortest_path/bfs.hpp"
-
+/*
+@title 幅優先探索
+@category 最短経路問題
+@docs ../docs/graph/shortest_path/bfs.md
+*/
 template<typename T>
 class BFS : public Graph<T>{
   public:
@@ -199,7 +207,7 @@ class BFS : public Graph<T>{
             int cur = q.front(); q.pop();
             for(auto nv: G[cur]){
                 if(d[nv.to] != -1)continue;
-                d[nv.to] = d[cur] + 1;
+                d[nv.to] = d[cur] + nv.cost;
                 q.push(nv.to);
             }
         }
