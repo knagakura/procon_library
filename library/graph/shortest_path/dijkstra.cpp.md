@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Dijkstra法
+# :heavy_check_mark: Dijkstra法(Simple Class)
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
+* category: <a href="../../../index.html#64bd4d1b924015ba12846ca8fcc2a63b">グラフ/最短経路問題</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 
@@ -55,7 +55,8 @@ layout: default
 #define DIJKSTRA_CPP
 #include "../../macro/macros.hpp"
 /*
-@title Dijkstra法
+@title Dijkstra法(Simple Class)
+@category グラフ/最短経路問題
 */
 template<class T> class Dijkstra {
 public:
@@ -152,7 +153,8 @@ const string dir = "DRUL";
 
 #line 4 "graph/shortest_path/dijkstra.cpp"
 /*
-@title Dijkstra法
+@title Dijkstra法(Simple Class)
+@category グラフ/最短経路問題
 */
 template<class T> class Dijkstra {
 public:

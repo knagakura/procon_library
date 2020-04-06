@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=ja</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">ワーシャルフロイド法</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
@@ -179,8 +179,11 @@ class Graph {
 
 
 /*
+@title ワーシャルフロイド法
+@category グラフ/最短経路問題
+
 */
-#line 7 "graph/shortest_path/warshall-floyd.cpp"
+#line 10 "graph/shortest_path/warshall-floyd.cpp"
 
 template<typename T>
 class WarshallFloyd : public Graph<T>{

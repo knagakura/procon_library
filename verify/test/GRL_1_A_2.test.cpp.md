@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.hpp.html">Dikstra法</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
@@ -168,7 +168,11 @@ class Graph {
 
 
 #line 5 "graph/shortest_path/dijkstra.hpp"
+/*
+@title Dikstra法
+@category グラフ/最短経路問題
 
+*/
 template<typename T>
 class Dijkstra : public Graph<T>{
   public:

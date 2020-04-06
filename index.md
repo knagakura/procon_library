@@ -34,15 +34,6 @@ layout: default
 
 ## Library Files
 
-<div id="fff28642b706f0621a80a098b694618d"></div>
-
-### graph/shortest_path
-
-* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
-* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
-
-
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
 
 ### math
@@ -70,6 +61,16 @@ layout: default
 * :heavy_check_mark: <a href="library/tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 
 
+<div id="64bd4d1b924015ba12846ca8fcc2a63b"></div>
+
+### グラフ/最短経路問題
+
+* :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">幅優先探索(Breadth-first search)</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法(Simple Class)</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/dijkstra.hpp.html">Dikstra法</a>
+* :heavy_check_mark: <a href="library/graph/shortest_path/warshall-floyd.cpp.html">ワーシャルフロイド法</a>
+
+
 <div id="c1c7278649b583761cecd13e0628181d"></div>
 
 ### データ構造
@@ -90,13 +91,6 @@ layout: default
 * :heavy_check_mark: <a href="library/math/partition-number.cpp.html">分割数(Partition Number)</a>
 * :heavy_check_mark: <a href="library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>
 * :heavy_check_mark: <a href="library/math/stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>
-
-
-<div id="0267ddb49558f7d3be87477febd8f525"></div>
-
-### 最短経路問題
-
-* :heavy_check_mark: <a href="library/graph/shortest_path/bfs.hpp.html">幅優先探索</a>
 
 
 ## Verify Files

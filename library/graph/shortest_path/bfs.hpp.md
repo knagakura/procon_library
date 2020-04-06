@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: 幅優先探索
+# :heavy_check_mark: 幅優先探索(Breadth-first search)
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#0267ddb49558f7d3be87477febd8f525">最短経路問題</a>
+* category: <a href="../../../index.html#64bd4d1b924015ba12846ca8fcc2a63b">グラフ/最短経路問題</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/bfs.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-06 10:13:03+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 
@@ -57,8 +57,8 @@ layout: default
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
 /*
-@title 幅優先探索
-@category 最短経路問題
+@title 幅優先探索(Breadth-first search)
+@category グラフ/最短経路問題
 @docs ../docs/graph/shortest_path/bfs.md
 */
 template<typename T>
@@ -187,8 +187,8 @@ class Graph {
 
 #line 5 "graph/shortest_path/bfs.hpp"
 /*
-@title 幅優先探索
-@category 最短経路問題
+@title 幅優先探索(Breadth-first search)
+@category グラフ/最短経路問題
 @docs ../docs/graph/shortest_path/bfs.md
 */
 template<typename T>

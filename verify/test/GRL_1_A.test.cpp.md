@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/GRL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/dijkstra.cpp.html">Dijkstra法(Simple Class)</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
@@ -131,7 +131,8 @@ const string dir = "DRUL";
 
 #line 4 "graph/shortest_path/dijkstra.cpp"
 /*
-@title Dijkstra法
+@title Dijkstra法(Simple Class)
+@category グラフ/最短経路問題
 */
 template<class T> class Dijkstra {
 public:

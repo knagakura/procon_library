@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/shortest_path/dijkstra.hpp
+# :heavy_check_mark: Dikstra法
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
+* category: <a href="../../../index.html#64bd4d1b924015ba12846ca8fcc2a63b">グラフ/最短経路問題</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/dijkstra.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 
@@ -56,7 +56,11 @@ layout: default
 #define DIJKSTRA_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
+/*
+@title Dikstra法
+@category グラフ/最短経路問題
 
+*/
 template<typename T>
 class Dijkstra : public Graph<T>{
   public:
@@ -187,7 +191,11 @@ class Graph {
 };
 
 #line 5 "graph/shortest_path/dijkstra.hpp"
+/*
+@title Dikstra法
+@category グラフ/最短経路問題
 
+*/
 template<typename T>
 class Dijkstra : public Graph<T>{
   public:

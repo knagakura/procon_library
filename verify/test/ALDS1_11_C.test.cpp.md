@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_11_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-06 10:13:03+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C&lang=ja">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C&lang=ja</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/graph/shortest_path/bfs.hpp.html">幅優先探索</a>
+* :heavy_check_mark: <a href="../../library/graph/shortest_path/bfs.hpp.html">幅優先探索(Breadth-first search)</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
@@ -178,8 +178,8 @@ class Graph {
 
 #line 5 "graph/shortest_path/bfs.hpp"
 /*
-@title 幅優先探索
-@category 最短経路問題
+@title 幅優先探索(Breadth-first search)
+@category グラフ/最短経路問題
 @docs ../docs/graph/shortest_path/bfs.md
 */
 template<typename T>

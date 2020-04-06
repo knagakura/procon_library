@@ -43,9 +43,9 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">幅優先探索</a>
-* :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
+* :heavy_check_mark: <a href="shortest_path/bfs.hpp.html">幅優先探索(Breadth-first search)</a>
+* :heavy_check_mark: <a href="shortest_path/dijkstra.hpp.html">Dikstra法</a>
+* :heavy_check_mark: <a href="shortest_path/warshall-floyd.cpp.html">ワーシャルフロイド法</a>
 * :heavy_check_mark: <a href="../tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 * :heavy_check_mark: <a href="../tree/template.cpp.html">Tree Class</a>
 * :heavy_check_mark: <a href="../tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>

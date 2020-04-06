@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: graph/shortest_path/warshall-floyd.cpp
+# :heavy_check_mark: ワーシャルフロイド法
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#fff28642b706f0621a80a098b694618d">graph/shortest_path</a>
+* category: <a href="../../../index.html#64bd4d1b924015ba12846ca8fcc2a63b">グラフ/最短経路問題</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/shortest_path/warshall-floyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 04:16:41+09:00
+    - Last commit date: 2020-04-06 10:26:30+09:00
 
 
 
@@ -55,6 +55,9 @@ layout: default
 #ifndef WARSHALL_FLOYD_CPP
 #define WARSHALL_FLOYD_CPP
 /*
+@title ワーシャルフロイド法
+@category グラフ/最短経路問題
+
 */
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
@@ -119,6 +122,9 @@ class WarshallFloyd : public Graph<T>{
 
 
 /*
+@title ワーシャルフロイド法
+@category グラフ/最短経路問題
+
 */
 #line 1 "macro/macros.hpp"
 
@@ -211,7 +217,7 @@ class Graph {
     }
 };
 
-#line 7 "graph/shortest_path/warshall-floyd.cpp"
+#line 10 "graph/shortest_path/warshall-floyd.cpp"
 
 template<typename T>
 class WarshallFloyd : public Graph<T>{

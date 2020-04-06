@@ -43,10 +43,10 @@ layout: default
 * :heavy_check_mark: <a href="../data_structure/lazy-segment-tree-raq.cpp.html">遅延評価セグメント木(Lazy Segment Tree) 区間加算</a>
 * :heavy_check_mark: <a href="../data_structure/segment-tree.cpp.html">抽象化セグ木</a>
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
-* :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">幅優先探索</a>
-* :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法</a>
-* :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">graph/shortest_path/dijkstra.hpp</a>
-* :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">graph/shortest_path/warshall-floyd.cpp</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">幅優先探索(Breadth-first search)</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法(Simple Class)</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">Dikstra法</a>
+* :heavy_check_mark: <a href="../graph/shortest_path/warshall-floyd.cpp.html">ワーシャルフロイド法</a>
 * :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
 * :heavy_check_mark: <a href="../math/bell-number-2.cpp.html">ベル数(Bell Number) slower ver.</a>
 * :heavy_check_mark: <a href="../math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
