@@ -38,7 +38,7 @@ layout: default
 
 ### Geometory
 
-* :x: <a href="library/geometory/template.cpp.html">Geometory/template.cpp</a>
+* :question: <a href="library/geometory/template.cpp.html">Geometory/template.cpp</a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
@@ -110,7 +110,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/ALDS1_5_D.test.cpp.html">test/ALDS1_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/ALDS1_7_A.test.cpp.html">test/ALDS1_7_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/ALDS1_7_B.test.cpp.html">test/ALDS1_7_B.test.cpp</a>
-* :x: <a href="verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
+* :x: <a href="verify/test/CGL_1_B.test.cpp.html">test/CGL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
 * :heavy_check_mark: <a href="verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>

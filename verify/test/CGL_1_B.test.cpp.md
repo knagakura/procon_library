@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/CGL_1_A.test.cpp
+# :x: test/CGL_1_B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/CGL_1_A.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/CGL_1_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-05-09 18:06:04+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B</a>
 
 
 ## Depends on
@@ -48,24 +48,25 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B"
 #include "../macro/macros.hpp"
 #include "../geometory/template.cpp"
+
 #define ERROR "1e-8"
 int main(){
     cout << fixed << setprecision(20);
-    int xp1,yp1,xp2,yp2;
+    int xp1, yp1, xp2, yp2;
     cin >> xp1 >> yp1 >> xp2 >> yp2;
-    Point p1(xp1,yp1);
-    Point p2(xp2,yp2);
+    Point p1(xp1, yp1);
+    Point p2(xp2, yp2);
     Segment l = make_pair(p1, p2);
     int q;
     cin >> q;
-    rep(_,q){
+    rep(_, q){
         int px, py;
         cin >> px >> py;
         Point p(px, py);
-        Point ans = projection(l, p);
+        Point ans = reflection(l, p);
         cout << ans.real() << " " << ans.imag() << endl;
     }
 }
@@ -75,8 +76,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/CGL_1_A.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A"
+#line 1 "test/CGL_1_B.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B"
 #line 1 "macro/macros.hpp"
 
 
@@ -159,22 +160,23 @@ bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){
 }
 
 
-#line 4 "test/CGL_1_A.test.cpp"
+#line 4 "test/CGL_1_B.test.cpp"
+
 #define ERROR "1e-8"
 int main(){
     cout << fixed << setprecision(20);
-    int xp1,yp1,xp2,yp2;
+    int xp1, yp1, xp2, yp2;
     cin >> xp1 >> yp1 >> xp2 >> yp2;
-    Point p1(xp1,yp1);
-    Point p2(xp2,yp2);
+    Point p1(xp1, yp1);
+    Point p2(xp2, yp2);
     Segment l = make_pair(p1, p2);
     int q;
     cin >> q;
-    rep(_,q){
+    rep(_, q){
         int px, py;
         cin >> px >> py;
         Point p(px, py);
-        Point ans = projection(l, p);
+        Point ans = reflection(l, p);
         cout << ans.real() << " " << ans.imag() << endl;
     }
 }

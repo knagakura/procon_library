@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: Geometory/template.cpp
+# :question: Geometory/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -43,7 +43,8 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
+* :x: <a href="../../verify/test/CGL_1_B.test.cpp.html">test/CGL_1_B.test.cpp</a>
 
 
 ## Code
