@@ -74,6 +74,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_7_B.test.cpp.html">test/ALDS1_7_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/CGL_1_B.test.cpp.html">test/CGL_1_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/CGL_1_C.test.cpp.html">test/CGL_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>
