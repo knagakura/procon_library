@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/data_structure/segment-tree.cpp.html">抽象化セグ木</a>
-* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code

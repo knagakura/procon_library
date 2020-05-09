@@ -74,7 +74,7 @@ $\sum_{j=0}^{k-i} \frac{(-1)^{j}}{j!}$については前処理により$O(K)$で
 
 ## Depends on
 
-* :question: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 

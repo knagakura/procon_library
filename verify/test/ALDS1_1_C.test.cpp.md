@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">エラトステネスの篩(Sieve of Eratosthenes)</a>
 
 

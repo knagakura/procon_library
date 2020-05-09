@@ -61,7 +61,7 @@ $O(V)$
 ## Depends on
 
 * :heavy_check_mark: <a href="../graph/template.hpp.html">Graph Class</a>
-* :question: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="template.cpp.html">Tree Class</a>
 
 

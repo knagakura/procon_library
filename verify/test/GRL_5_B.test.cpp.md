@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
-* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/tree/template.cpp.html">Tree Class</a>
 * :heavy_check_mark: <a href="../../library/tree/tree-diameter-height.cpp.html">木の直径と高さ/Diameter and Height of a Tree (全方位木DP/Rerooting ver.)</a>
 

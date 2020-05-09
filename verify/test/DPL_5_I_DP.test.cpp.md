@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
 * :heavy_check_mark: <a href="../../library/math/stiring-number-second-dp.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind) DP ver.</a>

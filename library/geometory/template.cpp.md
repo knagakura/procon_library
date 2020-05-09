@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: Geometory/template.cpp
+# :heavy_check_mark: Geometory/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#952c4b3955adb7d8aa8e139cd4391db8">Geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/geometory/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-09 16:39:18+09:00
+    - Last commit date: 2020-05-09 18:11:52+09:00
 
 
 
 
 ## Depends on
 
-* :question: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
-* :x: <a href="../../verify/test/CGL_1_B.test.cpp.html">test/CGL_1_B.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/CGL_1_B.test.cpp.html">test/CGL_1_B.test.cpp</a>
 
 
 ## Code
@@ -65,7 +65,9 @@ typedef complex<double> Point;
 typedef pair<Point, Point> Segment;
 #define EPS (1e-10)
 #define EQ(a, b) (abs((a) - (b)) < EPS)
-
+Point operator*(const Point &p, const double &d) {
+  return Point(real(p) * d, imag(p) * d);
+}
 // 内積
 double dot(Point a, Point b){
     return (a.real() * b.real() + a.imag() * b.imag());
@@ -82,6 +84,10 @@ double cross(const Point &a, const Point &b){
 Point projection(const Segment &l, const Point &p){
     double t = dot(p - l.first, l.second - l.first) / norm(l.second - l.first);
     return l.first + t * (l.second - l.first);
+}
+
+Point reflection(const Segment &l, const Point &p){
+    return p + (projection(l,p)-p)*2.0;
 }
 
 bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){
@@ -154,7 +160,9 @@ typedef complex<double> Point;
 typedef pair<Point, Point> Segment;
 #define EPS (1e-10)
 #define EQ(a, b) (abs((a) - (b)) < EPS)
-
+Point operator*(const Point &p, const double &d) {
+  return Point(real(p) * d, imag(p) * d);
+}
 // 内積
 double dot(Point a, Point b){
     return (a.real() * b.real() + a.imag() * b.imag());
@@ -171,6 +179,10 @@ double cross(const Point &a, const Point &b){
 Point projection(const Segment &l, const Point &p){
     double t = dot(p - l.first, l.second - l.first) / norm(l.second - l.first);
     return l.first + t * (l.second - l.first);
+}
+
+Point reflection(const Segment &l, const Point &p){
+    return p + (projection(l,p)-p)*2.0;
 }
 
 bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){

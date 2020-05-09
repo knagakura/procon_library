@@ -49,7 +49,7 @@ $B(n, k) := \sum_{j = 0}^{k}S(n, j)$
 
 ## Depends on
 
-* :question: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 * :heavy_check_mark: <a href="stiring-number-second.cpp.html">第二種スターリング数(Stirling-Number-Of-The-Second-Kind)</a>

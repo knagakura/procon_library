@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/CGL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-09 18:06:04+09:00
+    - Last commit date: 2020-05-09 18:11:52+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/geometory/template.cpp.html">Geometory/template.cpp</a>
-* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../../library/geometory/template.cpp.html">Geometory/template.cpp</a>
+* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code
@@ -135,7 +135,9 @@ typedef complex<double> Point;
 typedef pair<Point, Point> Segment;
 #define EPS (1e-10)
 #define EQ(a, b) (abs((a) - (b)) < EPS)
-
+Point operator*(const Point &p, const double &d) {
+  return Point(real(p) * d, imag(p) * d);
+}
 // 内積
 double dot(Point a, Point b){
     return (a.real() * b.real() + a.imag() * b.imag());
@@ -152,6 +154,10 @@ double cross(const Point &a, const Point &b){
 Point projection(const Segment &l, const Point &p){
     double t = dot(p - l.first, l.second - l.first) / norm(l.second - l.first);
     return l.first + t * (l.second - l.first);
+}
+
+Point reflection(const Segment &l, const Point &p){
+    return p + (projection(l,p)-p)*2.0;
 }
 
 bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){

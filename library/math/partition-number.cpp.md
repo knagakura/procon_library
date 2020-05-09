@@ -67,7 +67,7 @@ $P(n, k) = P(n, k-1) + P(n-k, k)$
 
 ## Depends on
 
-* :question: <a href="../macro/macros.hpp.html">Macro</a>
+* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
