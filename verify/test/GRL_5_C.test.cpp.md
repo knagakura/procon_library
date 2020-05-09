@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/tree/lca.cpp.html">最小共通祖先/LCA(Lowest Common Acestor)</a>
 * :heavy_check_mark: <a href="../../library/tree/template.cpp.html">Tree Class</a>
 

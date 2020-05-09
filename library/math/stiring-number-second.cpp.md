@@ -72,7 +72,7 @@ $k$個の箱全てに1つ以上のボールが入っているということは�
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
+* :question: <a href="../macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="mint.hpp.html">合同算術(Modular Arithmetic)</a>
 

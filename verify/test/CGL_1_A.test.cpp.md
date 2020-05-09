@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/ALDS1_1_B.test.cpp
+# :x: test/CGL_1_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/ALDS1_1_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-03-31 16:47:02+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/CGL_1_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-09 16:39:18+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A</a>
 
 
 ## Depends on
 
+* :x: <a href="../../library/geometory/template.cpp.html">Geometory/template.cpp</a>
 * :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
-* :heavy_check_mark: <a href="../../library/math/gcd.hpp.html">最大公約数(Greatest Common Divisor)</a>
 
 
 ## Code
@@ -48,15 +48,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B"
-
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A"
 #include "../macro/macros.hpp"
-#include "../math/gcd.hpp"
+#include "../geometory/template.cpp"
 
 int main(){
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b) << endl;
+    cout << fixed << setprecision(20);
+    int xp1,yp1,xp2,yp2;
+    cin >> xp1 >> yp1 >> xp2 >> yp2;
+    Point p1(xp1,yp1);
+    Point p2(xp2,yp2);
+    Segment l = make_pair(p1, p2);
+    int q;
+    cin >> q;
+    rep(_,q){
+        int px, py;
+        cin >> px >> py;
+        Point p(px, py);
+        Point ans = projection(l, p);
+        cout << ans.real() << " " << ans.imag() << endl;
+    }
 }
 ```
 {% endraw %}
@@ -64,9 +75,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/ALDS1_1_B.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B"
-
+#line 1 "test/CGL_1_A.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A"
 #line 1 "macro/macros.hpp"
 
 
@@ -112,26 +122,61 @@ const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
 
 
-#line 1 "math/gcd.hpp"
+#line 1 "geometory/template.cpp"
 
+
+#line 5 "geometory/template.cpp"
+/*
+@title Geometory/template.cpp
+@category Geometory
+*/
+
+typedef complex<double> Point;
+typedef pair<Point, Point> Segment;
+#define EPS (1e-10)
+#define EQ(a, b) (abs((a) - (b)) < EPS)
+
+// 内積
+double dot(Point a, Point b){
+    return (a.real() * b.real() + a.imag() * b.imag());
+}
+//外積
+double cross(const Point &a, const Point &b){
+    return (a.real() * b.imag() - a.imag() * b.real());
+}
 
 /*
-@title 最大公約数(Greatest Common Divisor)
+"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A"
+直線 l に p から引いた交点を求める
 */
-template<typename T>
-T gcd(T a,T b){
-    if(b == 0) return a;
-    return gcd(b, a%b);
+Point projection(const Segment &l, const Point &p){
+    double t = dot(p - l.first, l.second - l.first) / norm(l.second - l.first);
+    return l.first + t * (l.second - l.first);
 }
-template<typename T>
-T lcm(T a,T b){return a/gcd(a,b)*b;}
 
-#line 5 "test/ALDS1_1_B.test.cpp"
+bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){
+    return (cross(a2-a1, b1-a1)*cross(a2-a1, b2-b1) < EPS) && (cross(b2-b1, a1-b1)*cross(b2-b1, a2-b1) < EPS);
+}
+
+
+#line 4 "test/CGL_1_A.test.cpp"
 
 int main(){
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b) << endl;
+    cout << fixed << setprecision(20);
+    int xp1,yp1,xp2,yp2;
+    cin >> xp1 >> yp1 >> xp2 >> yp2;
+    Point p1(xp1,yp1);
+    Point p2(xp2,yp2);
+    Segment l = make_pair(p1, p2);
+    int q;
+    cin >> q;
+    rep(_,q){
+        int px, py;
+        cin >> px >> py;
+        Point p(px, py);
+        Point ans = projection(l, p);
+        cout << ans.real() << " " << ans.imag() << endl;
+    }
 }
 
 ```

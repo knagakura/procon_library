@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../library/data_structure/bit.cpp.html">BIT(Binary Indexed Tree)</a>
 * :heavy_check_mark: <a href="../../library/data_structure/inversion-num.cpp.html">転倒数(The Number of Inversion)</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code

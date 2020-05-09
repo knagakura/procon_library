@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Macro
+# :question: Macro
 
 <a href="../../index.html">Back to top page</a>
 
@@ -43,6 +43,7 @@ layout: default
 * :heavy_check_mark: <a href="../data_structure/lazy-segment-tree-raq.cpp.html">遅延評価セグメント木(Lazy Segment Tree) 区間加算</a>
 * :heavy_check_mark: <a href="../data_structure/segment-tree.cpp.html">抽象化セグ木</a>
 * :heavy_check_mark: <a href="../data_structure/unionfind.hpp.html">素集合データ構造(UnionFind Tree)</a>
+* :x: <a href="../geometory/template.cpp.html">Geometory/template.cpp</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/bfs.hpp.html">幅優先探索(Breadth-first search)</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.cpp.html">Dijkstra法(Simple Class)</a>
 * :heavy_check_mark: <a href="../graph/shortest_path/dijkstra.hpp.html">Dikstra法</a>
@@ -71,6 +72,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_5_D.test.cpp.html">test/ALDS1_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_7_A.test.cpp.html">test/ALDS1_7_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/ALDS1_7_B.test.cpp.html">test/ALDS1_7_B.test.cpp</a>
+* :x: <a href="../../verify/test/CGL_1_A.test.cpp.html">test/CGL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_A.test.cpp.html">玉区別する、箱区別する、制限なし($k^{n}$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_B.test.cpp.html">玉区別する、箱区別する、1個以内(${}_k P _n$)</a>
 * :heavy_check_mark: <a href="../../verify/test/DPL_5_C.test.cpp.html">玉区別する、箱区別する、1個以上($\sum_{i=0}^{k} (-1)^{i} {}_{k} C _{i} (k-i)^n$)</a>

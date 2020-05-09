@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../library/graph/shortest_path/warshall-floyd.cpp.html">ワーシャルフロイド法</a>
 * :heavy_check_mark: <a href="../../library/graph/template.hpp.html">Graph Class</a>
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
 
 
 ## Code

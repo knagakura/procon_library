@@ -47,7 +47,7 @@ BITによる高速化で$O(N\log N)$
 ## Depends on
 
 * :heavy_check_mark: <a href="bit.cpp.html">BIT(Binary Indexed Tree)</a>
-* :heavy_check_mark: <a href="../macro/macros.hpp.html">Macro</a>
+* :question: <a href="../macro/macros.hpp.html">Macro</a>
 
 
 ## Verified with

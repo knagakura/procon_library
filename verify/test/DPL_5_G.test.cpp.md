@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/math/bell-number.cpp.html">ベル数(Bell Number) faster ver.</a>
 * :heavy_check_mark: <a href="../../library/math/comb.hpp.html">組み合わせ(Combination)</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>

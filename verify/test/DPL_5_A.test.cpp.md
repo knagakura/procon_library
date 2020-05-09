@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/macro/macros.hpp.html">Macro</a>
+* :question: <a href="../../library/macro/macros.hpp.html">Macro</a>
 * :heavy_check_mark: <a href="../../library/math/mint.hpp.html">合同算術(Modular Arithmetic)</a>
 
 
