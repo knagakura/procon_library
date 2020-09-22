@@ -143,6 +143,12 @@ data:
       path: test/CGL_1_C.test.cpp
       title: test/CGL_1_C.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/CGL_2_A.test.cpp
+      title: test/CGL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/CGL_2_B.test.cpp
+      title: test/CGL_2_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/DPL_5_A.test.cpp
       title: "\u7389\u533A\u5225\u3059\u308B\u3001\u7BB1\u533A\u5225\u3059\u308B\u3001\
         \u5236\u9650\u306A\u3057($k^{n}$)"

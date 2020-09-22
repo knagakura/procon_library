@@ -10,6 +10,12 @@ data:
     path: test/CGL_1_A.test.cpp
     title: test/CGL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/CGL_2_A.test.cpp
+    title: test/CGL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/CGL_2_B.test.cpp
+    title: test/CGL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/CGL_1_B.test.cpp
     title: test/CGL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -23,6 +29,8 @@ data:
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/1/CGL_1_C
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_1_A
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
   bundledCode: "#line 1 \"geometory/template.cpp\"\n\n\n#line 1 \"macro/macros.hpp\"\
     \n\n\n\n/*\n@title Macro\n@category template\n*/\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n#define rep1(i,N)\
@@ -60,9 +68,16 @@ data:
     \ - a;\n    Point y = c - a;\n    if(cross(x,y) > EPS)return 1;   //\u6642\u8A08\
     \u56DE\u308A\n    if(cross(x,y) < -EPS)return -1; //\u53CD\u6642\u8A08\u56DE\u308A\
     \n    if(dot(x,y) < -EPS)return +2;   //\u5F8C\u308D\n    if(norm(x) < norm(y))return\
-    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\nbool is_intersected_ls(Point\
-    \ a1, Point a2, Point b1, Point b2){\n    return (cross(a2-a1, b1-a1)*cross(a2-a1,\
-    \ b2-b1) < EPS) && (cross(b2-b1, a1-b1)*cross(b2-b1, a2-b1) < EPS);\n}\n\n\n"
+    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u5DEE\u5224\u5B9A\n*/\nbool isinterSS(const\
+    \ Segment &a, const Segment &b){\n    double ok[2];\n    ok[0] = ccw(a.first,\
+    \ a.second, b.first)*ccw(a.first, a.second, b.second);\n    ok[1] = ccw(b.first,\
+    \ b.second, a.first)*ccw(b.first, b.second, a.second);\n    return ok[0] <= 0\
+    \ && ok[1] <= 0;\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u70B9\n*/\nPoint cross_point(const\
+    \ Segment &a, const Segment &b){\n    double d1 = abs(cross(b.second-b.first,\
+    \ a.first-b.first));\n    double d2 = abs(cross(b.second-b.first, a.second-b.first));\n\
+    \    return a.first + (d1/(d1+d2)) * (a.second-a.first);\n}\n\n\n"
   code: "#ifndef GEOMETORY_TEMPLATE_CPP\n#define GEOMETORY_TEMPLATE_CPP\n#include\
     \ \"../macro/macros.hpp\"\n#include <complex>\n/*\n@title Geometory/template.cpp\n\
     @category Geometory\n*/\n\ntypedef complex<double> Point;\ntypedef pair<Point,\
@@ -83,19 +98,27 @@ data:
     \ - a;\n    Point y = c - a;\n    if(cross(x,y) > EPS)return 1;   //\u6642\u8A08\
     \u56DE\u308A\n    if(cross(x,y) < -EPS)return -1; //\u53CD\u6642\u8A08\u56DE\u308A\
     \n    if(dot(x,y) < -EPS)return +2;   //\u5F8C\u308D\n    if(norm(x) < norm(y))return\
-    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\nbool is_intersected_ls(Point\
-    \ a1, Point a2, Point b1, Point b2){\n    return (cross(a2-a1, b1-a1)*cross(a2-a1,\
-    \ b2-b1) < EPS) && (cross(b2-b1, a1-b1)*cross(b2-b1, a2-b1) < EPS);\n}\n#endif\n\
-    \n"
+    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u5DEE\u5224\u5B9A\n*/\nbool isinterSS(const\
+    \ Segment &a, const Segment &b){\n    double ok[2];\n    ok[0] = ccw(a.first,\
+    \ a.second, b.first)*ccw(a.first, a.second, b.second);\n    ok[1] = ccw(b.first,\
+    \ b.second, a.first)*ccw(b.first, b.second, a.second);\n    return ok[0] <= 0\
+    \ && ok[1] <= 0;\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u70B9\n*/\nPoint cross_point(const\
+    \ Segment &a, const Segment &b){\n    double d1 = abs(cross(b.second-b.first,\
+    \ a.first-b.first));\n    double d2 = abs(cross(b.second-b.first, a.second-b.first));\n\
+    \    return a.first + (d1/(d1+d2)) * (a.second-a.first);\n}\n#endif\n\n"
   dependsOn:
   - macro/macros.hpp
   isVerificationFile: false
   path: geometory/template.cpp
   requiredBy: []
-  timestamp: '2020-05-09 18:58:19+09:00'
+  timestamp: '2020-09-22 16:04:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/CGL_1_A.test.cpp
+  - test/CGL_2_A.test.cpp
+  - test/CGL_2_B.test.cpp
   - test/CGL_1_B.test.cpp
   - test/CGL_1_C.test.cpp
 documentation_of: geometory/template.cpp

@@ -16,11 +16,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    ERROR: 1e-8
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B
-  bundledCode: "#line 1 \"test/CGL_1_B.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B\"\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
+  bundledCode: "#line 1 \"test/CGL_2_A.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
     \n#line 1 \"macro/macros.hpp\"\n\n\n\n/*\n@title Macro\n@category template\n*/\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n\
     #define rep1(i,N) for(int i=1;i<int(N);++i)\n#define all(a) (a).begin(),(a).end()\n\
@@ -66,35 +65,33 @@ data:
     \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u70B9\n*/\nPoint cross_point(const\
     \ Segment &a, const Segment &b){\n    double d1 = abs(cross(b.second-b.first,\
     \ a.first-b.first));\n    double d2 = abs(cross(b.second-b.first, a.second-b.first));\n\
-    \    return a.first + (d1/(d1+d2)) * (a.second-a.first);\n}\n\n\n#line 4 \"test/CGL_1_B.test.cpp\"\
-    \n\n#define ERROR \"1e-8\"\nint main(){\n    cout << fixed << setprecision(20);\n\
-    \    int xp1, yp1, xp2, yp2;\n    cin >> xp1 >> yp1 >> xp2 >> yp2;\n    Point\
-    \ p1(xp1, yp1);\n    Point p2(xp2, yp2);\n    Segment l = make_pair(p1, p2);\n\
-    \    int q;\n    cin >> q;\n    rep(_, q){\n        int px, py;\n        cin >>\
-    \ px >> py;\n        Point p(px, py);\n        Point ans = reflection(l, p);\n\
-    \        cout << ans.real() << \" \" << ans.imag() << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_B\"\
+    \    return a.first + (d1/(d1+d2)) * (a.second-a.first);\n}\n\n\n#line 4 \"test/CGL_2_A.test.cpp\"\
+    \n\nint main(){\n    int q;\n    cin >> q;\n    while(q--){\n        int x[4],y[4];\n\
+    \        rep(i,4)cin >> x[i] >> y[i];\n        Point p1(x[1]-x[0], y[1]-y[0]);\n\
+    \        Point p2(x[3]-x[2], y[3]-y[2]);\n        if(dot(p1,p2)==0)cout<<1<<endl;\n\
+    \        else if(cross(p1,p2)==0)cout<<2<<endl;\n        else cout << 0 << endl;\n\
+    \    }\n}\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
     \n#include \"../macro/macros.hpp\"\n#include \"../geometory/template.cpp\"\n\n\
-    #define ERROR \"1e-8\"\nint main(){\n    cout << fixed << setprecision(20);\n\
-    \    int xp1, yp1, xp2, yp2;\n    cin >> xp1 >> yp1 >> xp2 >> yp2;\n    Point\
-    \ p1(xp1, yp1);\n    Point p2(xp2, yp2);\n    Segment l = make_pair(p1, p2);\n\
-    \    int q;\n    cin >> q;\n    rep(_, q){\n        int px, py;\n        cin >>\
-    \ px >> py;\n        Point p(px, py);\n        Point ans = reflection(l, p);\n\
-    \        cout << ans.real() << \" \" << ans.imag() << endl;\n    }\n}"
+    int main(){\n    int q;\n    cin >> q;\n    while(q--){\n        int x[4],y[4];\n\
+    \        rep(i,4)cin >> x[i] >> y[i];\n        Point p1(x[1]-x[0], y[1]-y[0]);\n\
+    \        Point p2(x[3]-x[2], y[3]-y[2]);\n        if(dot(p1,p2)==0)cout<<1<<endl;\n\
+    \        else if(cross(p1,p2)==0)cout<<2<<endl;\n        else cout << 0 << endl;\n\
+    \    }\n}"
   dependsOn:
   - macro/macros.hpp
   - geometory/template.cpp
   - macro/macros.hpp
   isVerificationFile: true
-  path: test/CGL_1_B.test.cpp
+  path: test/CGL_2_A.test.cpp
   requiredBy: []
   timestamp: '2020-09-22 16:04:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/CGL_1_B.test.cpp
+documentation_of: test/CGL_2_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/CGL_1_B.test.cpp
-- /verify/test/CGL_1_B.test.cpp.html
-title: test/CGL_1_B.test.cpp
+- /verify/test/CGL_2_A.test.cpp
+- /verify/test/CGL_2_A.test.cpp.html
+title: test/CGL_2_A.test.cpp
 ---

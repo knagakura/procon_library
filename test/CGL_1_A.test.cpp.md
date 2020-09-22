@@ -57,16 +57,22 @@ data:
     \ - a;\n    Point y = c - a;\n    if(cross(x,y) > EPS)return 1;   //\u6642\u8A08\
     \u56DE\u308A\n    if(cross(x,y) < -EPS)return -1; //\u53CD\u6642\u8A08\u56DE\u308A\
     \n    if(dot(x,y) < -EPS)return +2;   //\u5F8C\u308D\n    if(norm(x) < norm(y))return\
-    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\nbool is_intersected_ls(Point\
-    \ a1, Point a2, Point b1, Point b2){\n    return (cross(a2-a1, b1-a1)*cross(a2-a1,\
-    \ b2-b1) < EPS) && (cross(b2-b1, a1-b1)*cross(b2-b1, a2-b1) < EPS);\n}\n\n\n#line\
-    \ 4 \"test/CGL_1_A.test.cpp\"\n#define ERROR \"1e-8\"\nint main(){\n    cout <<\
-    \ fixed << setprecision(20);\n    int xp1,yp1,xp2,yp2;\n    cin >> xp1 >> yp1\
-    \ >> xp2 >> yp2;\n    Point p1(xp1,yp1);\n    Point p2(xp2,yp2);\n    Segment\
-    \ l = make_pair(p1, p2);\n    int q;\n    cin >> q;\n    rep(_,q){\n        int\
-    \ px, py;\n        cin >> px >> py;\n        Point p(px, py);\n        Point ans\
-    \ = projection(l, p);\n        cout << ans.real() << \" \" << ans.imag() << endl;\n\
-    \    }\n}\n"
+    \ -2; //\u524D\n    return 0;                       //\u4E2D\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u5DEE\u5224\u5B9A\n*/\nbool isinterSS(const\
+    \ Segment &a, const Segment &b){\n    double ok[2];\n    ok[0] = ccw(a.first,\
+    \ a.second, b.first)*ccw(a.first, a.second, b.second);\n    ok[1] = ccw(b.first,\
+    \ b.second, a.first)*ccw(b.first, b.second, a.second);\n    return ok[0] <= 0\
+    \ && ok[1] <= 0;\n}\n/*\nhttps://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\n\
+    \u4E8C\u3064\u306E\u7DDA\u5206\u306E\u4EA4\u70B9\n*/\nPoint cross_point(const\
+    \ Segment &a, const Segment &b){\n    double d1 = abs(cross(b.second-b.first,\
+    \ a.first-b.first));\n    double d2 = abs(cross(b.second-b.first, a.second-b.first));\n\
+    \    return a.first + (d1/(d1+d2)) * (a.second-a.first);\n}\n\n\n#line 4 \"test/CGL_1_A.test.cpp\"\
+    \n#define ERROR \"1e-8\"\nint main(){\n    cout << fixed << setprecision(20);\n\
+    \    int xp1,yp1,xp2,yp2;\n    cin >> xp1 >> yp1 >> xp2 >> yp2;\n    Point p1(xp1,yp1);\n\
+    \    Point p2(xp2,yp2);\n    Segment l = make_pair(p1, p2);\n    int q;\n    cin\
+    \ >> q;\n    rep(_,q){\n        int px, py;\n        cin >> px >> py;\n      \
+    \  Point p(px, py);\n        Point ans = projection(l, p);\n        cout << ans.real()\
+    \ << \" \" << ans.imag() << endl;\n    }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\"\
     \n#include \"../macro/macros.hpp\"\n#include \"../geometory/template.cpp\"\n#define\
     \ ERROR \"1e-8\"\nint main(){\n    cout << fixed << setprecision(20);\n    int\
@@ -82,7 +88,7 @@ data:
   isVerificationFile: true
   path: test/CGL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-05-09 18:58:19+09:00'
+  timestamp: '2020-09-22 16:04:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/CGL_1_A.test.cpp

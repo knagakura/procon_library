@@ -178,6 +178,12 @@ data:
     path: test/DSL_2_A.test.cpp
     title: test/DSL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/CGL_2_A.test.cpp
+    title: test/CGL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/CGL_2_A.test.cpp
+    title: test/CGL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/DPL_5_D.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u3001\u5236\u9650\u306A\u3057(${}_n H _k$)"
@@ -185,6 +191,12 @@ data:
     path: test/DPL_5_D.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u3001\u5236\u9650\u306A\u3057(${}_n H _k$)"
+  - icon: ':heavy_check_mark:'
+    path: test/CGL_2_B.test.cpp
+    title: test/CGL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/CGL_2_B.test.cpp
+    title: test/CGL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/DPL_5_K.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3057\u306A\
@@ -468,8 +480,12 @@ data:
   - test/GRL_1_C.test.cpp
   - test/DSL_2_A.test.cpp
   - test/DSL_2_A.test.cpp
+  - test/CGL_2_A.test.cpp
+  - test/CGL_2_A.test.cpp
   - test/DPL_5_D.test.cpp
   - test/DPL_5_D.test.cpp
+  - test/CGL_2_B.test.cpp
+  - test/CGL_2_B.test.cpp
   - test/DPL_5_K.test.cpp
   - test/DSL_1_A.test.cpp
   - test/DPL_5_I.test.cpp
