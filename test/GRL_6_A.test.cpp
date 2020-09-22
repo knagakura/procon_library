@@ -6,7 +6,7 @@
 int main() {
     int V, E;
     cin >> V >> E;
-    FordFulkerson G(V);
+    FordFulkerson<ll> G(V, INFLL);
     rep(i,E){
         int u, v, c;
         cin >> u >> v >> c;

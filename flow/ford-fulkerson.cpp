@@ -9,23 +9,28 @@
 
 */
 
-struct edge{
-    int to, cap, rev;
-};
 
+template<typename T>
+struct edge{
+    int to;
+    T cap;
+    int rev;
+};
+template<typename T>
 struct FordFulkerson{
     int V;
-    vector<vector<edge>> G;
+    vector<vector<edge<T>>> G;
     vector<bool> used;
-    FordFulkerson(int V_):V(V_){
+    T inf;
+    FordFulkerson(int V_, T inf_):V(V_), inf(inf_){
         G.resize(V);
         used.assign(V, false);
     }
-    void add_edge(int from, int to, int cap){
-        G[from].push_back((edge){to, cap, (int)G[to].size()});
-        G[to].push_back((edge){from, 0, (int)G[from].size()-1});
+    void add_edge(int from, int to, T cap){
+        G[from].push_back((edge<T>){to, cap, (int)G[to].size()});
+        G[to].push_back((edge<T>){from, 0, (int)G[from].size()-1});
     }
-    int dfs(int v, int t, int f){
+    T dfs(int v, int t, T f){
         if(v == t)return f;
         used[v] = true;
         for(auto &&e: G[v]){
@@ -40,8 +45,8 @@ struct FordFulkerson{
         }
         return 0;
     }
-    int max_flow(int s, int t){
-        int flow = 0;
+    T max_flow(int s, int t){
+        T flow = 0;
         for( ; ; ){
             used.assign(V, false);
             int f = dfs(s, t, INF);
@@ -50,5 +55,6 @@ struct FordFulkerson{
         }
     }
 };
+
 
 #endif
