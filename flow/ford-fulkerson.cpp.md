@@ -34,43 +34,45 @@ data:
     \nconst double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
     \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
     ;\n\n\n#line 5 \"flow/ford-fulkerson.cpp\"\n/*\n\n@title \u6700\u5927\u6D41(Ford-Fulkerson\u6CD5\
-    )\n@category \u30CD\u30C3\u30C8\u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\
-    struct edge{\n    int to, cap, rev;\n};\n\nstruct FordFulkerson{\n    int V;\n\
-    \    vector<vector<edge>> G;\n    vector<bool> used;\n    FordFulkerson(int V_):V(V_){\n\
-    \        G.resize(V);\n        used.assign(V, false);\n    }\n    void add_edge(int\
-    \ from, int to, int cap){\n        G[from].push_back((edge){to, cap, (int)G[to].size()});\n\
-    \        G[to].push_back((edge){from, 0, (int)G[from].size()-1});\n    }\n   \
-    \ int dfs(int v, int t, int f){\n        if(v == t)return f;\n        used[v]\
+    )\n@category \u30CD\u30C3\u30C8\u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\n\
+    template<typename T>\nstruct edge{\n    int to;\n    T cap;\n    int rev;\n};\n\
+    template<typename T>\nstruct FordFulkerson{\n    int V;\n    vector<vector<edge<T>>>\
+    \ G;\n    vector<bool> used;\n    T inf;\n    FordFulkerson(int V_, T inf_):V(V_),\
+    \ inf(inf_){\n        G.resize(V);\n        used.assign(V, false);\n    }\n  \
+    \  void add_edge(int from, int to, T cap){\n        G[from].push_back((edge<T>){to,\
+    \ cap, (int)G[to].size()});\n        G[to].push_back((edge<T>){from, 0, (int)G[from].size()-1});\n\
+    \    }\n    T dfs(int v, int t, T f){\n        if(v == t)return f;\n        used[v]\
     \ = true;\n        for(auto &&e: G[v]){\n            if(used[e.to])continue;\n\
     \            if(e.cap <= 0)continue;\n            int d = dfs(e.to, t, min(f,\
     \ e.cap));\n            if(d > 0){\n                e.cap -= d;\n            \
     \    G[e.to][e.rev].cap += d;\n                return d;\n            }\n    \
-    \    }\n        return 0;\n    }\n    int max_flow(int s, int t){\n        int\
-    \ flow = 0;\n        for( ; ; ){\n            used.assign(V, false);\n       \
-    \     int f = dfs(s, t, INF);\n            if(f == 0)return flow;\n          \
-    \  flow += f;\n        }\n    }\n};\n\n\n"
+    \    }\n        return 0;\n    }\n    T max_flow(int s, int t){\n        T flow\
+    \ = 0;\n        for( ; ; ){\n            used.assign(V, false);\n            int\
+    \ f = dfs(s, t, INF);\n            if(f == 0)return flow;\n            flow +=\
+    \ f;\n        }\n    }\n};\n\n\n\n"
   code: "#ifndef MAX_FLOW\n#define MAX_FLOW\n\n#include \"../macro/macros.hpp\"\n\
     /*\n\n@title \u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)\n@category \u30CD\u30C3\u30C8\
-    \u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\nstruct edge{\n    int to, cap, rev;\n\
-    };\n\nstruct FordFulkerson{\n    int V;\n    vector<vector<edge>> G;\n    vector<bool>\
-    \ used;\n    FordFulkerson(int V_):V(V_){\n        G.resize(V);\n        used.assign(V,\
-    \ false);\n    }\n    void add_edge(int from, int to, int cap){\n        G[from].push_back((edge){to,\
-    \ cap, (int)G[to].size()});\n        G[to].push_back((edge){from, 0, (int)G[from].size()-1});\n\
-    \    }\n    int dfs(int v, int t, int f){\n        if(v == t)return f;\n     \
-    \   used[v] = true;\n        for(auto &&e: G[v]){\n            if(used[e.to])continue;\n\
-    \            if(e.cap <= 0)continue;\n            int d = dfs(e.to, t, min(f,\
-    \ e.cap));\n            if(d > 0){\n                e.cap -= d;\n            \
-    \    G[e.to][e.rev].cap += d;\n                return d;\n            }\n    \
-    \    }\n        return 0;\n    }\n    int max_flow(int s, int t){\n        int\
-    \ flow = 0;\n        for( ; ; ){\n            used.assign(V, false);\n       \
-    \     int f = dfs(s, t, INF);\n            if(f == 0)return flow;\n          \
-    \  flow += f;\n        }\n    }\n};\n\n#endif"
+    \u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\ntemplate<typename T>\nstruct edge{\n\
+    \    int to;\n    T cap;\n    int rev;\n};\ntemplate<typename T>\nstruct FordFulkerson{\n\
+    \    int V;\n    vector<vector<edge<T>>> G;\n    vector<bool> used;\n    T inf;\n\
+    \    FordFulkerson(int V_, T inf_):V(V_), inf(inf_){\n        G.resize(V);\n \
+    \       used.assign(V, false);\n    }\n    void add_edge(int from, int to, T cap){\n\
+    \        G[from].push_back((edge<T>){to, cap, (int)G[to].size()});\n        G[to].push_back((edge<T>){from,\
+    \ 0, (int)G[from].size()-1});\n    }\n    T dfs(int v, int t, T f){\n        if(v\
+    \ == t)return f;\n        used[v] = true;\n        for(auto &&e: G[v]){\n    \
+    \        if(used[e.to])continue;\n            if(e.cap <= 0)continue;\n      \
+    \      int d = dfs(e.to, t, min(f, e.cap));\n            if(d > 0){\n        \
+    \        e.cap -= d;\n                G[e.to][e.rev].cap += d;\n             \
+    \   return d;\n            }\n        }\n        return 0;\n    }\n    T max_flow(int\
+    \ s, int t){\n        T flow = 0;\n        for( ; ; ){\n            used.assign(V,\
+    \ false);\n            int f = dfs(s, t, INF);\n            if(f == 0)return flow;\n\
+    \            flow += f;\n        }\n    }\n};\n\n\n#endif"
   dependsOn:
   - macro/macros.hpp
   isVerificationFile: false
   path: flow/ford-fulkerson.cpp
   requiredBy: []
-  timestamp: '2020-09-22 16:18:50+09:00'
+  timestamp: '2020-09-22 19:59:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_6_A.test.cpp
@@ -84,6 +86,16 @@ title: "Ford Fulkerson\u6CD5"
 最大流の流量を$F$、辺数を$E$とすると、$O(FE)$。
 
 ### 説明
-
+- 使い方
+```cpp
+    FuldFulkerson<ll> G(N, INFLL);
+    G.add_edge(a, b, cap);
+    G.max_flow(source, sink);
+```
 ### 参考
 - 蟻本 p188 ~ 191
+
+### 手動verify
+
+- [No.654 Air E869120](https://yukicoder.me/problems/no/654)
+    - [Submission](https://yukicoder.me/submissions/557019)
