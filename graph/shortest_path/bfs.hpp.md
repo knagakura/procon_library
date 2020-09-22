@@ -1,4 +1,5 @@
 ---
+category: "\u30B0\u30E9\u30D5/\u6700\u77ED\u7D4C\u8DEF\u554F\u984C"
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
@@ -19,8 +20,6 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    _deprecated_at_docs: ../docs/graph/shortest_path/bfs.md
-    document_title: "\u5E45\u512A\u5148\u63A2\u7D22(Breadth-first search)"
     links: []
   bundledCode: "#line 1 \"graph/shortest_path/bfs.hpp\"\n\n\n#line 1 \"macro/macros.hpp\"\
     \n\n\n\n/*\n@title Macro\n@category template\n*/\n#include <bits/stdc++.h>\nusing\
@@ -54,9 +53,7 @@ data:
     \ b;\n            a += padding;\n            b += padding;\n            T c =\
     \ T(1);\n            if(weighted)cin >> c;\n            if(directed)add_Directed_edge(a,b,c);\n\
     \            else add_edge(a,b,c);\n        }\n    }\n};\n\n#line 5 \"graph/shortest_path/bfs.hpp\"\
-    \n/*\n@title \u5E45\u512A\u5148\u63A2\u7D22(Breadth-first search)\n@category \u30B0\
-    \u30E9\u30D5/\u6700\u77ED\u7D4C\u8DEF\u554F\u984C\n@docs ../docs/graph/shortest_path/bfs.md\n\
-    */\ntemplate<typename T>\nclass BFS : public Graph<T>{\n  public:\n    using Graph<T>::N;\n\
+    \n\ntemplate<typename T>\nclass BFS : public Graph<T>{\n  public:\n    using Graph<T>::N;\n\
     \    using Graph<T>::G;\n    vector<T> d;\n    BFS(int _N):Graph<T>::Graph(_N),\
     \ d(_N,-1){\n    }\n    vec<T> bfs(int start = 0){\n        queue<int> q;\n  \
     \      q.push(start);\n        d[start] = 0;\n        while(!q.empty()){\n   \
@@ -65,16 +62,14 @@ data:
     \ + nv.cost;\n                q.push(nv.to);\n            }\n        }\n     \
     \   return d;\n    }\n};\n\n"
   code: "#ifndef BFS_HPP\n#define BFS_HPP\n#include \"../../macro/macros.hpp\"\n#include\
-    \ \"../template.hpp\"\n/*\n@title \u5E45\u512A\u5148\u63A2\u7D22(Breadth-first\
-    \ search)\n@category \u30B0\u30E9\u30D5/\u6700\u77ED\u7D4C\u8DEF\u554F\u984C\n\
-    @docs ../docs/graph/shortest_path/bfs.md\n*/\ntemplate<typename T>\nclass BFS\
-    \ : public Graph<T>{\n  public:\n    using Graph<T>::N;\n    using Graph<T>::G;\n\
-    \    vector<T> d;\n    BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){\n    }\n   \
-    \ vec<T> bfs(int start = 0){\n        queue<int> q;\n        q.push(start);\n\
-    \        d[start] = 0;\n        while(!q.empty()){\n            int cur = q.front();\
-    \ q.pop();\n            for(auto nv: G[cur]){\n                if(d[nv.to] !=\
-    \ -1)continue;\n                d[nv.to] = d[cur] + nv.cost;\n               \
-    \ q.push(nv.to);\n            }\n        }\n        return d;\n    }\n};\n#endif"
+    \ \"../template.hpp\"\n\ntemplate<typename T>\nclass BFS : public Graph<T>{\n\
+    \  public:\n    using Graph<T>::N;\n    using Graph<T>::G;\n    vector<T> d;\n\
+    \    BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){\n    }\n    vec<T> bfs(int start\
+    \ = 0){\n        queue<int> q;\n        q.push(start);\n        d[start] = 0;\n\
+    \        while(!q.empty()){\n            int cur = q.front(); q.pop();\n     \
+    \       for(auto nv: G[cur]){\n                if(d[nv.to] != -1)continue;\n \
+    \               d[nv.to] = d[cur] + nv.cost;\n                q.push(nv.to);\n\
+    \            }\n        }\n        return d;\n    }\n};\n#endif"
   dependsOn:
   - macro/macros.hpp
   - graph/template.hpp
@@ -82,14 +77,17 @@ data:
   isVerificationFile: false
   path: graph/shortest_path/bfs.hpp
   requiredBy: []
-  timestamp: '2020-04-06 10:26:30+09:00'
+  timestamp: '2020-09-22 18:50:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/ALDS1_11_C.test.cpp
-documentation_of: graph/shortest_path/bfs.hpp
+documentation_of: ./graph/shortest_path/bfs.hpp
 layout: document
-redirect_from:
-- /library/graph/shortest_path/bfs.hpp
-- /library/graph/shortest_path/bfs.hpp.html
 title: "\u5E45\u512A\u5148\u63A2\u7D22(Breadth-first search)"
 ---
+
+### 計算量
+$O(V+E)$
+
+### 使用問題
+- [ABC070 D - Transit Tree Path](https://atcoder.jp/contests/abc070/tasks/abc070_d)

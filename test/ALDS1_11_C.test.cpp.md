@@ -60,12 +60,10 @@ data:
     \ >> b;\n            a += padding;\n            b += padding;\n            T c\
     \ = T(1);\n            if(weighted)cin >> c;\n            if(directed)add_Directed_edge(a,b,c);\n\
     \            else add_edge(a,b,c);\n        }\n    }\n};\n\n#line 1 \"graph/shortest_path/bfs.hpp\"\
-    \n\n\n#line 5 \"graph/shortest_path/bfs.hpp\"\n/*\n@title \u5E45\u512A\u5148\u63A2\
-    \u7D22(Breadth-first search)\n@category \u30B0\u30E9\u30D5/\u6700\u77ED\u7D4C\u8DEF\
-    \u554F\u984C\n@docs ../docs/graph/shortest_path/bfs.md\n*/\ntemplate<typename\
-    \ T>\nclass BFS : public Graph<T>{\n  public:\n    using Graph<T>::N;\n    using\
-    \ Graph<T>::G;\n    vector<T> d;\n    BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){\n\
-    \    }\n    vec<T> bfs(int start = 0){\n        queue<int> q;\n        q.push(start);\n\
+    \n\n\n#line 5 \"graph/shortest_path/bfs.hpp\"\n\ntemplate<typename T>\nclass BFS\
+    \ : public Graph<T>{\n  public:\n    using Graph<T>::N;\n    using Graph<T>::G;\n\
+    \    vector<T> d;\n    BFS(int _N):Graph<T>::Graph(_N), d(_N,-1){\n    }\n   \
+    \ vec<T> bfs(int start = 0){\n        queue<int> q;\n        q.push(start);\n\
     \        d[start] = 0;\n        while(!q.empty()){\n            int cur = q.front();\
     \ q.pop();\n            for(auto nv: G[cur]){\n                if(d[nv.to] !=\
     \ -1)continue;\n                d[nv.to] = d[cur] + nv.cost;\n               \
@@ -94,7 +92,7 @@ data:
   isVerificationFile: true
   path: test/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2020-04-06 10:26:30+09:00'
+  timestamp: '2020-09-22 18:50:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/ALDS1_11_C.test.cpp
