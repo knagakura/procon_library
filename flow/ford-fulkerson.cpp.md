@@ -43,13 +43,13 @@ data:
     \ cap, (int)G[to].size()});\n        G[to].push_back((edge<T>){from, 0, (int)G[from].size()-1});\n\
     \    }\n    T dfs(int v, int t, T f){\n        if(v == t)return f;\n        used[v]\
     \ = true;\n        for(auto &&e: G[v]){\n            if(used[e.to])continue;\n\
-    \            if(e.cap <= 0)continue;\n            int d = dfs(e.to, t, min(f,\
-    \ e.cap));\n            if(d > 0){\n                e.cap -= d;\n            \
-    \    G[e.to][e.rev].cap += d;\n                return d;\n            }\n    \
-    \    }\n        return 0;\n    }\n    T max_flow(int s, int t){\n        T flow\
-    \ = 0;\n        for( ; ; ){\n            used.assign(V, false);\n            int\
-    \ f = dfs(s, t, INF);\n            if(f == 0)return flow;\n            flow +=\
-    \ f;\n        }\n    }\n};\n\n\n\n"
+    \            if(e.cap <= 0)continue;\n            T d = dfs(e.to, t, min(f, e.cap));\n\
+    \            if(d > 0){\n                e.cap -= d;\n                G[e.to][e.rev].cap\
+    \ += d;\n                return d;\n            }\n        }\n        return 0;\n\
+    \    }\n    T max_flow(int s, int t){\n        T flow = 0;\n        for( ; ; ){\n\
+    \            used.assign(V, false);\n            T f = dfs(s, t, inf);\n     \
+    \       if(f == 0)return flow;\n            flow += f;\n        }\n    }\n};\n\
+    \n\n\n"
   code: "#ifndef MAX_FLOW\n#define MAX_FLOW\n\n#include \"../macro/macros.hpp\"\n\
     /*\n\n@title \u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)\n@category \u30CD\u30C3\u30C8\
     \u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\ntemplate<typename T>\nstruct edge{\n\
@@ -61,18 +61,18 @@ data:
     \ 0, (int)G[from].size()-1});\n    }\n    T dfs(int v, int t, T f){\n        if(v\
     \ == t)return f;\n        used[v] = true;\n        for(auto &&e: G[v]){\n    \
     \        if(used[e.to])continue;\n            if(e.cap <= 0)continue;\n      \
-    \      int d = dfs(e.to, t, min(f, e.cap));\n            if(d > 0){\n        \
-    \        e.cap -= d;\n                G[e.to][e.rev].cap += d;\n             \
-    \   return d;\n            }\n        }\n        return 0;\n    }\n    T max_flow(int\
+    \      T d = dfs(e.to, t, min(f, e.cap));\n            if(d > 0){\n          \
+    \      e.cap -= d;\n                G[e.to][e.rev].cap += d;\n               \
+    \ return d;\n            }\n        }\n        return 0;\n    }\n    T max_flow(int\
     \ s, int t){\n        T flow = 0;\n        for( ; ; ){\n            used.assign(V,\
-    \ false);\n            int f = dfs(s, t, INF);\n            if(f == 0)return flow;\n\
+    \ false);\n            T f = dfs(s, t, inf);\n            if(f == 0)return flow;\n\
     \            flow += f;\n        }\n    }\n};\n\n\n#endif"
   dependsOn:
   - macro/macros.hpp
   isVerificationFile: false
   path: flow/ford-fulkerson.cpp
   requiredBy: []
-  timestamp: '2020-09-22 19:59:17+09:00'
+  timestamp: '2020-09-23 01:51:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_6_A.test.cpp

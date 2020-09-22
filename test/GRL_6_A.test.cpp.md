@@ -48,12 +48,12 @@ data:
     \        G[to].push_back((edge<T>){from, 0, (int)G[from].size()-1});\n    }\n\
     \    T dfs(int v, int t, T f){\n        if(v == t)return f;\n        used[v] =\
     \ true;\n        for(auto &&e: G[v]){\n            if(used[e.to])continue;\n \
-    \           if(e.cap <= 0)continue;\n            int d = dfs(e.to, t, min(f, e.cap));\n\
+    \           if(e.cap <= 0)continue;\n            T d = dfs(e.to, t, min(f, e.cap));\n\
     \            if(d > 0){\n                e.cap -= d;\n                G[e.to][e.rev].cap\
     \ += d;\n                return d;\n            }\n        }\n        return 0;\n\
     \    }\n    T max_flow(int s, int t){\n        T flow = 0;\n        for( ; ; ){\n\
-    \            used.assign(V, false);\n            int f = dfs(s, t, INF);\n   \
-    \         if(f == 0)return flow;\n            flow += f;\n        }\n    }\n};\n\
+    \            used.assign(V, false);\n            T f = dfs(s, t, inf);\n     \
+    \       if(f == 0)return flow;\n            flow += f;\n        }\n    }\n};\n\
     \n\n\n#line 5 \"test/GRL_6_A.test.cpp\"\n\nint main() {\n    int V, E;\n    cin\
     \ >> V >> E;\n    FordFulkerson<ll> G(V, INFLL);\n    rep(i,E){\n        int u,\
     \ v, c;\n        cin >> u >> v >> c;\n        G.add_edge(u, v, c);\n    }\n  \
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: test/GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-22 19:59:17+09:00'
+  timestamp: '2020-09-23 01:51:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/GRL_6_A.test.cpp
