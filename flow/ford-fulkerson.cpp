@@ -6,7 +6,6 @@
 
 @title 最大流(Ford-Fulkerson法)
 @category ネットワークフロー
-@docs ../docs/flow/ford-fulkerson.md
 
 */
 
