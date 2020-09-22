@@ -217,6 +217,9 @@ data:
     path: test/DSL_1_A.test.cpp
     title: test/DSL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/NTL_1_E.test.cpp
+    title: test/NTL_1_E.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/DPL_5_I.test.cpp
     title: "\u7389\u533A\u5225\u3059\u308B\u3001\u7BB1\u533A\u5225\u3057\u306A\u3044\
       \u30011\u500B\u4EE5\u4E0A(\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\u30B0\
@@ -504,6 +507,7 @@ data:
   - test/CGL_2_B.test.cpp
   - test/DPL_5_K.test.cpp
   - test/DSL_1_A.test.cpp
+  - test/NTL_1_E.test.cpp
   - test/DPL_5_I.test.cpp
   - test/DPL_5_I.test.cpp
   - test/DSL_2_B.test.cpp

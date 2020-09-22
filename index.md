@@ -70,6 +70,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/comb.hpp
       title: "\u7D44\u307F\u5408\u308F\u305B(Combination)"
+    - icon: ':heavy_check_mark:'
+      path: math/extended-euclid-algorithm.cpp
+      title: math/extended-euclid-algorithm.cpp
     - icon: ':warning:'
       path: math/factorize.cpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3\u95A2\u4FC2"
@@ -251,6 +254,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/GRL_6_A.test.cpp
       title: test/GRL_6_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/NTL_1_E.test.cpp
+      title: test/NTL_1_E.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/union_find_tree.yosupo.test.cpp
       title: test/union_find_tree.yosupo.test.cpp
