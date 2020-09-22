@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/CGL_2_A.test.cpp
     title: test/CGL_2_A.test.cpp
+  - icon: ':x:'
+    path: test/CGL_2_C.test.cpp
+    title: test/CGL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/CGL_2_B.test.cpp
     title: test/CGL_2_B.test.cpp
@@ -22,7 +25,7 @@ data:
     path: test/CGL_1_C.test.cpp
     title: test/CGL_1_C.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Geometory/template.cpp
@@ -114,10 +117,11 @@ data:
   path: geometory/template.cpp
   requiredBy: []
   timestamp: '2020-09-22 16:04:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/CGL_1_A.test.cpp
   - test/CGL_2_A.test.cpp
+  - test/CGL_2_C.test.cpp
   - test/CGL_2_B.test.cpp
   - test/CGL_1_B.test.cpp
   - test/CGL_1_C.test.cpp

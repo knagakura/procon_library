@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: data_structure/bit.cpp
     title: BIT(Binary Indexed Tree)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

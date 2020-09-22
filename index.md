@@ -13,6 +13,9 @@ data:
       path: data_structure/lazy-segment-tree-raq.cpp
       title: "\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728(Lazy Segment\
         \ Tree) \u533A\u9593\u52A0\u7B97"
+    - icon: ':warning:'
+      path: data_structure/lazy-segment-tree-ruq.cpp
+      title: data_structure/lazy-segment-tree-ruq.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/segment-tree.cpp
       title: "\u62BD\u8C61\u5316\u30BB\u30B0\u6728"
@@ -29,7 +32,7 @@ data:
       title: "\u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)"
   - name: geometory
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: geometory/template.cpp
       title: Geometory/template.cpp
   - name: graph/shortest_path
@@ -53,7 +56,7 @@ data:
       title: Graph Class
   - name: macro
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: macro/macros.hpp
       title: Macro
   - name: math
@@ -67,6 +70,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/comb.hpp
       title: "\u7D44\u307F\u5408\u308F\u305B(Combination)"
+    - icon: ':warning:'
+      path: math/factorize.cpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3\u95A2\u4FC2"
     - icon: ':heavy_check_mark:'
       path: math/gcd.hpp
       title: "\u6700\u5927\u516C\u7D04\u6570(Greatest Common Divisor)"
@@ -148,6 +154,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/CGL_2_B.test.cpp
       title: test/CGL_2_B.test.cpp
+    - icon: ':x:'
+      path: test/CGL_2_C.test.cpp
+      title: test/CGL_2_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/DPL_5_A.test.cpp
       title: "\u7389\u533A\u5225\u3059\u308B\u3001\u7BB1\u533A\u5225\u3059\u308B\u3001\

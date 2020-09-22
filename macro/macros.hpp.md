@@ -28,7 +28,7 @@ data:
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: geometory/template.cpp
     title: Geometory/template.cpp
   - icon: ':heavy_check_mark:'
@@ -49,6 +49,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/comb.hpp
     title: "\u7D44\u307F\u5408\u308F\u305B(Combination)"
+  - icon: ':warning:'
+    path: math/factorize.cpp
+    title: "\u7D20\u56E0\u6570\u5206\u89E3\u95A2\u4FC2"
   - icon: ':heavy_check_mark:'
     path: math/stiring-number-second-dp.cpp
     title: "\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\u30B0\u6570(Stirling-Number-Of-The-Second-Kind)\
@@ -83,6 +86,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/template.hpp
     title: Graph Class
+  - icon: ':warning:'
+    path: data_structure/lazy-segment-tree-ruq.cpp
+    title: data_structure/lazy-segment-tree-ruq.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/unionfind.hpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
@@ -191,6 +197,12 @@ data:
     path: test/DPL_5_D.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u3001\u5236\u9650\u306A\u3057(${}_n H _k$)"
+  - icon: ':x:'
+    path: test/CGL_2_C.test.cpp
+    title: test/CGL_2_C.test.cpp
+  - icon: ':x:'
+    path: test/CGL_2_C.test.cpp
+    title: test/CGL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/CGL_2_B.test.cpp
     title: test/CGL_2_B.test.cpp
@@ -377,7 +389,7 @@ data:
     path: example/example.test.cpp
     title: "example(\u4E8C\u5206\u63A2\u7D22)"
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Macro
@@ -437,6 +449,7 @@ data:
   - math/bell-number.cpp
   - math/bell-number-2.cpp
   - math/comb.hpp
+  - math/factorize.cpp
   - math/stiring-number-second-dp.cpp
   - math/sieve_of_eratosthenes.cpp
   - flow/ford-fulkerson.cpp
@@ -448,6 +461,7 @@ data:
   - graph/shortest_path/dijkstra.hpp
   - graph/shortest_path/dijkstra.hpp
   - graph/template.hpp
+  - data_structure/lazy-segment-tree-ruq.cpp
   - data_structure/unionfind.hpp
   - data_structure/inversion-num.cpp
   - data_structure/inversion-num.cpp
@@ -456,7 +470,7 @@ data:
   - data_structure/stack.hpp
   - data_structure/segment-tree.cpp
   timestamp: '2020-03-31 04:16:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/GRL_1_A_2.test.cpp
   - test/GRL_1_A_2.test.cpp
@@ -484,6 +498,8 @@ data:
   - test/CGL_2_A.test.cpp
   - test/DPL_5_D.test.cpp
   - test/DPL_5_D.test.cpp
+  - test/CGL_2_C.test.cpp
+  - test/CGL_2_C.test.cpp
   - test/CGL_2_B.test.cpp
   - test/CGL_2_B.test.cpp
   - test/DPL_5_K.test.cpp

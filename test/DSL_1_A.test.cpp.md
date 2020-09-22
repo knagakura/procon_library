@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/unionfind.hpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

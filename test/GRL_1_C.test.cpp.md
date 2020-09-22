@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: graph/template.hpp
     title: Graph Class
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/warshall-floyd.cpp
     title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'

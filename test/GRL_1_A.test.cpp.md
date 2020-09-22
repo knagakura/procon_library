@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/dijkstra.cpp
     title: "Dijkstra\u6CD5(Simple Class)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

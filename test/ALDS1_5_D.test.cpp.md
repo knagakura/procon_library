@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/inversion-num.cpp
     title: "\u8EE2\u5012\u6570(The Number of Inversion)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: data_structure/bit.cpp
     title: BIT(Binary Indexed Tree)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
