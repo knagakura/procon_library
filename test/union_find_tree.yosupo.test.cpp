@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 #include "../macro/macros.hpp"
-#include "../data_structure/unionfind.hpp"
+#include "../data_structure/unionfind.cpp"
 
 using namespace std;
 

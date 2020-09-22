@@ -1,3 +1,8 @@
+---
+title: 素集合データ構造(UnionFind Tree)
+documentation_of: ./data_structure/unionfind.cpp
+---
+
 ## UnionFind木が出題された問題
 1. [D-Decayed Bridges](https://beta.atcoder.jp/contests/abc120)
 

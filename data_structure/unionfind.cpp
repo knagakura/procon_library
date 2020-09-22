@@ -1,11 +1,7 @@
-#ifndef INCLUDED_UNIONFIND_HPP
-#define INCLUDED_UNIONFIND_HPP
+#ifndef INCLUDED_UNIONFIND_CPP
+#define INCLUDED_UNIONFIND_CPP
 #include "../macro/macros.hpp"
-/*
-@title 素集合データ構造(UnionFind Tree)
-@category データ構造
-@docs ../docs/data_structure/unionfind.md
-*/
+
 struct UnionFind{
     int n;
     vector<int> Parent;
