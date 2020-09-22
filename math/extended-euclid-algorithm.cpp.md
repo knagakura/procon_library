@@ -28,10 +28,17 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/NTL_1_E.test.cpp
-documentation_of: math/extended-euclid-algorithm.cpp
+documentation_of: ./math/extended-euclid-algorithm.cpp
 layout: document
-redirect_from:
-- /library/math/extended-euclid-algorithm.cpp
-- /library/math/extended-euclid-algorithm.cpp.html
-title: math/extended-euclid-algorithm.cpp
+title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
 ---
+
+### 計算量
+$\log{a}$
+
+### 説明
+返り値: $a$と$b$の最大公約数
+$ax + by = gcd(a, b)$を満たす解$(x, y)$が格納される
+
+### 参考
+- [拡張ユークリッドの互除法 〜 一次不定方程式 ax + by = c の解き方 〜](https://qiita.com/drken/items/b97ff231e43bce50199a)

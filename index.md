@@ -72,7 +72,7 @@ data:
       title: "\u7D44\u307F\u5408\u308F\u305B(Combination)"
     - icon: ':heavy_check_mark:'
       path: math/extended-euclid-algorithm.cpp
-      title: math/extended-euclid-algorithm.cpp
+      title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
     - icon: ':warning:'
       path: math/factorize.cpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3\u95A2\u4FC2"
