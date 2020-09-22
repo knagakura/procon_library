@@ -50,8 +50,24 @@ int ccw(const Point &a, const Point &b, const Point &c){
     if(norm(x) < norm(y))return -2; //前
     return 0;                       //中
 }
-bool is_intersected_ls(Point a1, Point a2, Point b1, Point b2){
-    return (cross(a2-a1, b1-a1)*cross(a2-a1, b2-b1) < EPS) && (cross(b2-b1, a1-b1)*cross(b2-b1, a2-b1) < EPS);
+/*
+https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
+二つの線分の交差判定
+*/
+bool isinterSS(const Segment &a, const Segment &b){
+    double ok[2];
+    ok[0] = ccw(a.first, a.second, b.first)*ccw(a.first, a.second, b.second);
+    ok[1] = ccw(b.first, b.second, a.first)*ccw(b.first, b.second, a.second);
+    return ok[0] <= 0 && ok[1] <= 0;
+}
+/*
+https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
+二つの線分の交点
+*/
+Point cross_point(const Segment &a, const Segment &b){
+    double d1 = abs(cross(b.second-b.first, a.first-b.first));
+    double d2 = abs(cross(b.second-b.first, a.second-b.first));
+    return a.first + (d1/(d1+d2)) * (a.second-a.first);
 }
 #endif
 
