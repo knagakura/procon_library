@@ -5,7 +5,7 @@ data:
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
-    path: data_structure/unionfind.hpp
+    path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - icon: ':question:'
     path: macro/macros.hpp
@@ -38,10 +38,8 @@ data:
     \ int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD = (ll)1e9+7;\n\
     \nconst double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
     \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n\n\n#line 1 \"data_structure/unionfind.hpp\"\n\n\n#line 4 \"data_structure/unionfind.hpp\"\
-    \n/*\n@title \u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)\n\
-    @category \u30C7\u30FC\u30BF\u69CB\u9020\n@docs ../docs/data_structure/unionfind.md\n\
-    */\nstruct UnionFind{\n    int n;\n    vector<int> Parent;\n    vector<int> sizes;\n\
+    ;\n\n\n#line 1 \"data_structure/unionfind.cpp\"\n\n\n#line 4 \"data_structure/unionfind.cpp\"\
+    \n\nstruct UnionFind{\n    int n;\n    vector<int> Parent;\n    vector<int> sizes;\n\
     \    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){ rep(i,n)Parent[i]=i; }\n\
     \    //find the root of x\n    int root(int x){\n        if(x!=Parent[x]){\n \
     \       Parent[x] = root(Parent[x]);\n        }\n        return Parent[x];\n \
@@ -58,19 +56,19 @@ data:
     \            cout << uft.same(u, v) << endl;\n        }\n    }\n    return 0;\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include \"\
-    ../macro/macros.hpp\"\n#include \"../data_structure/unionfind.hpp\"\n\nusing namespace\
+    ../macro/macros.hpp\"\n#include \"../data_structure/unionfind.cpp\"\n\nusing namespace\
     \ std;\n\nint main() {\n    int n, q; cin >> n >> q;\n    UnionFind uft(n);\n\
     \    rep (i, q) {\n        int t, u, v; cin >> t >> u >> v;\n        if (t ==\
     \ 0) {\n            uft.unite(u, v);\n        } else if (t == 1) {\n         \
     \   cout << uft.same(u, v) << endl;\n        }\n    }\n    return 0;\n}\n"
   dependsOn:
   - macro/macros.hpp
-  - data_structure/unionfind.hpp
+  - data_structure/unionfind.cpp
   - macro/macros.hpp
   isVerificationFile: true
   path: test/union_find_tree.yosupo.test.cpp
   requiredBy: []
-  timestamp: '2020-03-31 17:09:20+09:00'
+  timestamp: '2020-09-22 16:57:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/union_find_tree.yosupo.test.cpp

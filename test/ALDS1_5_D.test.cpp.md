@@ -53,17 +53,15 @@ data:
     \ a, T w){add(a + 1, w);}\n    // 0-indexed sum\n    T sum0(int a){return sum(a\
     \ + 1);}\n    // 0-indexed sum of range\n    T sum0(int l, int r){return sum0(r)\
     \ - sum0(l-1);}\n    // show the value\n    void debug(){print(data);}\n};\n\n\
-    \n#line 5 \"data_structure/inversion-num.cpp\"\n/*\n@title \u8EE2\u5012\u6570\
-    (The Number of Inversion)\n@category \u30C7\u30FC\u30BF\u69CB\u9020\n@docs ../docs/data_structure/inversion-num.md\n\
-    */\ntemplate<typename T> \nT Inversion_num(vector<T>& v){\n    int N = v.size();\n\
-    \    BIT<T> Tree(N);\n    vector<int> B(N);\n    vector<pair<T, int>> ap;\n  \
-    \  for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n   \
-    \ }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n      \
-    \  B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N; i++){\n\
-    \        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n    }\n   \
-    \ return res;\n}\n\n#line 4 \"test/ALDS1_5_D.test.cpp\"\n\nint main(){\n    int\
-    \ N;\n    cin >> N;\n    vector<ll> A(N);\n    rep(i,N)cin>>A[i];\n    cout <<\
-    \ Inversion_num(A) << endl;\n}\n"
+    \n#line 5 \"data_structure/inversion-num.cpp\"\ntemplate<typename T> \nT Inversion_num(vector<T>&\
+    \ v){\n    int N = v.size();\n    BIT<T> Tree(N);\n    vector<int> B(N);\n   \
+    \ vector<pair<T, int>> ap;\n    for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n\
+    \    }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n   \
+    \     B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N;\
+    \ i++){\n        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n  \
+    \  }\n    return res;\n}\n\n#line 4 \"test/ALDS1_5_D.test.cpp\"\n\nint main(){\n\
+    \    int N;\n    cin >> N;\n    vector<ll> A(N);\n    rep(i,N)cin>>A[i];\n   \
+    \ cout << Inversion_num(A) << endl;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include \"../data_structure/inversion-num.cpp\"\n\nint main(){\n    int N;\n\
     \    cin >> N;\n    vector<ll> A(N);\n    rep(i,N)cin>>A[i];\n    cout << Inversion_num(A)\
@@ -76,7 +74,7 @@ data:
   isVerificationFile: true
   path: test/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2020-03-31 20:30:22+09:00'
+  timestamp: '2020-09-22 16:57:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/ALDS1_5_D.test.cpp

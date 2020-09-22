@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: data_structure/unionfind.hpp
+    path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - icon: ':question:'
     path: macro/macros.hpp
@@ -17,7 +17,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
   bundledCode: "#line 1 \"test/DSL_1_A.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp\"\
-    \n#line 1 \"data_structure/unionfind.hpp\"\n\n\n#line 1 \"macro/macros.hpp\"\n\
+    \n#line 1 \"data_structure/unionfind.cpp\"\n\n\n#line 1 \"macro/macros.hpp\"\n\
     \n\n\n/*\n@title Macro\n@category template\n*/\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n#define rep1(i,N)\
     \ for(int i=1;i<int(N);++i)\n#define all(a) (a).begin(),(a).end()\n#define print(v)\
@@ -35,10 +35,8 @@ data:
     \ int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD = (ll)1e9+7;\n\
     \nconst double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
     \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n\n\n#line 4 \"data_structure/unionfind.hpp\"\n/*\n@title \u7D20\u96C6\u5408\
-    \u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)\n@category \u30C7\u30FC\u30BF\u69CB\
-    \u9020\n@docs ../docs/data_structure/unionfind.md\n*/\nstruct UnionFind{\n   \
-    \ int n;\n    vector<int> Parent;\n    vector<int> sizes;\n    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){\
+    ;\n\n\n#line 4 \"data_structure/unionfind.cpp\"\n\nstruct UnionFind{\n    int\
+    \ n;\n    vector<int> Parent;\n    vector<int> sizes;\n    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){\
     \ rep(i,n)Parent[i]=i; }\n    //find the root of x\n    int root(int x){\n   \
     \     if(x!=Parent[x]){\n        Parent[x] = root(Parent[x]);\n        }\n   \
     \     return Parent[x];\n    }\n    //merge x and y\n    void unite(int x,int\
@@ -53,18 +51,18 @@ data:
     \   if(com == 0){\n            Tree.unite(x, y);\n        }\n        if(com ==\
     \ 1){\n            cout << Tree.same(x, y) << endl;\n        }\n    }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp\"\
-    \n#include \"../data_structure/unionfind.hpp\"\n\nint main(){\n    int N, Q;\n\
+    \n#include \"../data_structure/unionfind.cpp\"\n\nint main(){\n    int N, Q;\n\
     \    cin >> N >> Q;\n    UnionFind Tree(N);\n    while(Q--){\n        int com,\
     \ x, y;\n        cin >> com >> x >> y;\n        if(com == 0){\n            Tree.unite(x,\
     \ y);\n        }\n        if(com == 1){\n            cout << Tree.same(x, y) <<\
-    \ endl;\n        }\n    }\n}"
+    \ endl;\n        }\n    }\n}\n"
   dependsOn:
-  - data_structure/unionfind.hpp
+  - data_structure/unionfind.cpp
   - macro/macros.hpp
   isVerificationFile: true
   path: test/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-03-31 17:09:20+09:00'
+  timestamp: '2020-09-22 16:57:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/DSL_1_A.test.cpp

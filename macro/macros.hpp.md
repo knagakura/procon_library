@@ -90,9 +90,6 @@ data:
     path: data_structure/lazy-segment-tree-ruq.cpp
     title: data_structure/lazy-segment-tree-ruq.cpp
   - icon: ':heavy_check_mark:'
-    path: data_structure/unionfind.hpp
-    title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
-  - icon: ':heavy_check_mark:'
     path: data_structure/inversion-num.cpp
     title: "\u8EE2\u5012\u6570(The Number of Inversion)"
   - icon: ':heavy_check_mark:'
@@ -102,6 +99,9 @@ data:
     path: data_structure/lazy-segment-tree-raq.cpp
     title: "\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728(Lazy Segment\
       \ Tree) \u533A\u9593\u52A0\u7B97"
+  - icon: ':heavy_check_mark:'
+    path: data_structure/unionfind.cpp
+    title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - icon: ':heavy_check_mark:'
     path: data_structure/bit.cpp
     title: BIT(Binary Indexed Tree)
@@ -462,10 +462,10 @@ data:
   - graph/shortest_path/dijkstra.hpp
   - graph/template.hpp
   - data_structure/lazy-segment-tree-ruq.cpp
-  - data_structure/unionfind.hpp
   - data_structure/inversion-num.cpp
   - data_structure/inversion-num.cpp
   - data_structure/lazy-segment-tree-raq.cpp
+  - data_structure/unionfind.cpp
   - data_structure/bit.cpp
   - data_structure/stack.hpp
   - data_structure/segment-tree.cpp

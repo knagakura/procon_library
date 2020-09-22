@@ -23,7 +23,7 @@ data:
       path: data_structure/stack.hpp
       title: stack
     - icon: ':heavy_check_mark:'
-      path: data_structure/unionfind.hpp
+      path: data_structure/unionfind.cpp
       title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - name: flow
     pages:

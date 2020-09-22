@@ -19,8 +19,6 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    _deprecated_at_docs: ../docs/data_structure/inversion-num.md
-    document_title: "\u8EE2\u5012\u6570(The Number of Inversion)"
     links: []
   bundledCode: "#line 1 \"data_structure/inversion-num.cpp\"\n\n\n#line 1 \"macro/macros.hpp\"\
     \n\n\n\n/*\n@title Macro\n@category template\n*/\n#include <bits/stdc++.h>\nusing\
@@ -52,25 +50,21 @@ data:
     \ a, T w){add(a + 1, w);}\n    // 0-indexed sum\n    T sum0(int a){return sum(a\
     \ + 1);}\n    // 0-indexed sum of range\n    T sum0(int l, int r){return sum0(r)\
     \ - sum0(l-1);}\n    // show the value\n    void debug(){print(data);}\n};\n\n\
-    \n#line 5 \"data_structure/inversion-num.cpp\"\n/*\n@title \u8EE2\u5012\u6570\
-    (The Number of Inversion)\n@category \u30C7\u30FC\u30BF\u69CB\u9020\n@docs ../docs/data_structure/inversion-num.md\n\
-    */\ntemplate<typename T> \nT Inversion_num(vector<T>& v){\n    int N = v.size();\n\
-    \    BIT<T> Tree(N);\n    vector<int> B(N);\n    vector<pair<T, int>> ap;\n  \
-    \  for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n   \
-    \ }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n      \
-    \  B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N; i++){\n\
-    \        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n    }\n   \
-    \ return res;\n}\n\n"
+    \n#line 5 \"data_structure/inversion-num.cpp\"\ntemplate<typename T> \nT Inversion_num(vector<T>&\
+    \ v){\n    int N = v.size();\n    BIT<T> Tree(N);\n    vector<int> B(N);\n   \
+    \ vector<pair<T, int>> ap;\n    for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n\
+    \    }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n   \
+    \     B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N;\
+    \ i++){\n        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n  \
+    \  }\n    return res;\n}\n\n"
   code: "#ifndef INVERSION_NUM_CPP\n#define INVERSION_NUM_CPP\n#include \"../macro/macros.hpp\"\
-    \n#include \"../data_structure/bit.cpp\"\n/*\n@title \u8EE2\u5012\u6570(The Number\
-    \ of Inversion)\n@category \u30C7\u30FC\u30BF\u69CB\u9020\n@docs ../docs/data_structure/inversion-num.md\n\
-    */\ntemplate<typename T> \nT Inversion_num(vector<T>& v){\n    int N = v.size();\n\
-    \    BIT<T> Tree(N);\n    vector<int> B(N);\n    vector<pair<T, int>> ap;\n  \
-    \  for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n   \
-    \ }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n      \
-    \  B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N; i++){\n\
-    \        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n    }\n   \
-    \ return res;\n}\n#endif"
+    \n#include \"../data_structure/bit.cpp\"\ntemplate<typename T> \nT Inversion_num(vector<T>&\
+    \ v){\n    int N = v.size();\n    BIT<T> Tree(N);\n    vector<int> B(N);\n   \
+    \ vector<pair<T, int>> ap;\n    for(int i = 0; i < N; i++){\n        ap.push_back(make_pair(v[i],i));\n\
+    \    }\n    sort(ap.begin(), ap.end());\n    for(int i = 0; i < N; i++){\n   \
+    \     B[ap[i].second] =  i;\n    }\n    T res = 0;\n    for(int i = 0; i < N;\
+    \ i++){\n        res += i - Tree.sum0(B[i]);\n        Tree.add0(B[i], 1);\n  \
+    \  }\n    return res;\n}\n#endif"
   dependsOn:
   - macro/macros.hpp
   - data_structure/bit.cpp
@@ -78,14 +72,18 @@ data:
   isVerificationFile: false
   path: data_structure/inversion-num.cpp
   requiredBy: []
-  timestamp: '2020-03-31 20:30:22+09:00'
+  timestamp: '2020-09-22 16:57:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/ALDS1_5_D.test.cpp
-documentation_of: data_structure/inversion-num.cpp
+documentation_of: ./data_structure/inversion-num.cpp
 layout: document
-redirect_from:
-- /library/data_structure/inversion-num.cpp
-- /library/data_structure/inversion-num.cpp.html
 title: "\u8EE2\u5012\u6570(The Number of Inversion)"
 ---
+
+### 計算量
+BITによる高速化で$O(N\log N)$
+
+### 説明
+#### 反転数とは
+数列$A = a_0, a_1, a_2, ... a_N$があるとき、$i \lt  j$ のとき$a_i \gt a_j$となる$(i,  j)$の組みの数。
