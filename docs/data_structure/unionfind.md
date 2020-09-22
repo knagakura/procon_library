@@ -21,3 +21,5 @@ swapすればそれらは行き来可能になるので、実質パイプ。
 - [E - 1 or 2](https://atcoder.jp/contests/abc126/tasks/abc126_e)
 [提出](https://atcoder.jp/contests/abc126/submissions/10649376)
 集合の数を管理するgroup_numを実装した
+- [A - Reachable Towns](https://atcoder.jp/contests/acl1/tasks/acl1_a)
+uniteした後、y座標が最小のものにグループを代表させる
