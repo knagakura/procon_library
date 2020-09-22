@@ -2,11 +2,6 @@
 #define INVERSION_NUM_CPP
 #include "../macro/macros.hpp"
 #include "../data_structure/bit.cpp"
-/*
-@title 転倒数(The Number of Inversion)
-@category データ構造
-@docs ../docs/data_structure/inversion-num.md
-*/
 template<typename T> 
 T Inversion_num(vector<T>& v){
     int N = v.size();

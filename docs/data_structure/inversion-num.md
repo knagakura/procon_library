@@ -1,3 +1,8 @@
+---
+title: 転倒数(The Number of Inversion)
+documentation_of: ./data_structure/inversion-num.cpp
+---
+
 ### 計算量
 BITによる高速化で$O(N\log N)$
 
