@@ -2,11 +2,7 @@
 #define BFS_HPP
 #include "../../macro/macros.hpp"
 #include "../template.hpp"
-/*
-@title 幅優先探索(Breadth-first search)
-@category グラフ/最短経路問題
-@docs ../docs/graph/shortest_path/bfs.md
-*/
+
 template<typename T>
 class BFS : public Graph<T>{
   public:

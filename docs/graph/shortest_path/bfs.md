@@ -1,3 +1,9 @@
+---
+title: 幅優先探索(Breadth-first search)
+category: グラフ/最短経路問題
+documentation_of: ./graph/shortest_path/bfs.hpp
+---
+
 ### 計算量
 $O(V+E)$
 
