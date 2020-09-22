@@ -1,7 +1,6 @@
-
 ---
 title: Ford Fulkerson法
-documentation_of: flow/ford-fulkerson.cpp
+documentation_of: ./flow/ford-fulkerson.cpp
 ---
 
 ## 説明
