@@ -74,10 +74,16 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_6_A.test.cpp
-documentation_of: flow/ford-fulkerson.cpp
+documentation_of: ./flow/ford-fulkerson.cpp
 layout: document
-redirect_from:
-- /library/flow/ford-fulkerson.cpp
-- /library/flow/ford-fulkerson.cpp.html
-title: "\u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)"
+title: "Ford Fulkerson\u6CD5"
 ---
+
+## 説明
+### 計算量
+最大流の流量を$F$、辺数を$E$とすると、$O(FE)$。
+
+### 説明
+
+### 参考
+- 蟻本 p188 ~ 191

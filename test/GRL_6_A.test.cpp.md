@@ -6,7 +6,7 @@ data:
     title: Macro
   - icon: ':heavy_check_mark:'
     path: flow/ford-fulkerson.cpp
-    title: "\u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)"
+    title: "Ford Fulkerson\u6CD5"
   - icon: ':question:'
     path: macro/macros.hpp
     title: Macro

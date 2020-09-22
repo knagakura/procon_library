@@ -61,7 +61,7 @@ data:
     title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9(Sieve of Eratosthenes)"
   - icon: ':heavy_check_mark:'
     path: flow/ford-fulkerson.cpp
-    title: "\u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)"
+    title: "Ford Fulkerson\u6CD5"
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/bfs.hpp
     title: "\u5E45\u512A\u5148\u63A2\u7D22(Breadth-first search)"
