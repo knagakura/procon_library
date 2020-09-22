@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometory/template.cpp
     title: Geometory/template.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

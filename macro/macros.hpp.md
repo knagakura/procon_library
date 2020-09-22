@@ -28,7 +28,7 @@ data:
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometory/template.cpp
     title: Geometory/template.cpp
   - icon: ':heavy_check_mark:'
@@ -197,10 +197,10 @@ data:
     path: test/DPL_5_D.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u3001\u5236\u9650\u306A\u3057(${}_n H _k$)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/CGL_2_C.test.cpp
     title: test/CGL_2_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/CGL_2_C.test.cpp
     title: test/CGL_2_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -389,7 +389,7 @@ data:
     path: example/example.test.cpp
     title: "example(\u4E8C\u5206\u63A2\u7D22)"
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Macro
@@ -470,7 +470,7 @@ data:
   - data_structure/stack.hpp
   - data_structure/segment-tree.cpp
   timestamp: '2020-03-31 04:16:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_1_A_2.test.cpp
   - test/GRL_1_A_2.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

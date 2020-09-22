@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: flow/ford-fulkerson.cpp
     title: "Ford Fulkerson\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

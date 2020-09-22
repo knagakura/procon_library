@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: math/mint.hpp
     title: "\u5408\u540C\u7B97\u8853(Modular Arithmetic)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []

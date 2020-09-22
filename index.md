@@ -32,7 +32,7 @@ data:
       title: "Ford Fulkerson\u6CD5"
   - name: geometory
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometory/template.cpp
       title: Geometory/template.cpp
   - name: graph/shortest_path
@@ -56,7 +56,7 @@ data:
       title: Graph Class
   - name: macro
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: macro/macros.hpp
       title: Macro
   - name: math
@@ -154,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/CGL_2_B.test.cpp
       title: test/CGL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/CGL_2_C.test.cpp
       title: test/CGL_2_C.test.cpp
     - icon: ':heavy_check_mark:'

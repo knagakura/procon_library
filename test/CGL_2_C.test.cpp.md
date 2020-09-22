@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometory/template.cpp
     title: Geometory/template.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-8
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B
-  bundledCode: "#line 1 \"test/CGL_2_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
+  bundledCode: "#line 1 \"test/CGL_2_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\"\
     \n#line 1 \"macro/macros.hpp\"\n\n\n\n/*\n@title Macro\n@category template\n*/\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n\
     #define rep1(i,N) for(int i=1;i<int(N);++i)\n#define all(a) (a).begin(),(a).end()\n\
@@ -73,7 +73,7 @@ data:
     \ s[] = {make_pair(ps[0], ps[1]), make_pair(ps[2], ps[3])};\n        Point ans\
     \ = cross_point(s[0],s[1]);\n        cout << setprecision(20) << ans.real() <<\
     \ \" \" << ans.imag() << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_B\"\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\"\
     \n#include \"../macro/macros.hpp\"\n#include \"../geometory/template.cpp\"\n#define\
     \ ERROR \"1e-8\"\nint main(){\n    int q;\n    cin >> q;\n    while(q--){\n  \
     \      vector<Point> ps;\n        rep(i,4){\n            int x, y;\n         \
@@ -88,8 +88,8 @@ data:
   isVerificationFile: true
   path: test/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-09-22 16:27:04+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-22 17:28:24+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/CGL_2_C.test.cpp
 layout: document
