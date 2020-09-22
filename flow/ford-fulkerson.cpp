@@ -36,7 +36,7 @@ struct FordFulkerson{
         for(auto &&e: G[v]){
             if(used[e.to])continue;
             if(e.cap <= 0)continue;
-            int d = dfs(e.to, t, min(f, e.cap));
+            T d = dfs(e.to, t, min(f, e.cap));
             if(d > 0){
                 e.cap -= d;
                 G[e.to][e.rev].cap += d;
@@ -49,7 +49,7 @@ struct FordFulkerson{
         T flow = 0;
         for( ; ; ){
             used.assign(V, false);
-            int f = dfs(s, t, INF);
+            T f = dfs(s, t, inf);
             if(f == 0)return flow;
             flow += f;
         }
