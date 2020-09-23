@@ -48,10 +48,8 @@ const ll MOD = 1000000007;
 // const ll MOD = 998244353;
 const long double PI = acos(-1.0);
 
-/*
 const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 const string dir = "DRUL";
-*/
 
 #endif

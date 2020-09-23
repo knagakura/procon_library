@@ -19,9 +19,9 @@ class Tree_DH :  public Tree<T>{
         dfs1(start, pre);
         dfs2(start, pre);
         if(debug){
-            print(dp);
-            print(dp2);
-            print(height);
+            dump(dp);
+            dump(dp2);
+            dump(height);
         }
         diameter = *max_element(dp2.begin(), dp2.end());
     }
