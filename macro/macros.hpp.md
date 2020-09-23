@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/template.cpp
     title: Tree Class
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/template.cpp
     title: Tree Class
   - icon: ':heavy_check_mark:'
@@ -20,11 +20,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/binary-tree.cpp
     title: "\u4E8C\u5206\u6728(Binary Tree)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
@@ -59,7 +59,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/sieve_of_eratosthenes.cpp
     title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9(Sieve of Eratosthenes)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: flow/ford-fulkerson.cpp
     title: "Ford Fulkerson\u6CD5"
   - icon: ':heavy_check_mark:'
@@ -83,7 +83,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/dijkstra.hpp
     title: "Dikstra\u6CD5"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/template.hpp
     title: Graph Class
   - icon: ':warning:'
@@ -99,7 +99,7 @@ data:
     path: data_structure/lazy-segment-tree-raq.cpp
     title: "\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728(Lazy Segment\
       \ Tree) \u533A\u9593\u52A0\u7B97"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - icon: ':heavy_check_mark:'
@@ -216,7 +216,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/DSL_1_A.test.cpp
     title: test/DSL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/NTL_1_E.test.cpp
     title: test/NTL_1_E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -260,10 +260,10 @@ data:
     path: test/DPL_5_E.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u30011\u500B\u4EE5\u5185(${}_k C _n$)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_7_A.test.cpp
     title: test/GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_7_A.test.cpp
     title: test/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -321,13 +321,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/GRL_1_A.test.cpp
     title: test/GRL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -336,13 +336,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/ALDS1_5_D.test.cpp
     title: test/ALDS1_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -382,10 +382,10 @@ data:
     path: test/DPL_5_F.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u30011\u500B\u4EE5\u4E0A(${}_{n-k} H _k$)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/union_find_tree.yosupo.test.cpp
     title: test/union_find_tree.yosupo.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/union_find_tree.yosupo.test.cpp
     title: test/union_find_tree.yosupo.test.cpp
   - icon: ':heavy_check_mark:'
@@ -398,47 +398,242 @@ data:
     path: example/example.test.cpp
     title: "example(\u4E8C\u5206\u63A2\u7D22)"
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Macro
     links: []
-  bundledCode: "#line 1 \"macro/macros.hpp\"\n\n\n\n/*\n@title Macro\n@category template\n\
-    */\n#include <bits/stdc++.h>\nusing namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n\
-    #define rep1(i,N) for(int i=1;i<int(N);++i)\n#define all(a) (a).begin(),(a).end()\n\
-    #define print(v) { cerr<<#v<<\": [ \"; for(auto _ : v) cerr<<_<<\", \"; cerr<<\"\
-    ]\"<<endl; }\n#define printpair(v) { cerr<<#v<<\": [ \"; for(auto _ : v) cerr<<\"\
-    {\"<<_.first<<\",\"<<_.second<<\"}\"<<\", \"; cerr<<\"]\"<<endl; }\n#define dump(x)\
-    \ cerr<<#x<<\": \"<<x<<endl;\n#define bit(k) (1LL<<(k))\n#define Yes \"Yes\"\n\
-    #define No \"No\"\n#define YES \"YES\"\n#define NO \"NO\"\ntypedef long long ll;\n\
-    \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
-    \ pair< T1, T2 >& p) {\n  os << \"{\" <<p.first << \", \" << p.second << \"}\"\
-    ;\n  return os;\n}\ntemplate <class T> using vec = vector<T>;\ntemplate <class\
-    \ T> using vvec = vector<vec<T>>;\n\ntemplate<class T> inline bool chmax(T& a,\
-    \ T b) { if (a < b) { a = b; return true; } return false; }\ntemplate<class T>\
-    \ inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false;\
-    \ }\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD =\
-    \ (ll)1e9+7;\n\nconst double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1,\
-    \ 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string\
-    \ dir = \"DRUL\";\n\n\n"
-  code: "#ifndef MACROS_HPP\n#define MACROS_HPP\n\n/*\n@title Macro\n@category template\n\
-    */\n#include <bits/stdc++.h>\nusing namespace std;\n#define rep(i,N) for(int i=0;i<int(N);++i)\n\
-    #define rep1(i,N) for(int i=1;i<int(N);++i)\n#define all(a) (a).begin(),(a).end()\n\
-    #define print(v) { cerr<<#v<<\": [ \"; for(auto _ : v) cerr<<_<<\", \"; cerr<<\"\
-    ]\"<<endl; }\n#define printpair(v) { cerr<<#v<<\": [ \"; for(auto _ : v) cerr<<\"\
-    {\"<<_.first<<\",\"<<_.second<<\"}\"<<\", \"; cerr<<\"]\"<<endl; }\n#define dump(x)\
-    \ cerr<<#x<<\": \"<<x<<endl;\n#define bit(k) (1LL<<(k))\n#define Yes \"Yes\"\n\
-    #define No \"No\"\n#define YES \"YES\"\n#define NO \"NO\"\ntypedef long long ll;\n\
-    \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
-    \ pair< T1, T2 >& p) {\n  os << \"{\" <<p.first << \", \" << p.second << \"}\"\
-    ;\n  return os;\n}\ntemplate <class T> using vec = vector<T>;\ntemplate <class\
-    \ T> using vvec = vector<vec<T>>;\n\ntemplate<class T> inline bool chmax(T& a,\
-    \ T b) { if (a < b) { a = b; return true; } return false; }\ntemplate<class T>\
-    \ inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false;\
-    \ }\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD =\
-    \ (ll)1e9+7;\n\nconst double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1,\
-    \ 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string\
-    \ dir = \"DRUL\";\n\n#endif"
+  bundledCode: '#line 1 "macro/macros.hpp"
+
+
+
+
+    /*
+
+    @title Macro
+
+    @category template
+
+    */
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    typedef long long ll;
+
+    #define rep(i,N) for(int i=0;i<int(N);++i)
+
+    #define rep1(i,N) for(int i=1;i<int(N);++i)
+
+    #define all(a) (a).begin(),(a).end()
+
+    #define bit(k) (1LL<<(k))
+
+    #define SUM(v) accumulate(all(v), 0LL)
+
+
+    typedef pair<int, int> i_i;
+
+    typedef pair<ll, ll> l_l;
+
+    template <class T> using vec = vector<T>;
+
+    template <class T> using vvec = vector<vec<T>>;
+
+    struct fast_ios{ fast_ios(){ cin.tie(0); ios::sync_with_stdio(false); cout <<
+    fixed << setprecision(20); }; }fast_ios_;
+
+
+    template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true;
+    } return false; }
+
+    template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true;
+    } return false; }
+
+
+    #define TOSTRING(x) string(#x)
+
+    template <typename T> istream &operator>>(istream &is, vector<T> &vec) { for (T
+    &x : vec) is >> x; return is; }
+
+    template <typename T> ostream &operator<<(ostream &os, const vector<T> &v) { os  <<
+    "["; for(auto _: v) os << _ << ", "; os << "]"; return os; };
+
+    template <typename T> ostream &operator<<(ostream &os, set<T> &st) { os << "(";
+    for(auto _: st) { os << _ << ", "; } os << ")";return os;}
+
+    template <typename T, typename U> ostream &operator<<(ostream &os, const pair<
+    T, U >& p){os << "{" <<p.first << ", " << p.second << "}";return os; }
+
+    template <typename T, typename U> ostream &operator<<(ostream &os, const map<T,
+    U> &mp){ os << "["; for(auto _: mp){ os << _ << ", "; } os << "]" << endl; return
+    os; }
+
+
+    #define DUMPOUT cerr
+
+    void dump_func(){ DUMPOUT << endl; }
+
+    template <class Head, class... Tail> void dump_func(Head &&head, Tail &&... tail)
+    { DUMPOUT << head; if (sizeof...(Tail) > 0) { DUMPOUT << ", "; } dump_func(std::move(tail)...);
+    }
+
+
+    #ifdef DEBUG
+
+    #define dbg(...) dump_func(__VA_ARGS__)
+
+    #define dump(...) DUMPOUT << string(#__VA_ARGS__) << ": "; dump_func(__VA_ARGS__)
+
+    #else
+
+    #define dbg(...)
+
+    #define dump(...)
+
+    #endif
+
+
+    const int INF = (ll)1e9;
+
+    const ll INFLL = (ll)1e18+1;
+
+    const ll MOD = 1000000007;
+
+    // const ll MOD = 998244353;
+
+    const long double PI = acos(-1.0);
+
+
+    /*
+
+    const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+
+    const string dir = "DRUL";
+
+    */
+
+
+
+    '
+  code: '#ifndef MACROS_HPP
+
+    #define MACROS_HPP
+
+
+    /*
+
+    @title Macro
+
+    @category template
+
+    */
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    typedef long long ll;
+
+    #define rep(i,N) for(int i=0;i<int(N);++i)
+
+    #define rep1(i,N) for(int i=1;i<int(N);++i)
+
+    #define all(a) (a).begin(),(a).end()
+
+    #define bit(k) (1LL<<(k))
+
+    #define SUM(v) accumulate(all(v), 0LL)
+
+
+    typedef pair<int, int> i_i;
+
+    typedef pair<ll, ll> l_l;
+
+    template <class T> using vec = vector<T>;
+
+    template <class T> using vvec = vector<vec<T>>;
+
+    struct fast_ios{ fast_ios(){ cin.tie(0); ios::sync_with_stdio(false); cout <<
+    fixed << setprecision(20); }; }fast_ios_;
+
+
+    template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true;
+    } return false; }
+
+    template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true;
+    } return false; }
+
+
+    #define TOSTRING(x) string(#x)
+
+    template <typename T> istream &operator>>(istream &is, vector<T> &vec) { for (T
+    &x : vec) is >> x; return is; }
+
+    template <typename T> ostream &operator<<(ostream &os, const vector<T> &v) { os  <<
+    "["; for(auto _: v) os << _ << ", "; os << "]"; return os; };
+
+    template <typename T> ostream &operator<<(ostream &os, set<T> &st) { os << "(";
+    for(auto _: st) { os << _ << ", "; } os << ")";return os;}
+
+    template <typename T, typename U> ostream &operator<<(ostream &os, const pair<
+    T, U >& p){os << "{" <<p.first << ", " << p.second << "}";return os; }
+
+    template <typename T, typename U> ostream &operator<<(ostream &os, const map<T,
+    U> &mp){ os << "["; for(auto _: mp){ os << _ << ", "; } os << "]" << endl; return
+    os; }
+
+
+    #define DUMPOUT cerr
+
+    void dump_func(){ DUMPOUT << endl; }
+
+    template <class Head, class... Tail> void dump_func(Head &&head, Tail &&... tail)
+    { DUMPOUT << head; if (sizeof...(Tail) > 0) { DUMPOUT << ", "; } dump_func(std::move(tail)...);
+    }
+
+
+    #ifdef DEBUG
+
+    #define dbg(...) dump_func(__VA_ARGS__)
+
+    #define dump(...) DUMPOUT << string(#__VA_ARGS__) << ": "; dump_func(__VA_ARGS__)
+
+    #else
+
+    #define dbg(...)
+
+    #define dump(...)
+
+    #endif
+
+
+    const int INF = (ll)1e9;
+
+    const ll INFLL = (ll)1e18+1;
+
+    const ll MOD = 1000000007;
+
+    // const ll MOD = 998244353;
+
+    const long double PI = acos(-1.0);
+
+
+    /*
+
+    const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+
+    const string dir = "DRUL";
+
+    */
+
+
+    #endif'
   dependsOn: []
   isVerificationFile: false
   path: macro/macros.hpp
@@ -478,8 +673,8 @@ data:
   - data_structure/bit.cpp
   - data_structure/stack.hpp
   - data_structure/segment-tree.cpp
-  timestamp: '2020-03-31 04:16:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-23 14:39:14+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/GRL_1_A_2.test.cpp
   - test/GRL_1_A_2.test.cpp
