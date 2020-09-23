@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: flow/ford-fulkerson.cpp
     title: "Ford Fulkerson\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_7_A
@@ -47,9 +47,9 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"flow/ford-fulkerson.cpp\"\n\n\n\n#line 5 \"flow/ford-fulkerson.cpp\"\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"flow/ford-fulkerson.cpp\"\n\n\n\n#line 5 \"flow/ford-fulkerson.cpp\"\
     \n/*\n\n@title \u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)\n@category \u30CD\u30C3\
     \u30C8\u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\ntemplate<typename T>\nstruct\
     \ edge{\n    int to;\n    T cap;\n    int rev;\n};\ntemplate<typename T>\nstruct\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: true
   path: test/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/GRL_7_A.test.cpp
 layout: document

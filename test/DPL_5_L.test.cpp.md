@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: math/mint.hpp
     title: "\u5408\u540C\u7B97\u8853(Modular Arithmetic)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
@@ -55,13 +55,13 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"math/mint.hpp\"\n\n\n\n#line 5 \"math/mint.hpp\"\n/*\n@title\
-    \ \u5408\u540C\u7B97\u8853(Modular Arithmetic)\n*/\nstruct mint {\n    long long\
-    \ x;\n    mint(long long _x=0):x((_x%MOD+MOD)%MOD){}\n    mint operator-() const\
-    \ { return mint(-x);}\n    mint& operator+=(const mint a) {\n        if ((x +=\
-    \ a.x) >= MOD) x -= MOD;\n        return *this;\n    }\n    mint& operator-=(const\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"math/mint.hpp\"\n\n\n\n#line 5 \"math/mint.hpp\"\n/*\n@title \u5408\
+    \u540C\u7B97\u8853(Modular Arithmetic)\n*/\nstruct mint {\n    long long x;\n\
+    \    mint(long long _x=0):x((_x%MOD+MOD)%MOD){}\n    mint operator-() const {\
+    \ return mint(-x);}\n    mint& operator+=(const mint a) {\n        if ((x += a.x)\
+    \ >= MOD) x -= MOD;\n        return *this;\n    }\n    mint& operator-=(const\
     \ mint a) {\n        if ((x += MOD-a.x) >= MOD) x -= MOD;\n        return *this;\n\
     \    }\n    mint& operator*=(const mint a) {\n        (x *= a.x) %= MOD;\n   \
     \     return *this;\n    }\n    mint operator+(const mint a) const {\n       \
@@ -106,7 +106,7 @@ data:
   isVerificationFile: true
   path: test/DPL_5_L.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/DPL_5_L.test.cpp

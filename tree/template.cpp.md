@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/template.hpp
     title: Graph Class
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: tree/lca.cpp
     title: "\u6700\u5C0F\u5171\u901A\u7956\u5148/LCA(Lowest Common Acestor)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
@@ -22,20 +22,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/GRL_5_C.test.cpp
     title: test/GRL_5_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Tree Class
@@ -68,8 +68,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 1 \"graph/template.hpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 1 \"graph/template.hpp\"\
     \n\n\n#line 4 \"graph/template.hpp\"\n\n/*\n@title Graph Class\n@category template\n\
     */\ntemplate<typename T = int>\nstruct edge{\n    int to;\n    T cost;\n    int\
     \ id;\n    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id)\
@@ -115,8 +115,8 @@ data:
   requiredBy:
   - tree/lca.cpp
   - tree/tree-diameter-height.cpp
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_5_C.test.cpp
   - test/GRL_5_A.test.cpp

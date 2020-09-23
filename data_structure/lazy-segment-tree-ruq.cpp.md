@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -39,8 +39,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 4 \"data_structure/lazy-segment-tree-ruq.cpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 4 \"data_structure/lazy-segment-tree-ruq.cpp\"\
     \n\n/*\n@\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728(Lazy Segment\
     \ Tree) \u533A\u9593\u66F4\u65B0\n*/\ntemplate<typename T>\nclass LazySegTree\
     \ {\n  public:\n    int N;//\u8449\u306E\u6570\n    int cnt;\n    vector<T> data;//\u914D\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: data_structure/lazy-segment-tree-ruq.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data_structure/lazy-segment-tree-ruq.cpp

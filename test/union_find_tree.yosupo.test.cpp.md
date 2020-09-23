@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -48,8 +48,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 1 \"data_structure/unionfind.cpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 1 \"data_structure/unionfind.cpp\"\
     \n\n\n#line 4 \"data_structure/unionfind.cpp\"\n\nstruct UnionFind{\n    int n;\n\
     \    vector<int> Parent;\n    vector<int> sizes;\n    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){\
     \ rep(i,n)Parent[i]=i; }\n    //find the root of x\n    int root(int x){\n   \
@@ -79,8 +79,8 @@ data:
   isVerificationFile: true
   path: test/union_find_tree.yosupo.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/union_find_tree.yosupo.test.cpp
 layout: document

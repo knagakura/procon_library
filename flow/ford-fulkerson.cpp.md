@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_7_A.test.cpp
     title: test/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/GRL_6_A.test.cpp
     title: test/GRL_6_A.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)"
@@ -46,8 +46,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 5 \"flow/ford-fulkerson.cpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 5 \"flow/ford-fulkerson.cpp\"\
     \n/*\n\n@title \u6700\u5927\u6D41(Ford-Fulkerson\u6CD5)\n@category \u30CD\u30C3\
     \u30C8\u30EF\u30FC\u30AF\u30D5\u30ED\u30FC\n\n*/\n\n\ntemplate<typename T>\nstruct\
     \ edge{\n    int to;\n    T cap;\n    int rev;\n};\ntemplate<typename T>\nstruct\
@@ -87,8 +87,8 @@ data:
   isVerificationFile: false
   path: flow/ford-fulkerson.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_7_A.test.cpp
   - test/GRL_6_A.test.cpp

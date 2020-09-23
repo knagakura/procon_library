@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: data_structure/segment-tree.cpp
     title: "\u62BD\u8C61\u5316\u30BB\u30B0\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -47,9 +47,9 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"data_structure/segment-tree.cpp\"\n\n\n#line 4 \"data_structure/segment-tree.cpp\"\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"data_structure/segment-tree.cpp\"\n\n\n#line 4 \"data_structure/segment-tree.cpp\"\
     \n\n/*\n@title \u62BD\u8C61\u5316\u30BB\u30B0\u6728\n@category \u30C7\u30FC\u30BF\
     \u69CB\u9020\n*/\ntemplate<typename T>\nclass SegTree {\n  public:\n    int N;//\u8449\
     \u306E\u6570\n    vector<T> data;//\u914D\u5217\n    T unit;//\u5358\u4F4D\u5143\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/DSL_2_A.test.cpp

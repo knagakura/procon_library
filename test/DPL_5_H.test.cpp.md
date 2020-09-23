@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -43,12 +43,12 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 3 \"test/DPL_5_H.test.cpp\"\n/*\n@title \u7389\u533A\u5225\u3059\
-    \u308B\u3001\u7BB1\u533A\u5225\u3057\u306A\u3044\u30011\u500B\u4EE5\u5185(0 or\
-    \ 1)\n@category \u5199\u50CF12\u76F8\n*/\nint main(){\n    int n, k;\n    cin\
-    \ >> n >> k;\n    cout << ((n <= k) ? 1: 0) << endl;\n}\n"
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 3 \"test/DPL_5_H.test.cpp\"\n/*\n@title \u7389\u533A\u5225\u3059\u308B\
+    \u3001\u7BB1\u533A\u5225\u3057\u306A\u3044\u30011\u500B\u4EE5\u5185(0 or 1)\n\
+    @category \u5199\u50CF12\u76F8\n*/\nint main(){\n    int n, k;\n    cin >> n >>\
+    \ k;\n    cout << ((n <= k) ? 1: 0) << endl;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_H\"\
     \n#include \"../macro/macros.hpp\"\n/*\n@title \u7389\u533A\u5225\u3059\u308B\u3001\
     \u7BB1\u533A\u5225\u3057\u306A\u3044\u30011\u500B\u4EE5\u5185(0 or 1)\n@category\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: test/DPL_5_H.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/DPL_5_H.test.cpp

@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/template.cpp
     title: Tree Class
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/template.hpp
     title: Graph Class
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/template.cpp
     title: Tree Class
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B
@@ -60,13 +60,13 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"tree/template.cpp\"\n\n\n#line 1 \"graph/template.hpp\"\n\
-    \n\n#line 4 \"graph/template.hpp\"\n\n/*\n@title Graph Class\n@category template\n\
-    */\ntemplate<typename T = int>\nstruct edge{\n    int to;\n    T cost;\n    int\
-    \ id;\n    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id)\
-    \ {}\n};\n\ntemplate<class T>\nclass Graph {\n  public:\n    int N;\n    vvec<edge<T>>\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"tree/template.cpp\"\n\n\n#line 1 \"graph/template.hpp\"\n\n\n#line\
+    \ 4 \"graph/template.hpp\"\n\n/*\n@title Graph Class\n@category template\n*/\n\
+    template<typename T = int>\nstruct edge{\n    int to;\n    T cost;\n    int id;\n\
+    \    edge(int _to, T _cost = 1, int _id = -1) :to(_to), cost(_cost), id(_id) {}\n\
+    };\n\ntemplate<class T>\nclass Graph {\n  public:\n    int N;\n    vvec<edge<T>>\
     \ G;\n    Graph(int _N): N(_N),G(_N){\n    }\n    void add_Directed_edge(int from,\
     \ int to, T cost = 1, int id = -1){\n        G[from].push_back({to, cost, id});\n\
     \    }\n    void add_edge(int v1, int v2, T cost = 1, int id = -1){\n        add_Directed_edge(v1,\
@@ -94,8 +94,8 @@ data:
     \    vector<T> dp, dp2, height;\n    T diameter;\n    Tree_DH(int _N):Tree<T>::Tree(_N),\
     \ dp(_N,0), dp2(_N), height(_N){}\n    //Calc distance and start Rerooting\n \
     \   void build(int start = 0, int pre = -1, bool debug = false){\n        dfs1(start,\
-    \ pre);\n        dfs2(start, pre);\n        if(debug){\n            print(dp);\n\
-    \            print(dp2);\n            print(height);\n        }\n        diameter\
+    \ pre);\n        dfs2(start, pre);\n        if(debug){\n            dump(dp);\n\
+    \            dump(dp2);\n            dump(height);\n        }\n        diameter\
     \ = *max_element(dp2.begin(), dp2.end());\n    }\n    //calculate the distance\
     \ from start\n    void dfs1(int cur = 0, int pre = -1){\n        dp[cur] = 0;\n\
     \        for(edge<T>& ne: G[cur]){\n            if(ne.to == pre)continue;\n  \
@@ -134,8 +134,8 @@ data:
   isVerificationFile: true
   path: test/GRL_5_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/GRL_5_B.test.cpp
 layout: document

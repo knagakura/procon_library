@@ -22,12 +22,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/stack.hpp
       title: stack
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/unionfind.cpp
       title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - name: flow
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: flow/ford-fulkerson.cpp
       title: "Ford Fulkerson\u6CD5"
   - name: geometory
@@ -51,12 +51,12 @@ data:
       title: "\u30EF\u30FC\u30B7\u30E3\u30EB\u30D5\u30ED\u30A4\u30C9\u6CD5"
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/template.hpp
       title: Graph Class
   - name: macro
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: macro/macros.hpp
       title: Macro
   - name: math
@@ -70,7 +70,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/comb.hpp
       title: "\u7D44\u307F\u5408\u308F\u305B(Combination)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/extended-euclid-algorithm.cpp
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
     - icon: ':warning:'
@@ -106,10 +106,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/rooted-tree.cpp
       title: "\u6839\u4ED8\u304D\u6728(Rooted Tree)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/template.cpp
       title: Tree Class
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tree/tree-diameter-height.cpp
       title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a\
         \ Tree (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
@@ -242,10 +242,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/GRL_1_C.test.cpp
       title: test/GRL_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/GRL_5_A.test.cpp
       title: test/GRL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/GRL_5_B.test.cpp
       title: test/GRL_5_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -254,13 +254,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/GRL_6_A.test.cpp
       title: test/GRL_6_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/GRL_7_A.test.cpp
       title: test/GRL_7_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/NTL_1_E.test.cpp
       title: test/NTL_1_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/union_find_tree.yosupo.test.cpp
       title: test/union_find_tree.yosupo.test.cpp
 layout: toppage

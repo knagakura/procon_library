@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -42,14 +42,14 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 3 \"example/example.test.cpp\"\n/*\n@title example(\u4E8C\u5206\
-    \u63A2\u7D22)\n@category example\n@brief test\u7528\u3002\n*/\nint main() {\n\
-    \    int n; cin >> n;\n    vector<int> s(n);\n    for(int i = 0; i < n;++i){\n\
-    \        cin >> s[i];\n    }\n    int q; cin >> q;\n    int cnt = 0;\n    while\
-    \ (q --) {\n        int t_i; cin >> t_i;\n        cnt += binary_search(s.begin(),\
-    \ s.end(), t_i);\n    }\n    cout << cnt << endl;\n    return 0;\n}\n"
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 3 \"example/example.test.cpp\"\n/*\n@title example(\u4E8C\u5206\u63A2\
+    \u7D22)\n@category example\n@brief test\u7528\u3002\n*/\nint main() {\n    int\
+    \ n; cin >> n;\n    vector<int> s(n);\n    for(int i = 0; i < n;++i){\n      \
+    \  cin >> s[i];\n    }\n    int q; cin >> q;\n    int cnt = 0;\n    while (q --)\
+    \ {\n        int t_i; cin >> t_i;\n        cnt += binary_search(s.begin(), s.end(),\
+    \ t_i);\n    }\n    cout << cnt << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B\"\
     \n#include \"../macro/macros.hpp\"\n/*\n@title example(\u4E8C\u5206\u63A2\u7D22\
     )\n@category example\n@brief test\u7528\u3002\n*/\nint main() {\n    int n; cin\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: example/example.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: example/example.test.cpp

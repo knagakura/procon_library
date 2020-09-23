@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
@@ -44,13 +44,13 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"math/gcd.hpp\"\n\n\n/*\n@title \u6700\u5927\u516C\u7D04\u6570\
-    (Greatest Common Divisor)\n*/\ntemplate<typename T>\nT gcd(T a,T b){\n    if(b\
-    \ == 0) return a;\n    return gcd(b, a%b);\n}\ntemplate<typename T>\nT lcm(T a,T\
-    \ b){return a/gcd(a,b)*b;}\n\n#line 5 \"test/ALDS1_1_B.test.cpp\"\n\nint main(){\n\
-    \    int a, b;\n    cin >> a >> b;\n    cout << gcd(a, b) << endl;\n}\n"
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"math/gcd.hpp\"\n\n\n/*\n@title \u6700\u5927\u516C\u7D04\u6570(Greatest\
+    \ Common Divisor)\n*/\ntemplate<typename T>\nT gcd(T a,T b){\n    if(b == 0) return\
+    \ a;\n    return gcd(b, a%b);\n}\ntemplate<typename T>\nT lcm(T a,T b){return\
+    \ a/gcd(a,b)*b;}\n\n#line 5 \"test/ALDS1_1_B.test.cpp\"\n\nint main(){\n    int\
+    \ a, b;\n    cin >> a >> b;\n    cout << gcd(a, b) << endl;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/1/ALDS1_1_B\"\
     \n\n#include \"../macro/macros.hpp\"\n#include \"../math/gcd.hpp\"\n\nint main(){\n\
     \    int a, b;\n    cin >> a >> b;\n    cout << gcd(a, b) << endl;\n}"
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: test/ALDS1_1_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/ALDS1_1_B.test.cpp

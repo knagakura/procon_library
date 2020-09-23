@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/DSL_1_A.test.cpp
     title: test/DSL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/union_find_tree.yosupo.test.cpp
     title: test/union_find_tree.yosupo.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -45,8 +45,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 4 \"data_structure/unionfind.cpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 4 \"data_structure/unionfind.cpp\"\
     \n\nstruct UnionFind{\n    int n;\n    vector<int> Parent;\n    vector<int> sizes;\n\
     \    UnionFind(int _n):n(_n),Parent(_n),sizes(_n,1){ rep(i,n)Parent[i]=i; }\n\
     \    //find the root of x\n    int root(int x){\n        if(x!=Parent[x]){\n \
@@ -75,8 +75,8 @@ data:
   isVerificationFile: false
   path: data_structure/unionfind.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/DSL_1_A.test.cpp
   - test/union_find_tree.yosupo.test.cpp

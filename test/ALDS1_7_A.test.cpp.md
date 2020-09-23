@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: tree/rooted-tree.cpp
     title: "\u6839\u4ED8\u304D\u6728(Rooted Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -47,14 +47,14 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"tree/rooted-tree.cpp\"\n\n\n#line 4 \"tree/rooted-tree.cpp\"\
-    \n\n/*\n@title \u6839\u4ED8\u304D\u6728(Rooted Tree)\n@category tree\n@ignore\n\
-    */\nstruct Rooted_Tree{\n    int N;\n    vector<vector<int>> G;\n    vector<int>\
-    \ par;\n    vector<int> depth;\n    vector<string> type;\n    vector<vector<int>>\
-    \ childs;\n    Rooted_Tree(int _N):N(_N),G(_N), par(_N, -1),depth(_N,0), type(_N),\
-    \ childs(_N){}\n    void add_directed_edge(int parent, int child){\n        G[parent].push_back(child);\n\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"tree/rooted-tree.cpp\"\n\n\n#line 4 \"tree/rooted-tree.cpp\"\n\n\
+    /*\n@title \u6839\u4ED8\u304D\u6728(Rooted Tree)\n@category tree\n@ignore\n*/\n\
+    struct Rooted_Tree{\n    int N;\n    vector<vector<int>> G;\n    vector<int> par;\n\
+    \    vector<int> depth;\n    vector<string> type;\n    vector<vector<int>> childs;\n\
+    \    Rooted_Tree(int _N):N(_N),G(_N), par(_N, -1),depth(_N,0), type(_N), childs(_N){}\n\
+    \    void add_directed_edge(int parent, int child){\n        G[parent].push_back(child);\n\
     \        par[child] = parent;\n    }\n    void dfs(int cur, int pre = -1){\n \
     \       for(auto nv: G[cur]){\n            if(nv == pre)continue;\n          \
     \  childs[cur].push_back(nv);\n            depth[nv] = depth[cur] + 1;\n     \
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/ALDS1_7_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/ALDS1_7_A.test.cpp

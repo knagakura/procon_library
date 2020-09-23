@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -43,8 +43,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 4 \"data_structure/stack.hpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 4 \"data_structure/stack.hpp\"\
     \n/*\n@title stack\n@category \u30C7\u30FC\u30BF\u69CB\u9020\n@ignore\n*/\ntemplate<\
     \ typename T >\nclass Stack{\n  public:\n    int N;\n    int top = 0;\n    T data[20000];\n\
     \    Stack(int sz):N(sz), top(0){}\n    void push(int x){\n        if(isFull()){\n\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: false
   path: data_structure/stack.hpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/ALDS1_3_A.test.cpp

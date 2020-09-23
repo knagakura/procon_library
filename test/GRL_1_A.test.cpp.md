@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/dijkstra.cpp
     title: "Dijkstra\u6CD5(Simple Class)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -47,9 +47,9 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"graph/shortest_path/dijkstra.cpp\"\n\n\n#line 4 \"graph/shortest_path/dijkstra.cpp\"\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"graph/shortest_path/dijkstra.cpp\"\n\n\n#line 4 \"graph/shortest_path/dijkstra.cpp\"\
     \n/*\n@title Dijkstra\u6CD5(Simple Class)\n@category \u30B0\u30E9\u30D5/\u6700\
     \u77ED\u7D4C\u8DEF\u554F\u984C\n*/\ntemplate<class T> class Dijkstra {\npublic:\n\
     \    int N;\n    T inf;\n    vector<T> cost;\n    vector<vector<pair<T, int>>>\
@@ -85,7 +85,7 @@ data:
   isVerificationFile: true
   path: test/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/GRL_1_A.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: tree/binary-tree.cpp
     title: "\u4E8C\u5206\u6728(Binary Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -47,12 +47,12 @@ data:
     \ DUMPOUT << string(#__VA_ARGS__) << \": \"; dump_func(__VA_ARGS__)\n#else\n#define\
     \ dbg(...)\n#define dump(...)\n#endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL\
     \ = (ll)1e18+1;\nconst ll MOD = 1000000007;\n// const ll MOD = 998244353;\nconst\
-    \ long double PI = acos(-1.0);\n\n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1,\
-    \ 1};\nconst int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\"\
-    ;\n*/\n\n\n#line 1 \"tree/binary-tree.cpp\"\n\n\n#line 4 \"tree/binary-tree.cpp\"\
-    \n\n/*\n@title \u4E8C\u5206\u6728(Binary Tree)\n@category tree\n@ignore\n*/\n\
-    struct Binary_Tree{\n    int N;\n    vector<vector<int>> G;\n    vector<int> par,\
-    \ sibling, depth, height;\n    vector<string> type;\n    Binary_Tree(int _N):N(_N),G(_N),\
+    \ long double PI = acos(-1.0);\n\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\n\
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\
+    \n\n#line 1 \"tree/binary-tree.cpp\"\n\n\n#line 4 \"tree/binary-tree.cpp\"\n\n\
+    /*\n@title \u4E8C\u5206\u6728(Binary Tree)\n@category tree\n@ignore\n*/\nstruct\
+    \ Binary_Tree{\n    int N;\n    vector<vector<int>> G;\n    vector<int> par, sibling,\
+    \ depth, height;\n    vector<string> type;\n    Binary_Tree(int _N):N(_N),G(_N),\
     \ par(_N, -1), sibling(_N, -1), depth(_N,0),height(_N), type(_N){}\n    void add_directed_edge(int\
     \ from, int to){\n        G[from].push_back(to);\n        par[to] = from;\n  \
     \  }\n    void set_sibling(int l, int r){\n        sibling[l] = r;\n        sibling[r]\
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/ALDS1_7_B.test.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/ALDS1_7_B.test.cpp

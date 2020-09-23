@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   - icon: ':heavy_check_mark:'
     path: data_structure/bit.cpp
     title: BIT(Binary Indexed Tree)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: macro/macros.hpp
     title: Macro
   _extendedRequiredBy: []
@@ -48,8 +48,8 @@ data:
     \ << \": \"; dump_func(__VA_ARGS__)\n#else\n#define dbg(...)\n#define dump(...)\n\
     #endif\n\nconst int INF = (ll)1e9;\nconst ll INFLL = (ll)1e18+1;\nconst ll MOD\
     \ = 1000000007;\n// const ll MOD = 998244353;\nconst long double PI = acos(-1.0);\n\
-    \n/*\nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1,\
-    \ 0, -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n*/\n\n\n#line 1 \"data_structure/bit.cpp\"\
+    \nconst int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};\nconst int dy[8] = {0, 1, 0,\
+    \ -1, 1, 1, -1, -1};\nconst string dir = \"DRUL\";\n\n\n#line 1 \"data_structure/bit.cpp\"\
     \n\n\n#line 4 \"data_structure/bit.cpp\"\n/*\n@title BIT(Binary Indexed Tree)\n\
     @category \u30C7\u30FC\u30BF\u69CB\u9020\n*/\ntemplate<typename T>\nclass BIT{\n\
     \  public:\n    int N;\n    vector<T> data;\n    BIT(T _N):N(_N){\n        data.assign(N+1,\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: data_structure/inversion-num.cpp
   requiredBy: []
-  timestamp: '2020-09-23 14:39:14+09:00'
+  timestamp: '2020-09-23 15:05:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/ALDS1_5_D.test.cpp

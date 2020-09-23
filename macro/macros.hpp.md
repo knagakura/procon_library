@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/template.cpp
     title: Tree Class
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/template.cpp
     title: Tree Class
   - icon: ':heavy_check_mark:'
@@ -20,11 +20,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/binary-tree.cpp
     title: "\u4E8C\u5206\u6728(Binary Tree)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/tree-diameter-height.cpp
     title: "\u6728\u306E\u76F4\u5F84\u3068\u9AD8\u3055/Diameter and Height of a Tree\
       \ (\u5168\u65B9\u4F4D\u6728DP/Rerooting ver.)"
@@ -59,7 +59,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/sieve_of_eratosthenes.cpp
     title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9(Sieve of Eratosthenes)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: flow/ford-fulkerson.cpp
     title: "Ford Fulkerson\u6CD5"
   - icon: ':heavy_check_mark:'
@@ -83,7 +83,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/shortest_path/dijkstra.hpp
     title: "Dikstra\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/template.hpp
     title: Graph Class
   - icon: ':warning:'
@@ -99,7 +99,7 @@ data:
     path: data_structure/lazy-segment-tree-raq.cpp
     title: "\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728(Lazy Segment\
       \ Tree) \u533A\u9593\u52A0\u7B97"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/unionfind.cpp
     title: "\u7D20\u96C6\u5408\u30C7\u30FC\u30BF\u69CB\u9020(UnionFind Tree)"
   - icon: ':heavy_check_mark:'
@@ -216,7 +216,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/DSL_1_A.test.cpp
     title: test/DSL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/NTL_1_E.test.cpp
     title: test/NTL_1_E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -260,10 +260,10 @@ data:
     path: test/DPL_5_E.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u30011\u500B\u4EE5\u5185(${}_k C _n$)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_7_A.test.cpp
     title: test/GRL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_7_A.test.cpp
     title: test/GRL_7_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -321,13 +321,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/GRL_1_A.test.cpp
     title: test/GRL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_A.test.cpp
     title: test/GRL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -336,13 +336,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/ALDS1_5_D.test.cpp
     title: test/ALDS1_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_B.test.cpp
     title: test/GRL_5_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -382,10 +382,10 @@ data:
     path: test/DPL_5_F.test.cpp
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u30011\u500B\u4EE5\u4E0A(${}_{n-k} H _k$)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/union_find_tree.yosupo.test.cpp
     title: test/union_find_tree.yosupo.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/union_find_tree.yosupo.test.cpp
     title: test/union_find_tree.yosupo.test.cpp
   - icon: ':heavy_check_mark:'
@@ -398,7 +398,7 @@ data:
     path: example/example.test.cpp
     title: "example(\u4E8C\u5206\u63A2\u7D22)"
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Macro
@@ -506,15 +506,11 @@ data:
     const long double PI = acos(-1.0);
 
 
-    /*
-
     const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 
     const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 
     const string dir = "DRUL";
-
-    */
 
 
 
@@ -622,15 +618,11 @@ data:
     const long double PI = acos(-1.0);
 
 
-    /*
-
     const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
 
     const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
 
     const string dir = "DRUL";
-
-    */
 
 
     #endif'
@@ -673,8 +665,8 @@ data:
   - data_structure/bit.cpp
   - data_structure/stack.hpp
   - data_structure/segment-tree.cpp
-  timestamp: '2020-09-23 14:39:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-09-23 15:05:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/GRL_1_A_2.test.cpp
   - test/GRL_1_A_2.test.cpp
