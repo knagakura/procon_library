@@ -255,6 +255,9 @@ data:
       path: test/GRL_6_A.test.cpp
       title: test/GRL_6_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/GRL_7_A.test.cpp
+      title: test/GRL_7_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/NTL_1_E.test.cpp
       title: test/NTL_1_E.test.cpp
     - icon: ':heavy_check_mark:'

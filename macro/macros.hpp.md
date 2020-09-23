@@ -261,6 +261,12 @@ data:
     title: "\u7389\u533A\u5225\u3057\u306A\u3044\u3001\u7BB1\u533A\u5225\u3059\u308B\
       \u30011\u500B\u4EE5\u5185(${}_k C _n$)"
   - icon: ':heavy_check_mark:'
+    path: test/GRL_7_A.test.cpp
+    title: test/GRL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/GRL_7_A.test.cpp
+    title: test/GRL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/GRL_5_C.test.cpp
     title: test/GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -519,6 +525,8 @@ data:
   - test/ALDS1_1_B.test.cpp
   - test/DPL_5_E.test.cpp
   - test/DPL_5_E.test.cpp
+  - test/GRL_7_A.test.cpp
+  - test/GRL_7_A.test.cpp
   - test/GRL_5_C.test.cpp
   - test/GRL_5_C.test.cpp
   - test/GRL_5_C.test.cpp

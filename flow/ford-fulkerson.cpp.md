@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/GRL_7_A.test.cpp
+    title: test/GRL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/GRL_6_A.test.cpp
     title: test/GRL_6_A.test.cpp
   _pathExtension: cpp
@@ -75,6 +78,7 @@ data:
   timestamp: '2020-09-23 01:51:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/GRL_7_A.test.cpp
   - test/GRL_6_A.test.cpp
 documentation_of: ./flow/ford-fulkerson.cpp
 layout: document
@@ -99,3 +103,12 @@ title: "Ford Fulkerson\u6CD5"
 
 - [No.654 Air E869120](https://yukicoder.me/problems/no/654)
     - [Submission](https://yukicoder.me/submissions/557019)
+    - 応用問題
+
+- [F - RPG](https://atcoder.jp/contests/wupc2019/tasks/wupc2019_f)
+    - [Submission](https://atcoder.jp/contests/wupc2019/submissions/16961850)
+    - 応用問題。
+
+- [C - 2D Plane 2N Points](https://atcoder.jp/contests/abc091/tasks/arc092_a)
+    - [Submission](https://atcoder.jp/contests/abc091/submissions/16966878)
+    - 二部マッチング
